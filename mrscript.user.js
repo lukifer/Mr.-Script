@@ -398,7 +398,7 @@ function maybeConvertToNumber(val) {
 		return parseFloat(val);
 	}
 	else {
-		return val;
+		return val === 'false' ? false : val;
 	}
 }
 
@@ -3372,6 +3372,9 @@ function at_shop() {
 
 // BARREL: add links to the results of your barrel droppings.
 function at_barrel() {
+
+	InlineItemDescriptions();
+
 	$('img').each(function() {
 		var onclick = this.getAttribute("onclick");
 		if (onclick == undefined) return;
@@ -3383,6 +3386,9 @@ function at_barrel() {
 
 // COUNCIL: Add shortcut links for current quests.
 function at_council() {
+
+	InlineItemDescriptions();
+
 	if (GetPref('shortlinks') > 1) {
 		$('p').each(function() {
 			var p = $(this);
@@ -4661,13 +4667,13 @@ function at_palinshelves() {
 	}
 }
 
-function at_pandamonium() {
+function at_pandamonium(notagain) {
 	var gotitem = $('.effect > b').text();
 	if (gotitem == "Azazel's unicorn") SetCharData("pandabandsolved",false);	// defensive clear for next time through
 	if (document.location.search=='?action=sven')	{
 		var bognort = 0, stinkface = 0, flargwurm = 0, jim = 0;
 		var pandasolved = GetCharData("pandabandsolved");
-		if ((pandasolved == false) || (pandasolved == undefined)) {	// no solution found yet?
+		if (!pandasolved) {	// no solution found yet?
 			var itemlist = $('select[name="togive"]');
 			var set1 = 0, set2 = 0;
 			var bear = false, paper = false, marsh = false;
@@ -4701,7 +4707,7 @@ function at_pandamonium() {
 				SetCharData("flargwurm",flargwurm);
 				SetCharData("jim",jim);
 				SetCharData("pandabandsolved",true);
-				at_pandamonium();	// process and present our new solution, I hope
+				if(!notagain) at_pandamonium(true);	// process and present our new solution, I hope
 			}
 		} else {	// time to implement the solution!
 			bognort = GetCharData("bognort");
@@ -5632,10 +5638,10 @@ function spoil_cobbsknob() {
 function spoil_crypt() {
 	$('img').each(function() {
 		var ml = null; var src = this.getAttribute('src');
-		if (src.indexOf("ul.gif") != -1) ml = '53-57, +Item'; // nook
-		else if (src.indexOf("ur.gif") != -1) ml = '56-59, olfact dirty old lihc'; // niche
+		if (src.indexOf("ul.gif") != -1) ml = '53-57; +Item\n(No Meat)'; // nook
+		else if (src.indexOf("ur.gif") != -1) ml = '56-59; olfact dirty old lihc\n(No Meat)'; // niche
 		else if (src.indexOf("ll.gif") != -1) ml = '55; +ML, +NC'; // cranny
-		else if (src.indexOf("lr.gif") != -1) ml = '54-58, +Init'; //alcove
+		else if (src.indexOf("lr.gif") != -1) ml = '54-58; +Init'; //alcove
 		if (ml) this.setAttribute('title','ML: '+ml);
 	});
 	$('area').each(function() {

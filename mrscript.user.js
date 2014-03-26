@@ -4631,17 +4631,25 @@ function at_spookyraven3() {
 									// this was an expensive process, let's only do it once.  Save the table display:
 									SetCharData("wineHTML",wineDisplay.innerHTML);
 									// and save the list of wine->glyph mappings and the list of which wines we actually need.
-									var json = "{"; var json2 = "{";
+								//	var json = "{"; var json2 = "{";
+								//	for (i=2271;i<2277;i++) {
+								//		for (j=0;j<glyphids.length;j++)
+								//		if (winelist[i][1] == glyphids[j]) json = json + j + ":" + i + ",";
+								//		json2 = json2 + i+':["'+winelist[i][0]+'",'+winelist[i][1]+'],';
+								//	}
+									var json = {}; var json2 = {};
 									for (i=2271;i<2277;i++) {
 										for (j=0;j<glyphids.length;j++)
-										if (winelist[i][1] == glyphids[j]) json = json + j + ":" + i + ",";
-										json2 = json2 + i+':["'+winelist[i][0]+'",'+winelist[i][1]+'],';
+										if (winelist[i][1] == glyphids[j]) json[j] = i;
+										json2[i] = [winelist[i][0], winelist[i][1]];
 									}
-									json = json + "}"; json2 = json2 + "}";
-									SetCharData("winesNeeded",json);
-									SetCharData("winelist",json2);
-									winesneeded = $.parseJSON(json);
-									countWines(winelist, winesneeded);
+
+								//	json = json + "}"; json2 = json2 + "}";
+									SetCharData("winesNeeded", JSON.stringify(json));
+									SetCharData("winelist", JSON.stringify(json2));
+								//	winesneeded = $.parseJSON(json);
+								//	countWines(winelist, winesneeded);
+									countWines(winelist, json);
 								});
 							});
 						});

@@ -53,6 +53,7 @@ var VERSION = 180;
 var MAXLIMIT = 999;
 var ENABLE_QS_REFRESH = 1;
 var DISABLE_ITEM_DB = 0;
+var INDEXED_DB_VERSION = 7;
 
 var thePath = location.pathname;
 
@@ -89,6 +90,11 @@ anywhere(); // stuff we always add where we can
 if (/^(adventure|choice|craft|knoll|shore|town_right|forestvillage|place|multiuse)$/.test(place)) {
 	dropped_item();
 }
+
+if(place !== 'charpane' && place !== 'chat' && place !== 'topmenu') {
+	InlineItemDescriptions();
+}
+
 // where are we and what do we thus want to do?
 var handler;
 if ((handler = global["at_" + place])) {
@@ -334,6 +340,116 @@ function parseItem(tbl) {
 	}
 	return data;
 }
+
+
+function UpdateIndexedDB() {
+return;
+	GM_get("some.url/items.json", function(json) {
+
+		var items = $.parseJSON(json);
+
+		var del = indexedDB.deleteDatabase("mrscript");
+		del.onsuccess = function() {
+
+			var request = indexedDB.open("mrscript", INDEXED_DB_VERSION);
+			request.onupgradeneeded = function(event) {
+				var db = event.target.result;
+				var objStore = db.createObjectStore("items", { "keyPath": "id" });
+
+				objStore.createIndex("name",	"name",		{ "unique": true });
+				objStore.createIndex("descid",	"descid",	{ "unique": true });
+				objStore.createIndex("image",	"image",	{ "unique": false });
+				objStore.createIndex("type",	"type",		{ "unique": false, "multiEntry": true });
+
+				objStore.transaction.oncomplete = function(event) {
+					var objStore = db.transaction("items", "readwrite").objectStore("items");
+
+					for (var i in items) {
+						objStore.add(items[i]);
+					}
+				}
+			};
+
+		};
+	});
+}
+
+
+function QueryItems(args, callback) {
+	if(typeof callback !== "function") return;
+
+	if(typeof args !== "object") {
+		if(/^[0-9]+$/.test(args))	args = {"id":	args};
+		else						args = {"name":	args};
+	}
+
+	var request = indexedDB.open("mrscript", INDEXED_DB_VERSION);
+	request.onsuccess = function(event) {
+		var db = event.target.result;
+		var transaction = db.transaction(["items"]);
+		var objStore = transaction.objectStore("items");
+
+		// Query by Item Id: {"id": 1}
+		if(args.id !== undefined) {
+			var request = objStore.get(args.id);
+			request.onsuccess = function(event) {
+				callback([event.target.result]);
+			};
+		}
+
+		// Query by Description Id: {"descid": 868780591}
+		else if(args.descid !== undefined) {
+			var index = objStore.index("descid");
+			index.get(args.descid).onsuccess = function(event) {
+				callback([event.target.result]);
+			};
+		}
+
+		// Query by Name: {"name": "dry noodles"}
+		else if(args.descid !== undefined) {
+			var index = objStore.index("descid");
+			index.get(args.descid).onsuccess = function(event) {
+				callback([event.target.result]);
+			};
+		}
+
+		// Query by anything else: {"type": "weapon"}
+		else {
+
+			var index;
+			var keyRange;
+			$.each(args, function(k, v) {
+				index = objStore.index(k); // "type"
+				keyRange = IDBKeyRange.only(v); // "combat reusable"
+				return false; // TODO: Multiple queries
+			});
+
+			var items = [];
+			index.openCursor(keyRange).onsuccess = function(event) {
+				var cursor = event.target.result;
+				if (cursor) {
+					items.push(cursor.value);
+					cursor.continue();
+				}
+				else callback(items);
+			}
+		}
+	};
+}
+
+// EXAMPLE QUERIES
+
+/*
+setTimeout(function(){
+
+QueryItems("dry noodles", function(items){ console.log(items); });
+QueryItems("1", function(items){ console.log(items); });
+QueryItems({"type": "candy"}, function(items){ console.log(items); });
+
+}, 20000);
+*/
+
+
 
 // Convert GM_getValue data to the faster localStorage
 function ImportGmDataToLocalStorage() {
@@ -1476,6 +1592,10 @@ function InlineItemDescriptions() {
 				var pos = $img.position();
 				var x = pos.left - - 15 - 150;
 				var y = pos.top  - - 15;
+				
+				// X Bounds
+				x = Math.max(x, window.scrollX - - 3);
+				x = Math.min(x, $(document.body).width() - 290);
 
 				if(!window.$overlay) {
 					window.$overlay = $('<div id="_descitem_overlay"></div>')
@@ -1496,9 +1616,8 @@ function InlineItemDescriptions() {
 						setTimeout(function(){ $desc.remove(); }, 120);
 					});
 
-					$(document).on("keyup.descitem", function(e) {
+					$(document).on("keydown.descitem", function(e) {
 						if(e.keyCode == 27) window.$overlay.triggerHandler("click");
-						$(document).off("keyup.descitem");
 					});
 
 					$body
@@ -1519,7 +1638,7 @@ function InlineItemDescriptions() {
 						"display": "none",
 						"position": "absolute",
 						"overflow": "auto",
-						"maxHeight": 450,
+						"maxHeight": 400,
 						"width": 300,
 						"zIndex": "300",
 						"transform": "scale(0.1)",
@@ -1554,9 +1673,15 @@ function InlineItemDescriptions() {
 							.find("center:eq(1)")
 							.css("marginBottom", "15px");
 					}
+					
+					// Calculate Y and bounds
+					var yHeight = parseInt($desc.height());
+					y = y - (yHeight / 2);
+					y = Math.max(y, window.scrollY - - 3);
+					y = Math.min(y, parseInt($(document.body).height()) - yHeight - 3);
 
 					$desc.css({
-						"top": y - ($desc.height() / 2),
+						"top": y,
 						"opacity": 1,
 						"transform": "scale(1)"
 					})
@@ -1632,6 +1757,13 @@ function at_game() {
 	// reload topmenu exactly once after charpane has finished processing:
 	setTimeout('top.frames[0].location.reload();',2000);
 
+	// See if we need to create/refresh indexedDB
+/*	// Not ready for production
+	if((localStorage['indexedDBversion'] || 0) < INDEXED_DB_VERSION) {
+		UpdateIndexedDB();
+	}
+*/
+
 	// If over X hours, check for updates
 	if ((currentHours - lastUpdated) > 6)
 	{
@@ -1682,8 +1814,6 @@ function setItem(sel, itemName) {
 
 // FIGHT: special processing for certain critters
 function at_fight() {
-
-	InlineItemDescriptions();
 
 // code for NS Lair spoilers borrowed shamelessly from Tard's NS Trainer v0.8
 	// monster name:[preferred combat item, funkslinging item, is this lair-spoilery, special treatment flag]
@@ -2461,8 +2591,6 @@ function at_arcade() {
 // CHOICE: special functions for choice adventure text.
 function at_choice() {
 
-	InlineItemDescriptions();
-
 	var square = GetCharData("square");
 	SetCharData("square",false);
 	var $NCTitle = $('b:eq(0)');
@@ -2612,8 +2740,6 @@ function at_town_wrong() {
 // BHH: provide some convenience links here too.
 function at_bounty() {
 
-	InlineItemDescriptions();
-
 	var bountyloc = [
 		//item name, link display, adventure location ID
 		["bean-shaped rocks",               "[chamber (1)]",         "33"],
@@ -2717,7 +2843,6 @@ function at_bounty() {
 }
 
 function at_mall() {
-	InlineItemDescriptions();
 	$('center table tr td center table:first').prepend('<tr><td><center><a href=managestore.php>Manage your Store</a><br /><br /></center></td></tr>');
 }
 
@@ -2772,13 +2897,10 @@ function at_beerpong() {
 }
 
 function at_showplayer() {
-	InlineItemDescriptions();
 }
 
 // INVENTORY: Add shortcuts when equipping outfits
 function at_inventory() {
-
-	InlineItemDescriptions();
 
 	var firstTable = document.getElementsByTagName('table')[0];
 
@@ -3011,8 +3133,6 @@ function at_inv_equip() {
 // GALAKTIK: Add use boxes when buying
 function at_galaktik() {
 
-	InlineItemDescriptions();
-
 	var row = $('table:first tr:eq(1):contains("You acquire")'), txt;
 	if (row.length == 1) {
 		var num = 1;
@@ -3058,8 +3178,6 @@ function at_galaktik() {
 // BIGISLAND: add inventory check, max buttons to Frat/Hippy Trade-In stores.
 function at_bigisland() {
 
-	InlineItemDescriptions();
-
 	$('img').each(function()
 	{	var onclick = this.getAttribute('onclick');
 		if (onclick != undefined && onclick.indexOf("desc") != -1)
@@ -3102,13 +3220,10 @@ function pants(evt) {
 }
 
 function at_mrstore() {
-	InlineItemDescriptions();
 }
 
 // STORE: Add use boxes and links as appropriate
 function at_store() {
-
-	InlineItemDescriptions();
 
 	var firstTable = $('table:first tbody');		// we're interested in this when it's the "Results:" box from buying something.
 	var whichstore; var noform = 1;
@@ -3349,13 +3464,10 @@ function at_knoll_friendly() {
 }
 
 function at_cafe() {
-	InlineItemDescriptions();
 }
 
 // SHOP: link back to the 8-bit realm if we're at the mystic shop.
 function at_shop() {
-
-	InlineItemDescriptions();
 
 	if (document.location.search == "?whichshop=mystic") {
 		$('<center><br /><a href="adventure.php?snarfblat=73">Adventure in the 8-Bit Realm</a><br /><br /></center>').prependTo($('a:last').parent());
@@ -3373,8 +3485,6 @@ function at_shop() {
 // BARREL: add links to the results of your barrel droppings.
 function at_barrel() {
 
-	InlineItemDescriptions();
-
 	$('img').each(function() {
 		var onclick = this.getAttribute("onclick");
 		if (onclick == undefined) return;
@@ -3386,8 +3496,6 @@ function at_barrel() {
 
 // COUNCIL: Add shortcut links for current quests.
 function at_council() {
-
-	InlineItemDescriptions();
 
 	if (GetPref('shortlinks') > 1) {
 		$('p').each(function() {
@@ -4270,8 +4378,6 @@ function at_clan_viplounge() {
 
 // CHARSHEET: decode resistance level text.
 function at_charsheet() {
-
-	InlineItemDescriptions();
 
 	// see if the character qualifies for the Myst-Class innate 5% resistance bonus...
 	var mystBonus = 0;
@@ -6747,7 +6853,6 @@ function at_clan_stash() {
 	autoclear_added_rows();
 }
 function at_storage() {
-	InlineItemDescriptions();
 	autoclear_added_rows();
 }
 function at_sendmessage() {

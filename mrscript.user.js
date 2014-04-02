@@ -53,7 +53,7 @@ var VERSION = 180;
 var MAXLIMIT = 999;
 var ENABLE_QS_REFRESH = 1;
 var DISABLE_ITEM_DB = 0;
-var INDEXED_DB_VERSION = 7;
+var INDEXED_DB_VERSION = 1;
 
 var thePath = location.pathname;
 
@@ -83,6 +83,172 @@ addCss('center > center > table > tbody > tr > td > b { animation-duration: 0.00
 //this gets us right down to a <b>Results:</b> header, I hope.
 
 $(document).on('animationstart',ResultHandler);
+
+
+// IndexedDB wrapper: https://github.com/aaronpowell/db.js
+(function(e,t){"use strict";var n=e.indexedDB||e.webkitIndexedDB||e.mozIndexedDB||e.oIndexedDB||e.msIndexedDB,r=e.IDBKeyRange||e.webkitIDBKeyRange,i={readonly:"readonly",readwrite:"readwrite"};var s=Object.prototype.hasOwnProperty;if(!n){throw"IndexedDB required"}var o=function(e){return e};var u=function(){var e,t=[];var n=function(n,r){if(t){r=r||[];e=e||[n,r];for(var i=0,s=t.length;i<s;i++){t[i].apply(e[0],e[1])}t=[]}};this.add=function(){for(var r=0,i=arguments.length;r<i;r++){t.push(arguments[r])}if(e){n()}return this};this.execute=function(){n(this,arguments);return this}};var a=function(e){var t="progress",n=[["resolve","done",new u,"resolved"],["reject","fail",new u,"rejected"],["notify","progress",new u]],r={},i={state:function(){return t},then:function(){var e=arguments;return a(function(t){n.forEach(function(n,i){var s=e[i];r[n[1]](typeof s==="function"?function(){var e=s.apply(this,arguments);if(e&&typeof e.promise==="function"){e.promise().done(t.resolve).fail(t.reject).progress(t.notify)}}:t[n[0]])})}).promise()},promise:function(e){if(e){Object.keys(i).forEach(function(t){e[t]=i[t]});return e}return i}};n.forEach(function(e,n){var s=e[2],o=e[3];i[e[1]]=s.add;if(o){s.add(function(){t=o})}r[e[0]]=s.execute});i.promise(r);if(e){e.call(r,r)}return r};var f=function(e,t){var n=this,r=false;this.add=function(t){if(r){throw"Database has been closed"}var s=[];var o=0;for(var u=0;u<arguments.length-1;u++){if(Array.isArray(arguments[u+1])){for(var f=0;f<arguments[u+1].length;f++){s[o]=arguments[u+1][f];o++}}else{s[o]=arguments[u+1];o++}}var l=e.transaction(t,i.readwrite),c=l.objectStore(t),h=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=c.add(e,n)}else{t=c.add(e)}t.onsuccess=function(t){var n=t.target;var r=n.source.keyPath;if(r===null){r="__id__"}Object.defineProperty(e,r,{value:n.result,enumerable:true});h.notify()}});l.oncomplete=function(){h.resolve(s,n)};l.onerror=function(e){h.reject(s,e)};l.onabort=function(e){h.reject(s,e)};return h.promise()};this.update=function(t){if(r){throw"Database has been closed"}var s=[];for(var o=0;o<arguments.length-1;o++){s[o]=arguments[o+1]}var u=e.transaction(t,i.readwrite),f=u.objectStore(t),l=f.keyPath,c=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=f.put(e,n)}else{t=f.put(e)}t.onsuccess=function(e){c.notify()}});u.oncomplete=function(){c.resolve(s,n)};u.onerror=function(e){c.reject(s,e)};u.onabort=function(e){c.reject(s,e)};return c.promise()};this.remove=function(t,n){if(r){throw"Database has been closed"}var s=e.transaction(t,i.readwrite),o=s.objectStore(t),u=a();var f=o.delete(n);s.oncomplete=function(){u.resolve(n)};s.onerror=function(e){u.reject(e)};return u.promise()};this.clear=function(t){if(r){throw"Database has been closed"}var n=e.transaction(t,i.readwrite),s=n.objectStore(t),o=a();var u=s.clear();n.oncomplete=function(){o.resolve()};n.onerror=function(e){o.reject(e)};return o.promise()};this.close=function(){if(r){throw"Database has been closed"}e.close();r=true;delete p[t]};this.get=function(t,n){if(r){throw"Database has been closed"}var i=e.transaction(t),s=i.objectStore(t),o=a();var u=s.get(n);u.onsuccess=function(e){o.resolve(e.target.result)};i.onerror=function(e){o.reject(e)};return o.promise()};this.query=function(t,n){if(r){throw"Database has been closed"}return new l(t,e,n)};for(var o=0,u=e.objectStoreNames.length;o<u;o++){(function(e){n[e]={};for(var t in n){if(!s.call(n,t)||t==="close"){continue}n[e][t]=function(t){return function(){var r=[e].concat([].slice.call(arguments,0));return n[t].apply(n,r)}}(t)}})(e.objectStoreNames[o])}};var l=function(e,n,s){var u=this;var f=false;var l=function(o,u,l,c,h,p,d){var v=n.transaction(e,f?i.readwrite:i.readonly),m=v.objectStore(e),g=s?m.index(s):m,y=o?r[o].apply(null,u):null,b=[],w=a(),E=[y],h=h?h:null,p=p?p:[],S=0;if(l!=="count"){E.push(c||"next")}var x=f?Object.keys(f):false;var T=function(e){for(var t=0;t<x.length;t++){var n=x[t];var r=f[n];if(r instanceof Function)r=r(e);e[n]=r}return e};g[l].apply(g,E).onsuccess=function(e){var n=e.target.result;if(typeof n===typeof 0){b=n}else if(n){if(h!==null&&h[0]>S){S=h[0];n.advance(h[0])}else if(h!==null&&S>=h[0]+h[1]){}else{var r=true;var i="value"in n?n.value:n.key;p.forEach(function(e){if(!e||!e.length){}else if(e.length===2){r=i[e[0]]===e[1]}else{r=e[0].apply(t,[i])}});if(r){S++;b.push(d(i));if(f){i=T(i);n.update(i)}}n.continue()}}};v.oncomplete=function(){w.resolve(b)};v.onerror=function(e){w.reject(e)};v.onabort=function(e){w.reject(e)};return w.promise()};var c=function(e,t){var n="next",r="openCursor",i=[],s=null,u=o,a=false;var c=function(){return l(e,t,r,a?n+"unique":n,s,i,u)};var h=function(){s=Array.prototype.slice.call(arguments,0,2);if(s.length==1){s.unshift(0)}return{execute:c}};var p=function(){n=null;r="count";return{execute:c}};var d=function(){r="openKeyCursor";return{desc:m,execute:c,filter:v,distinct:g,map:b}};var v=function(){i.push(Array.prototype.slice.call(arguments,0,2));return{keys:d,execute:c,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};var m=function(){n="prev";return{keys:d,execute:c,filter:v,distinct:g,modify:y,map:b}};var g=function(){a=true;return{keys:d,count:p,execute:c,filter:v,desc:m,modify:y,map:b}};var y=function(e){f=e;return{execute:c}};var b=function(e){u=e;return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};"only bound upperBound lowerBound".split(" ").forEach(function(e){u[e]=function(){return new c(e,arguments)}});this.filter=function(){var e=new c(null,null);return e.filter.apply(e,arguments)};this.all=function(){return this.filter()}};var c=function(e,t,n){if(typeof t==="function"){t=t()}for(var r in t){var i=t[r];var o;if(!s.call(t,r)||n.objectStoreNames.contains(r)){o=e.currentTarget.transaction.objectStore(r)}else{o=n.createObjectStore(r,i.key)}for(var u in i.indexes){if(o.indexNames.contains(u)){continue}var a=i.indexes[u];o.createIndex(u,a.key||u,Object.keys(a).length?a:{unique:false})}}};var h=function(e,t,n,r){var i=e.target.result;var s=new f(i,t);var o;var u=a();u.resolve(s);p[t]=i;return u.promise()};var p={};var d={version:"0.9.0",open:function(e){var t;var r=a();if(p[e.server]){h({target:{result:p[e.server]}},e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)}else{t=n.open(e.server,e.version);t.onsuccess=function(t){h(t,e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)};t.onupgradeneeded=function(t){c(t,e.schema,t.target.result)};t.onerror=function(e){r.reject(e)}}return r.promise()}};if(typeof module!=="undefined"&&typeof module.exports!=="undefined"){module.exports=d}else if(typeof define==="function"&&define.amd){define(function(){return d})}else{e.db=d}})(window)
+
+
+function DB(callback) {
+
+	if(typeof callback !== "function") return;
+
+	if(window.kolDB) return callback(window.kolDB);
+	
+	db.open({
+		"server": 'mr.script',
+		"version": INDEXED_DB_VERSION,
+		"schema": {
+			"items": {
+				"key": { "keyPath": "id" },
+				"indexes": {
+					"name":		{ "unique": true },
+					"descid":	{ "unique": true },
+					"image":	{ }
+				}
+			},
+			"monsters": {
+				"key": { "keyPath": "id", "autoIncrement": true },
+				"indexes": {
+					"name":		{ "unique": true },
+					"image":	{ }
+				}
+			}
+		}
+	}).done(function(theDB) {
+		window.kolDB = theDB;
+		callback(window.kolDB);
+	});
+}
+
+
+function UpdateDB(successFunc, errorFunc, safeToCreate) {
+
+	DB(function(db) {
+	
+		// Fixme: host elsewhere
+		GM_get("lukifer.net/db.json?rand="+Math.random(), function(json) {
+
+			var data = $.parseJSON(json);
+			var items = data.items;
+			var monsters = data.monsters;
+			
+			var i = 0;
+			var f = function(i) {
+
+				if(items[i]) {
+					items[i]['id'] += ""; // cast to string
+					db.items.update(items[i]).done(function(){ f(i+1); });
+				}
+				else {
+					var ii = 0;
+					var ff = function(ii) {
+						if(monsters[ii]) {
+							monsters[ii]['id'] = ii+1;
+							db.monsters.update(monsters[ii]).done(function(){ ff(ii+1); });
+						}
+						else { if(typeof successFunc === "function") successFunc(db); }
+					}
+					ff(ii);
+				}
+			}
+			f(i);
+		});
+	});
+}
+
+
+function QueryItems(args, callback) {
+	if(typeof callback !== "function") return;
+
+	if(typeof args !== "object") {
+		if(/^[0-9]+$/.test(args))	args = {"id":	args};
+		else						args = {"name":	args};
+	}
+
+	DB(function(db) {
+
+		// Query by Item Id: {"id": 1}
+		if(args.id !== undefined) {
+			db.items.query()
+				.filter('id', args.id+"")
+				.execute()
+				.done(function(results) { callback(results[0]); });
+		}
+	
+		// Query by Description Id: {"descid": 868780591}
+		else if(args.descid !== undefined) {
+			db.items.query()
+				.filter('descid', args.descid)
+				.execute()
+				.done(function(results) { callback(results[0]); });
+		}
+	
+		// Query by Name: {"name": "dry noodles"}
+		else if(args.name !== undefined) {
+			db.items.query()
+				.filter('name', args.name)
+				.execute()
+				.done(function(results) { callback(results[0]); });
+		}
+	
+		// Query by anything else: {"type": "weapon"}
+		else {
+		}
+	});
+}
+
+
+function QueryMonsters(args, callback) {
+	if(typeof callback !== "function") return;
+
+	if(typeof args !== "object") args = {"name": args};
+
+	DB(function(db) {
+		// Query by Name: {"name": "dry noodles"}
+		if(args.name !== undefined) {
+			db.monsters.query()
+				.filter('name', args.name)
+				.execute()
+				.done(function(results) { console.log(results); callback(results[0]); });
+		}
+	
+		// Query by anything else: {"type": "horror"}
+		else {
+	
+		};
+	});
+}
+
+
+// EXAMPLE QUERIES
+
+
+if(0)
+setTimeout(function(){
+	UpdateDB(
+		function() { $("#refreshdb").html('Done'); },
+		function() { $("#refreshdb").html('Fail!'); }
+	);
+}, 500);
+
+
+
+if(0)
+setTimeout(function(){
+
+	QueryItems("1", function(item){ console.log(item); });
+	QueryItems("spices", function(item){ console.log(item); });
+	QueryMonsters("1335 HaXx0r", function(monster){ console.log(monster); });
+	
+}, 2000);
+
+
+
+
+// Things start happening right around here.
+
+
 
 anywhere(); // stuff we always add where we can
 
@@ -340,115 +506,6 @@ function parseItem(tbl) {
 	}
 	return data;
 }
-
-
-function UpdateIndexedDB() {
-return;
-	GM_get("some.url/items.json", function(json) {
-
-		var items = $.parseJSON(json);
-
-		var del = indexedDB.deleteDatabase("mrscript");
-		del.onsuccess = function() {
-
-			var request = indexedDB.open("mrscript", INDEXED_DB_VERSION);
-			request.onupgradeneeded = function(event) {
-				var db = event.target.result;
-				var objStore = db.createObjectStore("items", { "keyPath": "id" });
-
-				objStore.createIndex("name",	"name",		{ "unique": true });
-				objStore.createIndex("descid",	"descid",	{ "unique": true });
-				objStore.createIndex("image",	"image",	{ "unique": false });
-				objStore.createIndex("type",	"type",		{ "unique": false, "multiEntry": true });
-
-				objStore.transaction.oncomplete = function(event) {
-					var objStore = db.transaction("items", "readwrite").objectStore("items");
-
-					for (var i in items) {
-						objStore.add(items[i]);
-					}
-				}
-			};
-
-		};
-	});
-}
-
-
-function QueryItems(args, callback) {
-	if(typeof callback !== "function") return;
-
-	if(typeof args !== "object") {
-		if(/^[0-9]+$/.test(args))	args = {"id":	args};
-		else						args = {"name":	args};
-	}
-
-	var request = indexedDB.open("mrscript", INDEXED_DB_VERSION);
-	request.onsuccess = function(event) {
-		var db = event.target.result;
-		var transaction = db.transaction(["items"]);
-		var objStore = transaction.objectStore("items");
-
-		// Query by Item Id: {"id": 1}
-		if(args.id !== undefined) {
-			var request = objStore.get(args.id);
-			request.onsuccess = function(event) {
-				callback([event.target.result]);
-			};
-		}
-
-		// Query by Description Id: {"descid": 868780591}
-		else if(args.descid !== undefined) {
-			var index = objStore.index("descid");
-			index.get(args.descid).onsuccess = function(event) {
-				callback([event.target.result]);
-			};
-		}
-
-		// Query by Name: {"name": "dry noodles"}
-		else if(args.descid !== undefined) {
-			var index = objStore.index("descid");
-			index.get(args.descid).onsuccess = function(event) {
-				callback([event.target.result]);
-			};
-		}
-
-		// Query by anything else: {"type": "weapon"}
-		else {
-
-			var index;
-			var keyRange;
-			$.each(args, function(k, v) {
-				index = objStore.index(k); // "type"
-				keyRange = IDBKeyRange.only(v); // "combat reusable"
-				return false; // TODO: Multiple queries
-			});
-
-			var items = [];
-			index.openCursor(keyRange).onsuccess = function(event) {
-				var cursor = event.target.result;
-				if (cursor) {
-					items.push(cursor.value);
-					cursor.continue();
-				}
-				else callback(items);
-			}
-		}
-	};
-}
-
-// EXAMPLE QUERIES
-
-/*
-setTimeout(function(){
-
-QueryItems("dry noodles", function(items){ console.log(items); });
-QueryItems("1", function(items){ console.log(items); });
-QueryItems({"type": "candy"}, function(items){ console.log(items); });
-
-}, 20000);
-*/
-
 
 
 // Convert GM_getValue data to the faster localStorage
@@ -1760,7 +1817,7 @@ function at_game() {
 	// See if we need to create/refresh indexedDB
 /*	// Not ready for production
 	if((localStorage['indexedDBversion'] || 0) < INDEXED_DB_VERSION) {
-		UpdateIndexedDB();
+		UpdateDB();
 	}
 */
 
@@ -6755,11 +6812,26 @@ function buildPrefs() {
 				if (nupwd) { $("#hashrenew").html('Done'); SetPwd(nupwd); }
 				else $("#hashrenew").html('Fail!');
 		});	}, true);
+
+		var ul5 = document.createElement('a');
+		ul5.setAttribute('href','javascript:void(0);');
+		ul5.innerHTML = "Refresh DB";
+		ul5.setAttribute('id','refreshdb');
+		ul5.addEventListener('click', function(event)
+		{	this.innerHTML = 'Working...';
+			UpdateDB(
+				function() { $("#refreshdb").html('Done'); },
+				function() { $("#refreshdb").html('Fail!'); }
+			);
+		}, true);
+
 		ulspan.setAttribute('class','tiny');
 		ulspan.setAttribute('name','updatespan');
 		ulspan.appendChild(ul);
 		ulspan.appendChild(document.createTextNode(' - '));
 		ulspan.appendChild(ul4);
+		ulspan.appendChild(document.createTextNode(' - '));
+		ulspan.appendChild(ul5);
 		ulspan.appendChild(document.createElement('br'));
 		centeredlinks.appendChild(ulspan);
 	}
@@ -6768,6 +6840,7 @@ function buildPrefs() {
 		//build our settings and return them for appending
 		var guts = document.createElement("div");
 		guts.id = scriptID;
+		guts.style = 'text-align: center;';
 		var subhead = document.createElement("div");
 		guts.appendChild(subhead);
 		subhead.className = "subhead";
@@ -6780,7 +6853,7 @@ function buildPrefs() {
 		var bigSpan = document.createElement('span');
 		bigSpan.setAttribute('id','scriptpref');
 		bigSpan.style["margin"] = "0 auto";
-		bigSpan.style["display"] = "table-cell";
+		//bigSpan.style["display"] = "table-cell";
 		bigSpan.style["overflowX"] = "hidden";
 		bigSpan.style["overflowY"] = "auto";
 		bigSpan.style["textalign"] = "left";

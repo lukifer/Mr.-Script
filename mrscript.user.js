@@ -1284,6 +1284,14 @@ function AddLinks(descId, theItem, formWhere, path) {
 			addWhere.append(AppendLink('[malus]', 'guild.php?place=malus'));
 			break;
 
+		case "cocktail":
+			addWhere.append(AppendLink('[mix]', 'craft.php?mode=cocktail'));
+			break;
+
+		case "cook":
+			addWhere.append(AppendLink('[cook]', 'craft.php?mode=cook'));
+			break;
+
 		default:
 			if (doWhat) {
 				addWhere.append(AppendLink('['+ doWhat +']', doWhat+'.php'));
@@ -1458,7 +1466,6 @@ function Defaults(revert) {
 	var basePrefs = [["splitinv",1],
 			 ["splitquest",1],
 			 ["splitmsg",0],
-			 ["outfitmenu",1],
 			 ["shortlinks",3],
 			 ["autoclear",1],
 		   	 ['toprow', 1],
@@ -1788,6 +1795,41 @@ function InlineItemDescriptions() {
 }
 
 
+function RightClickFamiliarHat($link, which) {
+// unfinished
+	$link.on("contextmenu", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		var $ircm = $("#pop_ircm");
+		if(!$ircm.length) {
+			$("body").append('<div id="pop_ircm"></div>');
+			$ircm = $("#pop_ircm");
+		}
+		$ircm.css({
+			"position": "absolute",
+			"top": (e.pageY - -10)+"px",
+			"left": (e.pageX-140)+"px",
+			"width": "280px",
+			"border": "1px solid black",
+			"backgroundColor": "white",
+			"fontSize": "12px"
+		});
+
+		var html = '<div><b style="width: 160px; display: block; float: left;">asdf</b><a class="small dojaxy" href="javascript:void(0);">[fsda]</a></div>';
+
+		$ircm.html('<div style="color:white;background-color:blue;padding:2px 15px 2px 15px;white-space: nowrap;text-align:center; font-weight: bold">Manage Stuff</div><img class="close" style="cursor: pointer; position: absolute;right:1px;top:1px;" alt="X" title="Cancel [Esc]" src="http://images.kingdomofloathing.com/closebutton.gif"><div style="padding:4px; text-align: left">'+html+'</div><div style="clear:both"></div>');
+
+		return false;
+
+		// familiar.php?&action=backpack&famid=42&pwd=
+		// familiar.php?&action=backpack&famid=0&pwd=
+
+		// <div style="color:white;background-color:blue;padding:2px 15px 2px 15px;white-space: nowrap;text-align:center; font-weight: bold">Manage Stuff</div><img class="close" style="cursor: pointer; position: absolute;right:1px;top:1px;" alt="X" title="Cancel [Esc]" src="http://images.kingdomofloathing.com/closebutton.gif"><div style="padding:4px; text-align: left"><div style="width:100%; padding-bottom: 3px;" rel="sellstuff.php?action=sell&amp;ajax=1&amp;type=quant&amp;whichitem%5B%5D=IID&amp;howmany=NUM&amp;pwd=5be24f2554aaf1d1f0fb0edc5ea8cc7d" id="pircm_638"><b style="width: 160px; display: block; float: left;">Auto-Sell (45 meat):</b> <a href="#" rel="1" class="small dojaxy">[one]</a></div><div style="width:100%; padding-bottom: 3px;" rel="inventory.php?action=closetpush&amp;ajax=1&amp;whichitem=IID&amp;qty=NUM&amp;pwd=5be24f2554aaf1d1f0fb0edc5ea8cc7d" id="pircm_638"><b style="width: 160px; display: block; float: left;">Closet:</b> <a href="#" rel="1" class="small dojaxy">[one]</a></div></div><div style="clear:both"></div>
+	})
+}
+
+
 function GetInventoryEquipment() {
 	var equipped = {};
 	$("#curequip > tbody > tr > td[valign] > a").each(function(n, el) {
@@ -1803,7 +1845,7 @@ function GetInventoryEquipment() {
 
 function InventoryHoverText() {
 
-	if(GetPref("invhovertext") !== "1"
+	if(GetPref("invhovertext") === "0"
 	|| place != "inventory"
 	|| (document.location.search+"").indexOf("which=2") === -1)
 		return;
@@ -3064,6 +3106,7 @@ function at_inventory() {
 
 	// Real-time filtration (not ready for prime-time)
 //	if(GetPref("inlineitemfilter"))
+	if(false)
 	$("#filter input").on("keyup", function(e) {
 		var $input = $(this);
 		var filterVal = $input.val().toLowerCase();
@@ -3093,6 +3136,10 @@ function at_inventory() {
 		var selecty = $('select[name=whichoutfit]')[0];
 
 		InventoryHoverText();
+
+		var $bjorn = $("a[href='familiar.php?showback=1']");
+		//if($bjorn.length) RightClickFamiliarHat($bjorn, 'bjorn');
+		//if($crown.length) RightClickFamiliarHat($bjorn, 'crown');
 
 		SetCharData("outfitsmenu", selecty.innerHTML);
 
@@ -5337,6 +5384,14 @@ function at_familiar() {
 	{
 		$('img:first').nextAll('b:first').after(AppendLink('[map it!]',inv_use(2054)));
 	}
+
+	// Stash an array of all familiars
+	var fams = [];
+	$("img[onclick^=fam]").each(function(n, el) {
+		var fam = $(el).attr("onclick").match(/fam\(([0-9]+)\)/)[1];
+		if(!$.inArray(fam, fams)) fams.push(fam[1]);
+	});
+	SetCharData("familiars", fams.join(','));
 }
 
 // MINING: uber-twinklify all twinkly images.

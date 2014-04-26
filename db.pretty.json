@@ -147,18 +147,6 @@
             "equip": 1
         },
         {
-            "id": "13",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "14",
             "descid": "333987088",
             "name": "moxie weed",
@@ -2274,18 +2262,6 @@
                 "none"
             ],
             "autosell": "12",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "190",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -8429,18 +8405,6 @@
             "equip": 1
         },
         {
-            "id": "695",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "696",
             "descid": "722153019",
             "name": "frilly shirt",
@@ -8605,18 +8569,6 @@
                 "none"
             ],
             "autosell": "500",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "710",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -9716,30 +9668,6 @@
             "equip": 0
         },
         {
-            "id": "802",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "803",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "804",
             "descid": "15442777",
             "name": "Knoll stir-fry",
@@ -10264,18 +10192,6 @@
             "equip": 1
         },
         {
-            "id": "846",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "847",
             "descid": "1997970",
             "name": "heteroerotic frat-paddle",
@@ -10526,18 +10442,6 @@
             ],
             "autosell": "31",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "868",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -11289,18 +11193,6 @@
             "autosell": "0",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "930",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "931",
@@ -12088,30 +11980,6 @@
             "equip": 0
         },
         {
-            "id": "996",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "997",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "998",
             "descid": "918664629",
             "name": "maiden wig",
@@ -12145,18 +12013,6 @@
             ],
             "autosell": "220",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "1001",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -12604,18 +12460,6 @@
             ],
             "autosell": "38",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "1039",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -14029,18 +13873,6 @@
             ],
             "autosell": "0",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "1156",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -16215,18 +16047,6 @@
             "equip": 0
         },
         {
-            "id": "1337",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "1338",
             "descid": "880589942",
             "name": "Dyspepsi-Cola d-rations",
@@ -16733,18 +16553,6 @@
             "autosell": "0",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "1380",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "1381",
@@ -18393,18 +18201,6 @@
             "equip": 0
         },
         {
-            "id": "1517",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "1518",
             "descid": "446675937",
             "name": "vampire heart",
@@ -18606,18 +18402,6 @@
             ],
             "autosell": "0",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "1535",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -20900,18 +20684,6 @@
             "equip": 1
         },
         {
-            "id": "1724",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "1725",
             "descid": "934991406",
             "name": "bigger stick",
@@ -23115,30 +22887,6 @@
             "equip": 0
         },
         {
-            "id": "1908",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "1909",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "1910",
             "descid": "333019307",
             "name": "clockwork sword",
@@ -24817,18 +24565,6 @@
             "equip": 0
         },
         {
-            "id": "2048",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "2049",
             "descid": "382008303",
             "name": "can of Swiller",
@@ -25749,18 +25485,6 @@
             "autosell": "95",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "2124",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "2125",
@@ -27282,18 +27006,6 @@
             "autosell": "35",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "2250",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "2251",
@@ -29859,18 +29571,6 @@
             "autosell": "105",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "2461",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "2462",
@@ -35717,18 +35417,6 @@
             "equip": 0
         },
         {
-            "id": "2944",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "2945",
             "descid": "340531020",
             "name": "party hat",
@@ -41492,54 +41180,6 @@
             "equip": 0
         },
         {
-            "id": "3417",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3418",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3419",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3420",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "3421",
             "descid": "306172112",
             "name": "little box of fireworks",
@@ -41639,18 +41279,6 @@
             ],
             "autosell": "50",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "3429",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -43520,18 +43148,6 @@
                 "food"
             ],
             "autosell": "0",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3583",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -45532,18 +45148,6 @@
             "equip": 0
         },
         {
-            "id": "3748",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "3749",
             "descid": "631866824",
             "name": "concoction of clumsiness",
@@ -45576,18 +45180,6 @@
                 "food"
             ],
             "autosell": "45",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3752",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -46048,114 +45640,6 @@
             "equip": 0
         },
         {
-            "id": "3790",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3791",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3792",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3793",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3794",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3795",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3796",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3797",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3798",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "3799",
             "descid": "912081563",
             "name": "Apathargic Bandersnatch",
@@ -46338,18 +45822,6 @@
             "autosell": "0",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "3814",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "3815",
@@ -47358,30 +46830,6 @@
                 "combat reusable"
             ],
             "autosell": "0",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3899",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "3900",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -50181,18 +49629,6 @@
                 "none"
             ],
             "autosell": "0",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4131",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -53520,18 +52956,6 @@
             "equip": 1
         },
         {
-            "id": "4404",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "4405",
             "descid": "800942495",
             "name": "foreign box",
@@ -53797,18 +53221,6 @@
             "equip": 0
         },
         {
-            "id": "4427",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "4428",
             "descid": "873692545",
             "name": "glowstick on a string",
@@ -53893,18 +53305,6 @@
             "equip": 0
         },
         {
-            "id": "4435",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "4436",
             "descid": "999869987",
             "name": "strange cube",
@@ -53913,18 +53313,6 @@
                 "none"
             ],
             "autosell": "0",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4437",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -57989,390 +57377,6 @@
             "equip": 0
         },
         {
-            "id": "4772",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4773",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4774",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4775",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4776",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4777",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4778",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4779",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4780",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4781",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4782",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4783",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4784",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4785",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4786",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4787",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4788",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4789",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4790",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4791",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4792",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4793",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4794",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4795",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4796",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4797",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4798",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4799",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4800",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4801",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4802",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4803",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "4804",
             "descid": "929376084",
             "name": "Essence of Annoyance",
@@ -58420,126 +57424,6 @@
                 "curse"
             ],
             "autosell": "0",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4808",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4809",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4810",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4811",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4812",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4813",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4814",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4815",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4816",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4817",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -59924,78 +58808,6 @@
             ],
             "autosell": "0",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "4931",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4932",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4933",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4934",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4935",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "4936",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -61432,18 +60244,6 @@
             "equip": 0
         },
         {
-            "id": "5056",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "5057",
             "descid": "290365150",
             "name": "Atomic Comic",
@@ -62049,18 +60849,6 @@
                 "none"
             ],
             "autosell": "0",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "5107",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -65524,18 +64312,6 @@
                 "drink"
             ],
             "autosell": "0",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "5391",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -69434,30 +68210,6 @@
             "equip": 1
         },
         {
-            "id": "5710",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "5711",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "5712",
             "descid": "439484541",
             "name": "fire axe",
@@ -70005,18 +68757,6 @@
             "equip": 0
         },
         {
-            "id": "5757",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "5758",
             "descid": "235701538",
             "name": "Staff of Holiday Sensations",
@@ -70243,30 +68983,6 @@
             "autosell": "30",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "5777",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "5778",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "5779",
@@ -71767,18 +70483,6 @@
             ],
             "autosell": "0",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "5904",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -74320,18 +73024,6 @@
             "equip": 0
         },
         {
-            "id": "6113",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "6114",
             "descid": "524857668",
             "name": "zaibatsu level 2 card",
@@ -75826,18 +74518,6 @@
             "equip": 0
         },
         {
-            "id": "6238",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "6239",
             "descid": "299288653",
             "name": "cube of ectoplasm",
@@ -76707,18 +75387,6 @@
             "equip": 0
         },
         {
-            "id": "6311",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "6312",
             "descid": "421662304",
             "name": "crate of fish meat",
@@ -77481,42 +76149,6 @@
                 "combat"
             ],
             "autosell": "5",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "6375",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "6376",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "6377",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -79528,18 +78160,6 @@
             "equip": 1
         },
         {
-            "id": "6544",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "6545",
             "descid": "603655510",
             "name": "weedy skirt",
@@ -80787,30 +79407,6 @@
             ],
             "autosell": "5",
             "use": 1,
-            "equip": 0
-        },
-        {
-            "id": "6646",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "6647",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
             "equip": 0
         },
         {
@@ -82495,30 +81091,6 @@
             "equip": 0
         },
         {
-            "id": "6786",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "6787",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "6788",
             "descid": "248829997",
             "name": "blank diary",
@@ -82589,18 +81161,6 @@
             "autosell": "5",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "6794",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "6795",
@@ -83007,30 +81567,6 @@
                 "drink"
             ],
             "autosell": "0",
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "6829",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "6830",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
             "use": 0,
             "equip": 0
         },
@@ -83904,18 +82440,6 @@
             "autosell": "0",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "6902",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "6903",
@@ -86172,18 +84696,6 @@
             "equip": 0
         },
         {
-            "id": "7090",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "7091",
             "descid": "154879893",
             "name": "Skully's hot chocolate",
@@ -88145,42 +86657,6 @@
             "equip": 0
         },
         {
-            "id": "7253",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "7254",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
-            "id": "7255",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
-        },
-        {
             "id": "7256",
             "descid": "567969134",
             "name": "smoke grenade",
@@ -88423,18 +86899,6 @@
             "autosell": "5",
             "use": 0,
             "equip": 1
-        },
-        {
-            "id": "7276",
-            "descid": null,
-            "name": null,
-            "image": null,
-            "type": [
-                ""
-            ],
-            "autosell": null,
-            "use": 0,
-            "equip": 0
         },
         {
             "id": "7277",
@@ -105682,21 +104146,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "ambulatory pirate",
             "image": "pirate2.gif",
             "atk": false,
@@ -105745,21 +104194,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "beebee gunners",
             "image": "beebeegunner.gif",
             "atk": false,
@@ -105802,21 +104236,6 @@
             "boss": false,
             "items": [
                 "handful of honey (0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -105865,21 +104284,6 @@
             "items": [
                 "handful of honey (0)",
                 "handful of honey (0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -105934,21 +104338,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Wu Tang the Betrayer",
             "image": "susguy.gif",
             "atk": "200",
@@ -105965,51 +104354,6 @@
                 "black cherry soda (0)",
                 "black cherry soda (0)",
                 "black cherry soda (0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -106059,21 +104403,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "hypodermic bugbear",
             "image": "bb_vamp.gif",
             "atk": "8",
@@ -106119,21 +104448,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "batbugbear",
             "image": "bb_bat.gif",
             "atk": "25",
@@ -106146,21 +104460,6 @@
             "boss": false,
             "items": [
                 "BURT (100)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -106194,21 +104493,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "bugaboo",
             "image": "bb_ghost.gif",
             "atk": "60",
@@ -106239,21 +104523,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Black Ops Bugbear",
             "image": "bb_ninja.gif",
             "atk": "90",
@@ -106266,21 +104535,6 @@
             "boss": false,
             "items": [
                 "BURT (100)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -106329,21 +104583,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "ancient unspeakable bugbear",
             "image": "bb_horror.gif",
             "atk": "140",
@@ -106366,21 +104605,6 @@
             "hp": "180",
             "init": "100",
             "type": "construct",
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
             "elem": false,
             "meat": 0,
             "boss": false,
@@ -106419,21 +104643,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Bugbear Captain",
             "image": "bb_captain.gif",
             "atk": "280",
@@ -106441,21 +104650,6 @@
             "hp": "1337",
             "init": "200",
             "type": "beast",
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
             "elem": false,
             "meat": 0,
             "boss": false,
@@ -106696,21 +104890,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "alielf",
             "image": "alielf.gif",
             "atk": false,
@@ -106924,21 +105103,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "alien hamsterpus",
             "image": "muthamster.gif",
             "atk": false,
@@ -106994,21 +105158,6 @@
                 "lunar isotope (0)",
                 "lunar isotope (0)",
                 "lunar isotope (0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -107084,21 +105233,6 @@
             "boss": false,
             "items": [
                 "purple-frosted astral cupcake (15)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -107178,21 +105312,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Angels of Avalon",
             "image": "angel.gif",
             "atk": "145",
@@ -107265,21 +105384,6 @@
             "boss": false,
             "items": [
                 "pink-frosted astral cupcake (15)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -107356,21 +105460,6 @@
             "boss": false,
             "items": [
                 "patent antipsychotics (20)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -107451,21 +105540,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Ancient Mariner",
             "image": "mariner.gif",
             "atk": false,
@@ -107542,21 +105616,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "digital underground dweller",
             "image": "digitalug.gif",
             "atk": false,
@@ -107624,21 +105683,6 @@
             "hp": false,
             "init": "-10000",
             "type": "humanoid",
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
             "elem": false,
             "meat": 0,
             "boss": false,
@@ -107729,21 +105773,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Bettie Barulio",
             "image": "wraith2.gif",
             "atk": false,
@@ -107825,21 +105854,6 @@
                 "jar full of wind (0)",
                 "jar full of wind (0)",
                 "Winifred's whistle (0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -107926,21 +105940,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Candied Yam Golem",
             "image": "yamgolem.gif",
             "atk": false,
@@ -108004,21 +106003,6 @@
             "items": [
                 "single-serving herbal stuffing (c100)",
                 "herbal stuffing (c100)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -108087,21 +106071,6 @@
                 "powdered donut (20)",
                 "powdered wig (0)",
                 "reflection of a map (c10)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -108195,21 +106164,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Hammered Yam Golem",
             "image": "",
             "atk": false,
@@ -108267,21 +106221,6 @@
             "boss": false,
             "items": [
                 "breaded beer (c100)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -108347,21 +106286,6 @@
                 "corpsebite (c100)",
                 "Corpse Island iced tea (c100)",
                 "una poca de gracia (c0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -108520,21 +106444,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "angry bassist",
             "image": "mh_bassist.gif",
             "atk": false,
@@ -108607,21 +106516,6 @@
             "boss": false,
             "items": [
                 "ironic jogging shorts (c10)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -108705,37 +106599,7 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "The Darkness (blind)",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
             "image": null,
             "atk": false,
             "def": false,
@@ -108757,21 +106621,6 @@
             "hp": "600",
             "init": "100",
             "type": "fish",
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
             "elem": false,
             "meat": 0,
             "boss": false,
@@ -108802,21 +106651,6 @@
             "hp": false,
             "init": "-10000",
             "type": "dude",
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
             "elem": false,
             "meat": 0,
             "boss": false,
@@ -109109,21 +106943,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "reanimated bat skeleton",
             "image": "foss_bat.gif",
             "atk": "50",
@@ -109211,21 +107030,6 @@
             "boss": false,
             "items": [
                 "fossilized necklace (c100)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -109334,21 +107138,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Servant Of Lord Flameface",
             "image": "",
             "atk": false,
@@ -109361,21 +107150,6 @@
             "boss": false,
             "items": [
                 "molten brick (c5)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -109504,21 +107278,6 @@
             "items": [
                 "plastic ingot (50)",
                 "electrical thingamabob (10)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -110550,21 +108309,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Video Game Boss",
             "image": "qmark.gif",
             "atk": false,
@@ -110640,21 +108384,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Clancy",
             "image": "clancy.gif",
             "atk": "150",
@@ -110677,36 +108406,6 @@
             "hp": "1000",
             "init": "50",
             "type": "dude",
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
             "elem": false,
             "meat": 0,
             "boss": false,
@@ -111226,21 +108925,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Count Drunkula",
             "image": "drunkula.gif",
             "atk": false,
@@ -111474,21 +109158,6 @@
                 "HOA zombie eyes (c0)",
                 "HOA citation pad (c0)",
                 "wriggling severed nose (c0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -111825,21 +109494,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "scout seal",
             "image": "scoutseal.gif",
             "atk": "30",
@@ -111905,21 +109559,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "awkward disco dancer",
             "image": "disco_awkward.gif",
             "atk": false,
@@ -111962,21 +109601,6 @@
             "boss": false,
             "items": [
                 "discocktail (c0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -112046,21 +109670,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "depressing French accordionist",
             "image": "wanderacc1.gif",
             "atk": false,
@@ -112121,21 +109730,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "spirit alarm clock",
             "image": "spiritalclock.gif",
             "atk": false,
@@ -112193,21 +109787,6 @@
             "boss": false,
             "items": [
                 "spirit gum (5)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -112306,21 +109885,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Warbear Foot Soldier",
             "image": "warbear12.gif",
             "atk": false,
@@ -112369,21 +109933,6 @@
                 "warbear whosit (n100)",
                 "warbear whosit (n100)",
                 "warbear officer requisition box (f0)"
-            ]
-        },
-        {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
             ]
         },
         {
@@ -113050,21 +110599,6 @@
             ]
         },
         {
-            "name": "",
-            "image": null,
-            "atk": false,
-            "def": false,
-            "hp": false,
-            "init": false,
-            "type": false,
-            "elem": false,
-            "meat": 0,
-            "boss": false,
-            "items": [
-
-            ]
-        },
-        {
             "name": "Avatar of Jarlsberg",
             "image": "aojarls.gif",
             "atk": "240",
@@ -113078,6 +110612,2304 @@
             "items": [
 
             ]
+        }
+    ],
+    "familiars": [
+        {
+            "id": "1",
+            "name": "Mosquito",
+            "image": "familiar1.gif",
+            "type": [
+                "combat",
+                "sorceress"
+            ],
+            "larva": "275",
+            "item": "hypodermic needle",
+            "arena": "2,1,3,0",
+            "bjorn": "Weapon Damage +20%",
+            "bjorn2": "5-6 MP \/ 3 rounds"
+        },
+        {
+            "id": "2",
+            "name": "Leprechaun",
+            "image": "familiar2.gif",
+            "type": [
+                "meat0"
+            ],
+            "larva": "276",
+            "item": "Meat detector",
+            "arena": "1,3,0,2",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "3",
+            "name": "Levitating Potato",
+            "image": "familiar3.gif",
+            "type": [
+                "none",
+                "sorceress"
+            ],
+            "larva": "288",
+            "item": "many-eyed glasses",
+            "arena": "0,1,2,3",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "5-6 HP, 3-4 MP \/ 3 rounds"
+        },
+        {
+            "id": "4",
+            "name": "Angry Goat",
+            "image": "familiar4.gif",
+            "type": [
+                "combat",
+                "sorceress"
+            ],
+            "larva": "327",
+            "item": "prosthetic forehead",
+            "arena": "3,0,2,1",
+            "bjorn": "Muscle +15%",
+            "bjorn2": "Goat cheese pizza"
+        },
+        {
+            "id": "5",
+            "name": "Sabre-Toothed Lime",
+            "image": "familiar5.gif",
+            "type": [
+                "combat",
+                "sorceress"
+            ],
+            "larva": "335",
+            "item": "tiny shaker of salt",
+            "arena": "3,0,2,1",
+            "bjorn": "Moxie +15%",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "6",
+            "name": "Fuzzy Dice",
+            "image": "familiar6.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "387",
+            "item": "meatcar model",
+            "arena": "2,2,2,2",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "7",
+            "name": "Spooky Pirate Skeleton",
+            "image": "familiar7.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "408",
+            "item": "blundarrrbus",
+            "arena": "2,3,1,0",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "8",
+            "name": "Barrrnacle",
+            "image": "familiar8.gif",
+            "type": [
+                "none",
+                "sorceress"
+            ],
+            "larva": "412",
+            "item": "sucky decal",
+            "arena": "0,2,1,3",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "10-30 Damage, 30%"
+        },
+        {
+            "id": "9",
+            "name": "Howling Balloon Monkey",
+            "image": "familiar9.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "436",
+            "item": "tiny balloon knife",
+            "arena": "1,3,2,0",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "10-15 Stench Damage 10-15 Sleaze Damage, 30%"
+        },
+        {
+            "id": "10",
+            "name": "Stab Bat",
+            "image": "familiar10.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "523",
+            "item": "shock collar",
+            "arena": "3,2,1,0",
+            "bjorn": "Muscle +15%",
+            "bjorn2": "20-30 Damage, 10-15 HP loss"
+        },
+        {
+            "id": "11",
+            "name": "Grue",
+            "image": "familiar11.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "525",
+            "item": "moonglasses",
+            "arena": "2,0,1,3",
+            "bjorn": "Mysticality +15%",
+            "bjorn2": "20-25 Spooky Damage \/ 33%"
+        },
+        {
+            "id": "12",
+            "name": "Blood-Faced Volleyball",
+            "image": "familiar12.gif",
+            "type": [
+                "stat0"
+            ],
+            "larva": "528",
+            "item": "palm-frond toupee",
+            "arena": "0,1,3,2",
+            "bjorn": "+2 Moxie Stat(s) Per Fight",
+            "bjorn2": "15-20 Spooky Damage"
+        },
+        {
+            "id": "14",
+            "name": "Ghuol Whelp",
+            "image": "familiar14.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "529",
+            "item": "tiny knife and fork",
+            "arena": "1,2,0,3",
+            "bjorn": "Regen 2-8 HP & MP",
+            "bjorn2": "15-25 Stench Damage"
+        },
+        {
+            "id": "15",
+            "name": "Baby Gravy Fairy",
+            "image": "familiar15.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "561",
+            "item": "eye-pod",
+            "arena": "0,3,1,2",
+            "bjorn": "Weapon Damage +10",
+            "bjorn2": "5-6 HP, 3-4 MP \/ 3 rounds"
+        },
+        {
+            "id": "16",
+            "name": "Cocoabo",
+            "image": "familiar16.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "591",
+            "item": "chocolate spurs",
+            "arena": "2,3,0,1",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "white chocolate chips"
+        },
+        {
+            "id": "17",
+            "name": "Star Starfish",
+            "image": "familiar17.gif",
+            "type": [
+                "combat",
+                "sorceress"
+            ],
+            "larva": "664",
+            "item": "magnifying glass",
+            "arena": "2,1,3,0",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "MP\/4 Damage, max 100 \/ 30%"
+        },
+        {
+            "id": "18",
+            "name": "Hovering Sombrero",
+            "image": "hat2.gif",
+            "type": [
+                "stat1"
+            ],
+            "larva": "1165",
+            "item": "tiny maracas",
+            "arena": "0,3,2,1",
+            "bjorn": "+2 Mysticality Stat(s) Per Fight",
+            "bjorn2": "15-25 Spooky Damage"
+        },
+        {
+            "id": "19",
+            "name": "Ghost Pickle on a Stick",
+            "image": "familiar19.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "766",
+            "item": "skewer-mounted razor blade",
+            "arena": "3,1,0,2",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "8-10 HP \/ 3 rounds"
+        },
+        {
+            "id": "20",
+            "name": "Killer Bee",
+            "image": "familiar20.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "828",
+            "item": "brass stinger",
+            "arena": "3,1,2,0",
+            "bjorn": "+2 Muscle Stat(s) Per Fight",
+            "bjorn2": "8-10 HP \/ 3 rounds"
+        },
+        {
+            "id": "21",
+            "name": "Whirling Maple Leaf",
+            "image": "familiar21.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "888",
+            "item": "tiny Mountie hat",
+            "arena": "3,1,2,0",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "15-25 Cold Damage \/ 25%"
+        },
+        {
+            "id": "22",
+            "name": "Coffee Pixie",
+            "image": "familiar22.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "897",
+            "item": "miniature espresso maker",
+            "arena": "1,1,3,2",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "5-6 MP \/ 3 rounds"
+        },
+        {
+            "id": "23",
+            "name": "Cheshire Bat",
+            "image": "familiar23.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "898",
+            "item": "smile-sharpening stone",
+            "arena": "1,2,3,1",
+            "bjorn": "+2 Mysticality Stat(s) Per Fight",
+            "bjorn2": "8-10 HP \/ 3 rounds"
+        },
+        {
+            "id": "24",
+            "name": "Jill-O-Lantern",
+            "image": "familiar24.gif",
+            "type": [
+                "combat,stat0"
+            ],
+            "larva": "894",
+            "item": "100-Watt bulb",
+            "arena": "3,1,2,1",
+            "bjorn": "+2 Moxie Stat(s) Per Fight",
+            "bjorn2": "8-10 HP \/ 3 rounds"
+        },
+        {
+            "id": "25",
+            "name": "Hand Turkey",
+            "image": "familiar25.gif",
+            "type": [
+                "combat,meat0"
+            ],
+            "larva": "914",
+            "item": "candied yam pinky ring",
+            "arena": "3,2,1,1",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "26",
+            "name": "Crimbo Elf",
+            "image": "familiar26.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "924",
+            "item": "dental pliers",
+            "arena": "1,2,1,3",
+            "bjorn": "Weapon Damage +10",
+            "bjorn2": "Angry Farmer candy, Cold Hots candy, Rock Pops, Tasty Fun Good rice candy, Wint-O-Fresh mint \/ 30%"
+        },
+        {
+            "id": "27",
+            "name": "Hanukkimbo Dreidl",
+            "image": "familiar27.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "936",
+            "item": "menorette",
+            "arena": "2,1,3,1",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "28",
+            "name": "Baby Yeti",
+            "image": "familiar28.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "954",
+            "item": "penguin-smacking club",
+            "arena": "3,1,1,2",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "Delevels, sometimes"
+        },
+        {
+            "id": "29",
+            "name": "Feather Boa Constrictor",
+            "image": "familiar29.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "961",
+            "item": "velvet choker",
+            "arena": "2,3,1,1",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "5-6 HP, 3-4 MP \/ 3 rounds"
+        },
+        {
+            "id": "30",
+            "name": "Emo Squid",
+            "image": "familiar30.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "1081",
+            "item": "gazing shoes",
+            "arena": "1,3,1,2",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "Staggers, sometimes"
+        },
+        {
+            "id": "31",
+            "name": "Personal Raincloud",
+            "image": "familiar31.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1083",
+            "item": "rainbow tie",
+            "arena": "2,1,3,1",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "5-6 HP, 3-4 MP \/ 3 rounds"
+        },
+        {
+            "id": "32",
+            "name": "Clockwork Grapefruit",
+            "image": "familiar32.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1103",
+            "item": "false eyelashes",
+            "arena": "3,2,0,1",
+            "bjorn": "Moxie +15%",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "33",
+            "name": "MagiMechTech MicroMechaMech",
+            "image": "familiar33.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1095",
+            "item": "targeting chip",
+            "arena": "3,0,1,2",
+            "bjorn": "Muscle +15%",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "34",
+            "name": "Flaming Gravy Fairy",
+            "image": "familiar34.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "1118",
+            "item": "flaming glowsticks",
+            "arena": "2,3,1,2",
+            "bjorn": "+20 Hot Damage",
+            "bjorn2": "Hot nuggets, sometimes"
+        },
+        {
+            "id": "35",
+            "name": "Frozen Gravy Fairy",
+            "image": "familiar35.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "1119",
+            "item": "iced-out bling",
+            "arena": "2,3,1,2",
+            "bjorn": "+20 Cold Damage",
+            "bjorn2": "Cold nuggets, sometimes"
+        },
+        {
+            "id": "36",
+            "name": "Stinky Gravy Fairy",
+            "image": "familiar36.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "1120",
+            "item": "limburger biker boots",
+            "arena": "2,3,1,2",
+            "bjorn": "+20 Stench Damage",
+            "bjorn2": "Stench nuggets, sometimes"
+        },
+        {
+            "id": "37",
+            "name": "Spooky Gravy Fairy",
+            "image": "sgfairy.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "1430",
+            "item": "miniature carton of clove cigarettes",
+            "arena": "3,3,1,2",
+            "bjorn": "+20 Spooky Damage",
+            "bjorn2": "Spooky nuggets, sometimes"
+        },
+        {
+            "id": "38",
+            "name": "Inflatable Dodecapede",
+            "image": "familiar38.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1242",
+            "item": "toy six-seater hovercraft",
+            "arena": "3,2,2,1",
+            "bjorn": "Mysticality +15%",
+            "bjorn2": "Blocks attacks, sometimes"
+        },
+        {
+            "id": "39",
+            "name": "Pygmy Bugbear Shaman",
+            "image": "familiar39.gif",
+            "type": [
+                "stat0,item0"
+            ],
+            "larva": "1263",
+            "item": "tiny nose-bone fetish",
+            "arena": "1,3,1,2",
+            "bjorn": "+2 Mysticality Stat(s) Per Fight",
+            "bjorn2": "Delevels 3-5, 5-6 HP, 3-4 MP \/ 3 rounds"
+        },
+        {
+            "id": "40",
+            "name": "Doppelshifter",
+            "image": "familiar40.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "1304",
+            "item": "tiny makeup kit",
+            "arena": "3,3,3,3",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "41",
+            "name": "Attention-Deficit Demon",
+            "image": "familiar41.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "1307",
+            "item": "attention spanner",
+            "arena": "1,1,3,2",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "Chorizo brownies, white chocolate and tomato pizza, carob chunk noodles"
+        },
+        {
+            "id": "42",
+            "name": "Cymbal-Playing Monkey",
+            "image": "familiar42.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "1308",
+            "item": "funky brass fez",
+            "arena": "1,2,3,1",
+            "bjorn": "+2 Moxie Stat(s) Per Fight",
+            "bjorn2": "5-25 Damage"
+        },
+        {
+            "id": "43",
+            "name": "Temporal Riftlet",
+            "image": "familiar43.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "1349",
+            "item": "1.21 jigawatts",
+            "arena": "1,3,1,2",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "44",
+            "name": "Sweet Nutcracker",
+            "image": "familiar44.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1373",
+            "item": "metal mandible",
+            "arena": "2,3,0,2",
+            "bjorn": "Regen 2-8 HP & MP",
+            "bjorn2": "Candy cane, eggnog, fruitcake, or gingerbread bugbear \/ 30%"
+        },
+        {
+            "id": "45",
+            "name": "Pet Rock",
+            "image": "familiar45.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "1393",
+            "item": "pet rock &quot;Snooty&quot; disguise",
+            "arena": "0,0,0,0",
+            "bjorn": "So-So Resistance to All Elements",
+            "bjorn2": "20-50 Damage \/ 30%"
+        },
+        {
+            "id": "46",
+            "name": "Snowy Owl",
+            "image": "familiar46.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1410",
+            "item": "Pretty Predator Clawicure Kit",
+            "arena": "3,3,3,3",
+            "bjorn": "Mysticality +15%",
+            "bjorn2": "5-6 HP, 3-4 MP \/ 3 rounds"
+        },
+        {
+            "id": "47",
+            "name": "Teddy Bear",
+            "image": "familiar47.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "1395",
+            "item": "teddy bear sewing kit",
+            "arena": "3,2,0,1",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "15-25 Sleaze Damage, delevels 3-5"
+        },
+        {
+            "id": "48",
+            "name": "Ninja Pirate Zombie Robot",
+            "image": "npzr.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1353",
+            "item": "rhesus monkey",
+            "arena": "3,3,3,3",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "10-15 HP, 8-10 MP \/ 3 rounds"
+        },
+        {
+            "id": "49",
+            "name": "Sleazy Gravy Fairy",
+            "image": "slgfairy.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "1431",
+            "item": "hot pink lipstick",
+            "arena": "3,3,2,1",
+            "bjorn": "+20 Sleaze Damage",
+            "bjorn2": "Sleaze nuggets, sometimes"
+        },
+        {
+            "id": "50",
+            "name": "Wild Hare",
+            "image": "hare.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "1488",
+            "item": "miniature dormouse",
+            "arena": "1,3,2,0",
+            "bjorn": "5-6 HP, 3-4 MP",
+            "bjorn2": "5-6 HP, 3-4 MP \/ 3 rounds"
+        },
+        {
+            "id": "51",
+            "name": "Wind-up Chattering Teeth",
+            "image": "chatteeth.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1524",
+            "item": "diamond-studded fronts",
+            "arena": "3,0,2,1",
+            "bjorn": "Muscle +15%",
+            "bjorn2": "15-20 Stench Damage \/ 30%"
+        },
+        {
+            "id": "52",
+            "name": "Spirit Hobo",
+            "image": "ghobo.gif",
+            "type": [
+                "combat,stat0"
+            ],
+            "larva": "1536",
+            "item": "weegee sqouija",
+            "arena": "2,1,3,0",
+            "bjorn": "+15% Booze Drops from Monsters",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "53",
+            "name": "Astral Badger",
+            "image": "badger.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1621",
+            "item": "badger badge",
+            "arena": "3,0,2,3",
+            "bjorn": "Maximum HP\/MP +10",
+            "bjorn2": "Spooky mushrooms, Knob mushrooms, Knoll mushrooms; delevels 5-9"
+        },
+        {
+            "id": "54",
+            "name": "Comma Chameleon",
+            "image": "commacha.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "1703",
+            "item": "",
+            "arena": "0,0,0,2",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "55",
+            "name": "Misshapen Animal Skeleton",
+            "image": "animskel.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1797",
+            "item": "bone collar",
+            "arena": "3,2,1,2",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "5-15 Meat, 20-40 Spooky Damage \/ 3 rounds"
+        },
+        {
+            "id": "56",
+            "name": "Scary Death Orb",
+            "image": "orb.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "1927",
+            "item": "tuning fork",
+            "arena": "3,2,1,0",
+            "bjorn": "Mysticality +15%",
+            "bjorn2": "5-6 MP \/ 3 rounds"
+        },
+        {
+            "id": "57",
+            "name": "Jitterbug",
+            "image": "jitterbug.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "1967",
+            "item": "bottle of perfume",
+            "arena": "1,3,2,2",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "15-20 Stench Damage, 8-10 HP \/ 3 rounds"
+        },
+        {
+            "id": "58",
+            "name": "Nervous Tick",
+            "image": "tick.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "1970",
+            "item": "spoon!",
+            "arena": "0,3,2,2",
+            "bjorn": "+2 Moxie Stat(s) Per Fight",
+            "bjorn2": "8-10 HP \/ 3 rounds"
+        },
+        {
+            "id": "59",
+            "name": "Reassembled Blackbird",
+            "image": "blackbird2.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "2052",
+            "item": "tiny bust of Pallas",
+            "arena": "0,0,0,0",
+            "bjorn": "+10% Item Drops from Monsters",
+            "bjorn2": "blackberry"
+        },
+        {
+            "id": "60",
+            "name": "Origami Towel Crane",
+            "image": "crane1.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "2083",
+            "item": "can of starch",
+            "arena": "3,1,0,2",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "5-6 MP \/ 3 rounds"
+        },
+        {
+            "id": "61",
+            "name": "Ninja Snowflake",
+            "image": "snowflake.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "2231",
+            "item": "icicle katana",
+            "arena": "3,0,3,3",
+            "bjorn": "Moxie +15%",
+            "bjorn2": "5-6 MP \/ 3 rounds"
+        },
+        {
+            "id": "62",
+            "name": "Evil Teddy Bear",
+            "image": "teddybear.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "2146",
+            "item": "evil teddy bear sewing kit",
+            "arena": "3,2,0,1",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "63",
+            "name": "Toothsome Rock",
+            "image": "pettoothrock.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "2148",
+            "item": "pet rock &quot;Groucho&quot; disguise",
+            "arena": "0,0,0,0",
+            "bjorn": "So-So Resistance to All Elements",
+            "bjorn2": "20-50 Damage \/ 30%"
+        },
+        {
+            "id": "65",
+            "name": "Ancient Yuletide Troll",
+            "image": "crimbotroll.gif",
+            "type": [
+                "stat0"
+            ],
+            "larva": "2190",
+            "item": "giant book of ancient carols",
+            "arena": "2,3,1,0",
+            "bjorn": "Regen 2-8 HP & MP",
+            "bjorn2": "Candy cane, eggnog, fruitcake, or gingerbread bugbear \/ 30%"
+        },
+        {
+            "id": "66",
+            "name": "Dandy Lion",
+            "image": "dandylion.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "2380",
+            "item": "woolen cravat",
+            "arena": "0,3,2,1",
+            "bjorn": "Regen 2-8 HP & MP",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "67",
+            "name": "O.A.F.",
+            "image": "oaf.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "2445",
+            "item": "hardware upgrade",
+            "arena": "0,0,0,0",
+            "bjorn": "All Attributes -10",
+            "bjorn2": "+10 Monster Level"
+        },
+        {
+            "id": "68",
+            "name": "Penguin Goodfella",
+            "image": "goodfella.gif",
+            "type": [
+                "stat0"
+            ],
+            "larva": "2447",
+            "item": "tasteful black bow tie",
+            "arena": "3,2,1,0",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "15-30 Damage \/ 30%"
+        },
+        {
+            "id": "69",
+            "name": "Jumpsuited Hound Dog",
+            "image": "hounddog.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "2466",
+            "item": "blue suede shoes",
+            "arena": "1,3,3,2",
+            "bjorn": "Weapon Damage +20",
+            "bjorn2": "4-10 HP, 2-8 MP \/ 3 rounds"
+        },
+        {
+            "id": "70",
+            "name": "Green Pixie",
+            "image": "pictsie.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "2650",
+            "item": "green pixie spog",
+            "arena": "3,2,0,2",
+            "bjorn": "Maximum HP\/MP +10",
+            "bjorn2": "bottles of tequila \/ 20%"
+        },
+        {
+            "id": "71",
+            "name": "Ragamuffin Imp",
+            "image": "ragimp.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "2738",
+            "item": "",
+            "arena": "3,3,3,3",
+            "bjorn": "Mysticality +15%",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "72",
+            "name": "Exotic Parrot",
+            "image": "parrot.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "2709",
+            "item": "cracker",
+            "arena": "3,3,2,0",
+            "bjorn": "So-So Resistance to All Elements",
+            "bjorn2": "15-30 Damage \/ 30%"
+        },
+        {
+            "id": "73",
+            "name": "Wizard Action Figure",
+            "image": "waf.gif",
+            "type": [
+                "combat,stat0,item0"
+            ],
+            "larva": "2836",
+            "item": "mint-condition magic wand",
+            "arena": "2,3,2,2",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "5-6 MP, sometimes"
+        },
+        {
+            "id": "74",
+            "name": "Gluttonous Green Ghost",
+            "image": "ggg.gif",
+            "type": [
+                "combat,stat0"
+            ],
+            "larva": "2845",
+            "item": "plastic bib",
+            "arena": "2,3,3,1",
+            "bjorn": "+15% Food Drops from Monsters",
+            "bjorn2": "Random bean burrito"
+        },
+        {
+            "id": "75",
+            "name": "Casagnova Gnome",
+            "image": "cassagnome.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "2937",
+            "item": "miniature castagnets",
+            "arena": "0,1,3,2",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "14-20 HP, 8-14 MP \/ 1st round"
+        },
+        {
+            "id": "76",
+            "name": "Hunchbacked Minion",
+            "image": "hunchback.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "2939",
+            "item": "miniature Jacob's ladder",
+            "arena": "1,3,0,2",
+            "bjorn": "+2 Muscle Stat(s) Per Fight",
+            "bjorn2": "Skeleton bone, disembodied brain (rare)"
+        },
+        {
+            "id": "77",
+            "name": "Crimbo P. R. E. S. S. I. E.",
+            "image": "pressiebot.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3042",
+            "item": "metallic foil bow",
+            "arena": "3,2,0,1",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "78",
+            "name": "Bulky Buddy Box",
+            "image": "wcb.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3079",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "So-So Resistance to All Elements",
+            "bjorn2": ""
+        },
+        {
+            "id": "79",
+            "name": "Teddy Borg",
+            "image": "teddyborg.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3080",
+            "item": "teddy borg sewing kit",
+            "arena": "3,2,0,1",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "15-25 Sleaze Damage"
+        },
+        {
+            "id": "80",
+            "name": "RoboGoose",
+            "image": "robogoose.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3107",
+            "item": "overclocked avian microprocessor",
+            "arena": "2,3,1,0",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "81",
+            "name": "El Vibrato Megadrone",
+            "image": "megadrone.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3217",
+            "item": "",
+            "arena": "3,3,3,3",
+            "bjorn": "+10 to Monster Level",
+            "bjorn2": "10-15 MP \/ 3 rounds"
+        },
+        {
+            "id": "82",
+            "name": "Mad Hatrack",
+            "image": "hatrack.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3219",
+            "item": "",
+            "arena": "3,0,1,2",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "83",
+            "name": "Adorable Seal Larva",
+            "image": "seallarva.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3292",
+            "item": "pretty pink bow",
+            "arena": "3,2,1,2",
+            "bjorn": "Regen 2-8 HP & MP",
+            "bjorn2": "Random nugget \/ 1 per fight, 35%"
+        },
+        {
+            "id": "84",
+            "name": "Untamed Turtle",
+            "image": "untamed.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3293",
+            "item": "smiley-face sticker",
+            "arena": "0,0,0,3",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "Snailmail bits, turtlemail bits, turtle wax"
+        },
+        {
+            "id": "85",
+            "name": "Animated Macaroni Duck",
+            "image": "macaroniduck.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3294",
+            "item": "farfalle bow tie",
+            "arena": "2,2,2,2",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "20-50 Damage"
+        },
+        {
+            "id": "86",
+            "name": "Pet Cheezling",
+            "image": "cheezblob.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3295",
+            "item": "jalape&ntilde;o slices",
+            "arena": "2,2,0,2",
+            "bjorn": "Spell Damage +15%",
+            "bjorn2": "5-15 HP, 2-8 MP \/ 3 rounds"
+        },
+        {
+            "id": "87",
+            "name": "Autonomous Disco Ball",
+            "image": "discoball.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3296",
+            "item": "stick-on mini solar panels",
+            "arena": "3,2,1,0",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "Delevels 5-9"
+        },
+        {
+            "id": "88",
+            "name": "Mariachi Chihuahua",
+            "image": "chihuahua.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3297",
+            "item": "tiny sombrero",
+            "arena": "3,2,1,0",
+            "bjorn": "+2 Moxie Stat(s) Per Fight",
+            "bjorn2": "Staggers, 50%"
+        },
+        {
+            "id": "89",
+            "name": "Hobo Monkey",
+            "image": "hobomonkey.gif",
+            "type": [
+                "meat0"
+            ],
+            "larva": "3342",
+            "item": "tiny bindle",
+            "arena": "0,3,3,3",
+            "bjorn": "+25% Meat from Monsters",
+            "bjorn2": "15-25 Hot Damage, delevels 3-5 \/ 3 rounds"
+        },
+        {
+            "id": "90",
+            "name": "Llama Lama",
+            "image": "llama.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3351",
+            "item": "zen motorcycle",
+            "arena": "1,2,3,2",
+            "bjorn": "Maximum HP\/MP +10",
+            "bjorn2": "5-6 MP \/ 3 rounds"
+        },
+        {
+            "id": "91",
+            "name": "Cotton Candy Carnie",
+            "image": "cccarnie.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3431",
+            "item": "cotton candy cordial",
+            "arena": "0,2,2,3",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "Cotton candy pinch \/ 1 per fight"
+        },
+        {
+            "id": "92",
+            "name": "Disembodied Hand",
+            "image": "dishand.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3434",
+            "item": "",
+            "arena": "3,2,0,2",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "93",
+            "name": "Black Cat",
+            "image": "blackcat.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3443",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "All Attributes -10",
+            "bjorn2": "Lose 30-40 HP, 20-30 Meat"
+        },
+        {
+            "id": "94",
+            "name": "Uniclops",
+            "image": "uniclops.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "3481",
+            "item": "eye 'n' horn shampoo",
+            "arena": "2,1,2,3",
+            "bjorn": "+2 Mysticality Stat(s) Per Fight",
+            "bjorn2": "15-25 Damage \/ 30%"
+        },
+        {
+            "id": "95",
+            "name": "Psychedelic Bear",
+            "image": "dancebear.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "3482",
+            "item": "psychedelic bubble wand",
+            "arena": "1,3,2,1",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "96",
+            "name": "Baby Mutant Rattlesnake",
+            "image": "rattlesnake.gif",
+            "type": [
+                "combat,stat0"
+            ],
+            "larva": "3527",
+            "item": "rattlesnake enrager",
+            "arena": "3,2,1,0",
+            "bjorn": "+2 Muscle Stat(s) Per Fight",
+            "bjorn2": "15-25 poison"
+        },
+        {
+            "id": "97",
+            "name": "Mutant Fire Ant",
+            "image": "fireant.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "3528",
+            "item": "ant antidepressant",
+            "arena": "3,2,0,2",
+            "bjorn": "+20 Hot Damage",
+            "bjorn2": "15-25 poison"
+        },
+        {
+            "id": "98",
+            "name": "Mutant Cactus Bud",
+            "image": "cactusbud.gif",
+            "type": [
+                "combat,meat0"
+            ],
+            "larva": "3529",
+            "item": "cactus monocle",
+            "arena": "3,0,2,2",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "15-25 poison"
+        },
+        {
+            "id": "99",
+            "name": "Mutant Gila Monster",
+            "image": "gilamonster.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3530",
+            "item": "Jawmaster 2000&trade;",
+            "arena": "3,0,2,2",
+            "bjorn": "Regen 2-8 HP & MP",
+            "bjorn2": "Delevels 8-10"
+        },
+        {
+            "id": "100",
+            "name": "Cuddlefish",
+            "image": "cuddlefish.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3572",
+            "item": "six-armed sweater",
+            "arena": "0,1,3,3",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "15-30 Sleaze Damage \/ 30%"
+        },
+        {
+            "id": "101",
+            "name": "Sugar Fruit Fairy",
+            "image": "sugarfairy.gif",
+            "type": [
+                "stat0,item0"
+            ],
+            "larva": "3578",
+            "item": "tiny ballet slippers",
+            "arena": "0,3,3,2",
+            "bjorn": "+2 Mysticality Stat(s) Per Fight",
+            "bjorn2": "15-25 Damage \/ 33%"
+        },
+        {
+            "id": "102",
+            "name": "Imitation Crab",
+            "image": "crab.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3598",
+            "item": "imitation whetstone",
+            "arena": "3,1,2,2",
+            "bjorn": "Muscle +15%",
+            "bjorn2": "15-20 Damage x 2 \/ 33%"
+        },
+        {
+            "id": "103",
+            "name": "Pair of Ragged Claws",
+            "image": "raggedclaws.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3628",
+            "item": "radioactive chew toy",
+            "arena": "1,1,1,1",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "104",
+            "name": "Magic Dragonfish",
+            "image": "dragonfishfam.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3648",
+            "item": "fin-bit wax",
+            "arena": "1,1,2,0",
+            "bjorn": "Spell Damage +15%",
+            "bjorn2": "8-10 HP \/ 3 rounds"
+        },
+        {
+            "id": "105",
+            "name": "Frumious Bandersnatch",
+            "image": "bandersnatch.gif",
+            "type": [
+                "combat,stat0"
+            ],
+            "larva": "3799",
+            "item": "aquaviolet jub-jub bird",
+            "arena": "3,2,2,0",
+            "bjorn": "+2 Stat(s) Per Fight",
+            "bjorn2": "2-4 Prismatic Damage x 5 \/ 33%"
+        },
+        {
+            "id": "106",
+            "name": "Midget Clownfish",
+            "image": "midgetclownfish.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3815",
+            "item": "half-height unicycle",
+            "arena": "0,1,2,2",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "107",
+            "name": "Syncopated Turtle",
+            "image": "syncturtle.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "3928",
+            "item": "metrognome",
+            "arena": "0,2,3,2",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "108",
+            "name": "Grinning Turtle",
+            "image": "grinturtle.gif",
+            "type": [
+                "stat0"
+            ],
+            "larva": "3929",
+            "item": "security blankie",
+            "arena": "1,0,0,3",
+            "bjorn": "+2 Muscle Stat(s) Per Fight",
+            "bjorn2": "15-25 Spooky Damage"
+        },
+        {
+            "id": "109",
+            "name": "Purse Rat",
+            "image": "purserat.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "3962",
+            "item": "tiny cell phone",
+            "arena": "0,0,0,0",
+            "bjorn": "+2 Stat(s) Per Fight",
+            "bjorn2": "40-50 Damage \/ 30%"
+        },
+        {
+            "id": "110",
+            "name": "Wereturtle",
+            "image": "turtle.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "3979",
+            "item": "bottle of moontan lotion",
+            "arena": "3,1,0,2",
+            "bjorn": "Muscle +15%",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "111",
+            "name": "Baby Sandworm",
+            "image": "babyworm.gif",
+            "type": [
+                "stat1"
+            ],
+            "larva": "3999",
+            "item": "string of dingle balls",
+            "arena": "1,2,2,3",
+            "bjorn": "Maximum HP\/MP +10",
+            "bjorn2": "Delevels 3-5 \/ 50%"
+        },
+        {
+            "id": "112",
+            "name": "Slimeling",
+            "image": "slimeling.gif",
+            "type": [
+                "combat,item0"
+            ],
+            "larva": "4017",
+            "item": "undissolvable contact lenses",
+            "arena": "3,3,2,2",
+            "bjorn": "+15% Weapon Drops from Monsters",
+            "bjorn2": "10% Damage"
+        },
+        {
+            "id": "113",
+            "name": "He-Boulder",
+            "image": "heboulder.gif",
+            "type": [
+                "combat,meat0"
+            ],
+            "larva": "4148",
+            "item": "quadroculars",
+            "arena": "3,3,2,1",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "114",
+            "name": "Rock Lobster",
+            "image": "rocklobster.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4159",
+            "item": "extra-strength rubber bands",
+            "arena": "3,2,2,1",
+            "bjorn": "Spell Damage +15%",
+            "bjorn2": "10-15 MP \/ 3 rounds"
+        },
+        {
+            "id": "115",
+            "name": "Urchin Urchin",
+            "image": "urchin.gif",
+            "type": [
+                "meat0"
+            ],
+            "larva": "4202",
+            "item": "pet anemone",
+            "arena": "3,3,0,2",
+            "bjorn": "Weapon Damage +10",
+            "bjorn2": "15-30 Damage \/ 30%"
+        },
+        {
+            "id": "116",
+            "name": "Grouper Groupie",
+            "image": "grouper2.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "4200",
+            "item": "gill rings",
+            "arena": "0,2,3,2",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "15-25 Sleaze Damage"
+        },
+        {
+            "id": "117",
+            "name": "Squamous Gibberer",
+            "image": "gibberer.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "4223",
+            "item": "unspeakable lozenges",
+            "arena": "1,2,2,3",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "15-30 Spooky Damage \/ 33%"
+        },
+        {
+            "id": "118",
+            "name": "Dancing Frog",
+            "image": "dancfrog.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "4228",
+            "item": "miniature tophat",
+            "arena": "1,2,2,3",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "119",
+            "name": "Chauvinist Pig",
+            "image": "chauvpig.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "4227",
+            "item": "bottle of Cochon Noir",
+            "arena": "0,3,2,1",
+            "bjorn": "+2 Muscle Stat(s) Per Fight",
+            "bjorn2": "15-25 Sleaze Damage"
+        },
+        {
+            "id": "120",
+            "name": "Stocking Mimic",
+            "image": "smimic.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4328",
+            "item": "bag of many confections",
+            "arena": "0,0,0,0",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "Angry Farmer candy, Cold Hots candy, Rock Pops, Tasty Fun Good rice candy, Wint-O-Fresh mint \/ 30%"
+        },
+        {
+            "id": "121",
+            "name": "Snow Angel",
+            "image": "snowangel.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4352",
+            "item": "snow halo",
+            "arena": "2,1,3,2",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "Delevels, sometimes"
+        },
+        {
+            "id": "122",
+            "name": "Jack-in-the-Box",
+            "image": "jackinthebox.gif",
+            "type": [
+                "stat0,item0"
+            ],
+            "larva": "4396",
+            "item": "brass crank handle",
+            "arena": "0,0,0,0",
+            "bjorn": "+2 Stat(s) Per Fight",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "123",
+            "name": "BRICKO chick",
+            "image": "brickochick.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4495",
+            "item": "extra-heavy BRICKO brick",
+            "arena": "1,2,2,1",
+            "bjorn": "All Attributes +10%",
+            "bjorn2": "BRICKO brick \/ 1 per fight"
+        },
+        {
+            "id": "124",
+            "name": "Baby Bugged Bugbear",
+            "image": "babybugbug.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "4574",
+            "item": "bugged beanie",
+            "arena": "0,0,0,0",
+            "bjorn": "All Attributes -10, +2 Stats",
+            "bjorn2": "?"
+        },
+        {
+            "id": "125",
+            "name": "Money-Making Goblin",
+            "image": "mmgoblin.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "126",
+            "name": "Floating Eye",
+            "image": "lower_e.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "127",
+            "name": "Vampire Bat",
+            "image": "jubjubbird.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "128",
+            "name": "Oyster Bunny",
+            "image": "hare2.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "129",
+            "name": "Egg Benedict",
+            "image": "egg.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "130",
+            "name": "Bank Piggy",
+            "image": "bankpig.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "131",
+            "name": "Worm Doctor",
+            "image": "larva.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "132",
+            "name": "Snowhitman",
+            "image": "snowhitman.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "133",
+            "name": "Plastic Grocery Bag",
+            "image": "grocbag.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "-1",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "134",
+            "name": "Underworld Bonsai",
+            "image": "uwbonsai.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4616",
+            "item": "miniature pruning shears",
+            "arena": "3,1,2,0",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "10-20 Spooky Damage, staggers"
+        },
+        {
+            "id": "135",
+            "name": "Rogue Program",
+            "image": "tronguy.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4619",
+            "item": "portable motorcycle",
+            "arena": "3,2,2,0",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "15-20 Damage"
+        },
+        {
+            "id": "136",
+            "name": "Mini-Hipster",
+            "image": "minihipster.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4648",
+            "item": "ironic moustache",
+            "arena": "0,3,2,1",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "10-20 HP, 3-4 MP, staggers"
+        },
+        {
+            "id": "137",
+            "name": "Pottery Barn Owl",
+            "image": "sp_owl.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4686",
+            "item": "affordable teak perch",
+            "arena": "3,1,2,0",
+            "bjorn": "+10 Hot Damage",
+            "bjorn2": "Volcanic ash"
+        },
+        {
+            "id": "138",
+            "name": "Hippo Ballerina",
+            "image": "hippo.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "4709",
+            "item": "immense ballet shoes",
+            "arena": "3,2,3,0",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "Delevels \/ 33%"
+        },
+        {
+            "id": "139",
+            "name": "Knob Goblin Organ Grinder",
+            "image": "organgoblin.gif",
+            "type": [
+                "combat,meat0"
+            ],
+            "larva": "4720",
+            "item": "microwave stogie",
+            "arena": "0,3,2,1",
+            "bjorn": "+25% Meat from Monsters",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "140",
+            "name": "Piano Cat",
+            "image": "pianocat.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "4732",
+            "item": "kitty sheet music",
+            "arena": "2,3,2,0",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "Beertini, papaya slung, salty slug, tomato daiquiri"
+        },
+        {
+            "id": "141",
+            "name": "Dramatic Hedgehog",
+            "image": "dramahog.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "4734",
+            "item": "tiny prop sword",
+            "arena": "2,3,0,2",
+            "bjorn": "+2 Mysticality Stat(s) Per Fight",
+            "bjorn2": "Delevels, heals 2-3 HP"
+        },
+        {
+            "id": "142",
+            "name": "Smiling Rat",
+            "image": "smilerat.gif",
+            "type": [
+                "stat0"
+            ],
+            "larva": "4741",
+            "item": "rat tooth polish",
+            "arena": "1,3,1,0",
+            "bjorn": "+3 Stat(s) Per Fight",
+            "bjorn2": "15-20 Spooky Damage, delevels 3-5"
+        },
+        {
+            "id": "143",
+            "name": "Robot Reindeer",
+            "image": "roboreindeer.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "4827",
+            "item": "S.L.E.I.G.H.B.E.L.L.S.",
+            "arena": "3,3,3,3",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "Candy cane, eggnog, fruitcake, or gingerbread bugbear \/ 30%"
+        },
+        {
+            "id": "144",
+            "name": "Holiday Log",
+            "image": "holidaylog.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "4896",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "So-So Resistance to All Elements",
+            "bjorn2": "30-50 Damage, sometimes"
+        },
+        {
+            "id": "146",
+            "name": "Obtuse Angel",
+            "image": "obtuseangel.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "4937",
+            "item": "quake of arrows",
+            "arena": "2,0,3,1",
+            "bjorn": "+20% Meat from Monsters ",
+            "bjorn2": "5-6 MP \/ 3 rounds"
+        },
+        {
+            "id": "147",
+            "name": "Reconstituted Crow",
+            "image": "blackbird2.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "5117",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "+10% Item Drops from Monsters",
+            "bjorn2": "blackberry"
+        },
+        {
+            "id": "148",
+            "name": "Li'l Xenomorph",
+            "image": "lilxeno.gif",
+            "type": [
+                "stat0"
+            ],
+            "larva": "5164",
+            "item": "tiny top hat and cane",
+            "arena": "3,2,1,3",
+            "bjorn": "+15% Item Drops from Monsters",
+            "bjorn2": "Lunar isotope"
+        },
+        {
+            "id": "149",
+            "name": "Dataspider",
+            "image": "dataspider.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "5191",
+            "item": "solid state loom",
+            "arena": "2,1,2,3",
+            "bjorn": "Spell Damage +10%",
+            "bjorn2": "3-5 MP \/ 3 rounds"
+        },
+        {
+            "id": "150",
+            "name": "Pair of Stomping Boots",
+            "image": "stompboots.gif",
+            "type": [
+                "item0",
+                "combat"
+            ],
+            "larva": "4536",
+            "item": "stomp box",
+            "arena": "3,0,2,2",
+            "bjorn": "Weapon Damage +20%",
+            "bjorn2": "20-30 Damage, sometimes"
+        },
+        {
+            "id": "151",
+            "name": "Feral Kobold",
+            "image": "kobold.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "5295",
+            "item": "slightly thicker filthy rags",
+            "arena": "3,1,1,1",
+            "bjorn": "+15% Item Drops from Monsters",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "152",
+            "name": "Fancypants Scarecrow",
+            "image": "pantscrow2.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "5371",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "154",
+            "name": "Bloovian Groose",
+            "image": "groose.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "5377",
+            "item": "spruce juice",
+            "arena": "2,2,1,3",
+            "bjorn": "Maximum HP\/MP +10",
+            "bjorn2": "Delevels opponent 3-6 \/ 30%"
+        },
+        {
+            "id": "155",
+            "name": "Blavious Kloop",
+            "image": "kloop.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "5442",
+            "item": "miniscule beatbox",
+            "arena": "0,3,2,1",
+            "bjorn": "Maximum HP\/MP +10",
+            "bjorn2": "Delevels opponent 3-6 \/ 30%"
+        },
+        {
+            "id": "156",
+            "name": "Peppermint Rhino",
+            "image": "pep_rhino.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "5399",
+            "item": "licorice boa",
+            "arena": "1,3,1,0",
+            "bjorn": "Weapon Damage +10%",
+            "bjorn2": "5-6 HP, 3-4 MP \/ 3 rounds"
+        },
+        {
+            "id": "157",
+            "name": "Tickle-Me Emilio",
+            "image": "emiliofam.gif",
+            "type": [
+                "stat0",
+                "combat"
+            ],
+            "larva": "5503",
+            "item": "tiny do-rag",
+            "arena": "3,1,1,0",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "Staggers \/ 30%"
+        },
+        {
+            "id": "158",
+            "name": "Steam-Powered Cheerleader",
+            "image": "cheerleader.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "6411",
+            "item": "school spirit socket set",
+            "arena": "2,3,2,0",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "Delevels 8-10"
+        },
+        {
+            "id": "159",
+            "name": "Happy Medium",
+            "image": "medium_0.gif",
+            "type": [
+                "stat0"
+            ],
+            "larva": "5639",
+            "item": "crystal decanter",
+            "arena": "0,3,2,2",
+            "bjorn": "+25% Meat from Monsters",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "160",
+            "name": "Artistic Goth Kid",
+            "image": "crayongoth.gif",
+            "type": [
+                "stat0"
+            ],
+            "larva": "5701",
+            "item": "little wooden mannequin",
+            "arena": "0,2,2,3",
+            "bjorn": "All Attributes +10",
+            "bjorn2": "10-20 HP, 3-4 MP, staggers"
+        },
+        {
+            "id": "161",
+            "name": "Flaming Face",
+            "image": "flameface.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "5718",
+            "item": "flaming nose",
+            "arena": "3,2,2,1",
+            "bjorn": "Serious Cold Resistance",
+            "bjorn2": "15-30 Hot Damage"
+        },
+        {
+            "id": "162",
+            "name": "Reagnimated Gnome",
+            "image": "frankengnome.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "5767",
+            "item": "",
+            "arena": "0,0,0,0",
+            "bjorn": "+15 Spooky Damage",
+            "bjorn2": "Delevels 3-5"
+        },
+        {
+            "id": "163",
+            "name": "Hovering Skull",
+            "image": "talkskull.gif",
+            "type": [
+                "stat0,combat"
+            ],
+            "larva": "5774",
+            "item": "shiny gold fronts",
+            "arena": "2,2,3,1",
+            "bjorn": "+2 Moxie Stat(s) Per Fight",
+            "bjorn2": "15-25 Sleaze Damage"
+        },
+        {
+            "id": "164",
+            "name": "Mini-Skulldozer",
+            "image": "minidozer.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "5890",
+            "item": "ribcage rollcage",
+            "arena": "2,1,3,0",
+            "bjorn": "Combat Initiative +20%",
+            "bjorn2": "Delevels \/ 50%"
+        },
+        {
+            "id": "165",
+            "name": "Angry Jung Man",
+            "image": "jungman.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "5893",
+            "item": "Little Red Book",
+            "arena": "2,2,1,1",
+            "bjorn": "Maximum HP\/MP +10",
+            "bjorn2": "Delevels opponent 3-6"
+        },
+        {
+            "id": "166",
+            "name": "Unconscious Collective",
+            "image": "uc.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "5895",
+            "item": "blue canary nightlight",
+            "arena": "2,1,1,3",
+            "bjorn": "Maximum HP\/MP +10",
+            "bjorn2": "Delevels opponent 3-6"
+        },
+        {
+            "id": "167",
+            "name": "Nanorhino",
+            "image": "nanorhino.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "5910",
+            "item": "nanorhino credit card",
+            "arena": "3,1,1,3",
+            "bjorn": "All Attributes +10%",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "168",
+            "name": "Oily Woim",
+            "image": "woim.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "6044",
+            "item": "woimbook",
+            "arena": "2,1,3,1",
+            "bjorn": "+10% Item Drops from Monsters",
+            "bjorn2": "5-15 Meat \/ 3 rounds"
+        },
+        {
+            "id": "169",
+            "name": "Homemade Robot",
+            "image": "homemadebot.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "6101",
+            "item": "homemade robot gear",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "170",
+            "name": "MiniMechaElf",
+            "image": "mechaelf.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "6148",
+            "item": "MiniMechaElf Laser Punch Missile Launcher",
+            "arena": "3,2,0,1",
+            "bjorn": "",
+            "bjorn2": ""
+        },
+        {
+            "id": "171",
+            "name": "Gelatinous Cubeling",
+            "image": "gcube.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "6256",
+            "item": "pile of dungeon junk",
+            "arena": "2,3,0,1",
+            "bjorn": "+5 to Familiar Weight",
+            "bjorn2": "Damage"
+        },
+        {
+            "id": "172",
+            "name": "Adorable Space Buddy",
+            "image": "starbuddy.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "6409",
+            "item": "cute bow from beyond the stars",
+            "arena": "1,2,3,3",
+            "bjorn": "Maximum HP\/MP +30",
+            "bjorn2": "10-12 MP \/ 3 rounds"
+        },
+        {
+            "id": "173",
+            "name": "Nosy Nose",
+            "image": "nosynose.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "6460",
+            "item": "nosy nose ringy ring",
+            "arena": "1,3,1,2",
+            "bjorn": "Moxie +15%",
+            "bjorn2": "Staggers, sometimes"
+        },
+        {
+            "id": "174",
+            "name": "Mini-Adventurer",
+            "image": "miniadv0.gif",
+            "type": [
+                ""
+            ],
+            "larva": "6561",
+            "item": "mini-Mr. Accessory",
+            "arena": "2,2,2,2",
+            "bjorn": "All Attributes +10%",
+            "bjorn2": "15-30 Meat \/ 3 rounds"
+        },
+        {
+            "id": "175",
+            "name": "Mechanical Songbird",
+            "image": "mechbird.gif",
+            "type": [
+                "item0"
+            ],
+            "larva": "6490",
+            "item": "shiny brass tailfeathers",
+            "arena": "1,2,2,0",
+            "bjorn": "Spell Damage +20%",
+            "bjorn2": "5-10 HP"
+        },
+        {
+            "id": "176",
+            "name": "Reanimated Reanimator",
+            "image": "reanimator.gif",
+            "type": [
+                "none"
+            ],
+            "larva": "6784",
+            "item": "flask of embalming fluid",
+            "arena": "2,3,2,0",
+            "bjorn": "+2 Mysticality Stat(s) Per Fight",
+            "bjorn2": "Hot wing, broken skull"
+        },
+        {
+            "id": "177",
+            "name": "Warbear Drone",
+            "image": "wbdronefam.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "6970",
+            "item": "warbear drone codes",
+            "arena": "3,2,2,0",
+            "bjorn": "Maximum HP\/MP +15",
+            "bjorn2": "warbear whosit"
+        },
+        {
+            "id": "178",
+            "name": "Grimstone Golem",
+            "image": "grimgolem.gif",
+            "type": [
+                "item0,meat0"
+            ],
+            "larva": "7064",
+            "item": "grimstone galoshes",
+            "arena": "0,2,3,3",
+            "bjorn": "-5% Combat Frequency",
+            "bjorn2": "Grimstone mask 1\/day"
+        },
+        {
+            "id": "179",
+            "name": "Grim Brother",
+            "image": "grimbrother.gif",
+            "type": [
+                "stat0,meat0"
+            ],
+            "larva": "7062",
+            "item": "Grim Brothers' story book",
+            "arena": "3,2,0,3",
+            "bjorn": "+5% Combat Frequency",
+            "bjorn2": "Grim fairy tale 2\/day"
+        },
+        {
+            "id": "181",
+            "name": "Putty Buddy",
+            "image": "puttybuddy.gif",
+            "type": [
+                "combat"
+            ],
+            "larva": "7291",
+            "item": "putty coat",
+            "arena": "0,0,0,0",
+            "bjorn": "",
+            "bjorn2": ""
         }
     ]
 }

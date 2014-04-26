@@ -53,6 +53,8 @@ if($file) while (($line = fgets($file)) !== false)
 	if($line === "" || $line[0] === '#') continue;
 	$line = explode("\t", trim($line));
 
+	if(@empty($line[1])) continue;
+
 	$useableTypes = array('usable', 'multiple', 'reusable', 'hp', 'mp', 'hpmp');
 	$equippableTypes = array('hat', 'pants', 'shirt', 'weapon', 'offhand', 'accessory');
 
@@ -97,6 +99,8 @@ if($file) while (($line = fgets($file)) !== false)
 {
 	if($line === "" || $line[0] === '#') continue;
 	$line = explode("\t", trim($line));
+	
+	if(@empty($line[0])) continue;
 
 	$deets = $line[2];
 	$atk	= matchy('/Atk:\s([0-9\-]+)/',	$deets);

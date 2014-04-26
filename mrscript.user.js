@@ -86,7 +86,7 @@ $(document).on('animationstart',ResultHandler);
 
 
 // IndexedDB wrapper: https://github.com/aaronpowell/db.js
-(function(e,t){"use strict";var n=e.indexedDB||e.webkitIndexedDB||e.mozIndexedDB||e.oIndexedDB||e.msIndexedDB,r=e.IDBKeyRange||e.webkitIDBKeyRange,i={readonly:"readonly",readwrite:"readwrite"};var s=Object.prototype.hasOwnProperty;if(!n){throw"IndexedDB required"}var o=function(e){return e};var u=function(){var e,t=[];var n=function(n,r){if(t){r=r||[];e=e||[n,r];for(var i=0,s=t.length;i<s;i++){t[i].apply(e[0],e[1])}t=[]}};this.add=function(){for(var r=0,i=arguments.length;r<i;r++){t.push(arguments[r])}if(e){n()}return this};this.execute=function(){n(this,arguments);return this}};var a=function(e){var t="progress",n=[["resolve","done",new u,"resolved"],["reject","fail",new u,"rejected"],["notify","progress",new u]],r={},i={state:function(){return t},then:function(){var e=arguments;return a(function(t){n.forEach(function(n,i){var s=e[i];r[n[1]](typeof s==="function"?function(){var e=s.apply(this,arguments);if(e&&typeof e.promise==="function"){e.promise().done(t.resolve).fail(t.reject).progress(t.notify)}}:t[n[0]])})}).promise()},promise:function(e){if(e){Object.keys(i).forEach(function(t){e[t]=i[t]});return e}return i}};n.forEach(function(e,n){var s=e[2],o=e[3];i[e[1]]=s.add;if(o){s.add(function(){t=o})}r[e[0]]=s.execute});i.promise(r);if(e){e.call(r,r)}return r};var f=function(e,t){var n=this,r=false;this.add=function(t){if(r){throw"Database has been closed"}var s=[];var o=0;for(var u=0;u<arguments.length-1;u++){if(Array.isArray(arguments[u+1])){for(var f=0;f<arguments[u+1].length;f++){s[o]=arguments[u+1][f];o++}}else{s[o]=arguments[u+1];o++}}var l=e.transaction(t,i.readwrite),c=l.objectStore(t),h=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=c.add(e,n)}else{t=c.add(e)}t.onsuccess=function(t){var n=t.target;var r=n.source.keyPath;if(r===null){r="__id__"}Object.defineProperty(e,r,{value:n.result,enumerable:true});h.notify()}});l.oncomplete=function(){h.resolve(s,n)};l.onerror=function(e){h.reject(s,e)};l.onabort=function(e){h.reject(s,e)};return h.promise()};this.update=function(t){if(r){throw"Database has been closed"}var s=[];for(var o=0;o<arguments.length-1;o++){s[o]=arguments[o+1]}var u=e.transaction(t,i.readwrite),f=u.objectStore(t),l=f.keyPath,c=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=f.put(e,n)}else{t=f.put(e)}t.onsuccess=function(e){c.notify()}});u.oncomplete=function(){c.resolve(s,n)};u.onerror=function(e){c.reject(s,e)};u.onabort=function(e){c.reject(s,e)};return c.promise()};this.remove=function(t,n){if(r){throw"Database has been closed"}var s=e.transaction(t,i.readwrite),o=s.objectStore(t),u=a();var f=o.delete(n);s.oncomplete=function(){u.resolve(n)};s.onerror=function(e){u.reject(e)};return u.promise()};this.clear=function(t){if(r){throw"Database has been closed"}var n=e.transaction(t,i.readwrite),s=n.objectStore(t),o=a();var u=s.clear();n.oncomplete=function(){o.resolve()};n.onerror=function(e){o.reject(e)};return o.promise()};this.close=function(){if(r){throw"Database has been closed"}e.close();r=true;delete p[t]};this.get=function(t,n){if(r){throw"Database has been closed"}var i=e.transaction(t),s=i.objectStore(t),o=a();var u=s.get(n);u.onsuccess=function(e){o.resolve(e.target.result)};i.onerror=function(e){o.reject(e)};return o.promise()};this.query=function(t,n){if(r){throw"Database has been closed"}return new l(t,e,n)};for(var o=0,u=e.objectStoreNames.length;o<u;o++){(function(e){n[e]={};for(var t in n){if(!s.call(n,t)||t==="close"){continue}n[e][t]=function(t){return function(){var r=[e].concat([].slice.call(arguments,0));return n[t].apply(n,r)}}(t)}})(e.objectStoreNames[o])}};var l=function(e,n,s){var u=this;var f=false;var l=function(o,u,l,c,h,p,d){var v=n.transaction(e,f?i.readwrite:i.readonly),m=v.objectStore(e),g=s?m.index(s):m,y=o?r[o].apply(null,u):null,b=[],w=a(),E=[y],h=h?h:null,p=p?p:[],S=0;if(l!=="count"){E.push(c||"next")}var x=f?Object.keys(f):false;var T=function(e){for(var t=0;t<x.length;t++){var n=x[t];var r=f[n];if(r instanceof Function)r=r(e);e[n]=r}return e};g[l].apply(g,E).onsuccess=function(e){var n=e.target.result;if(typeof n===typeof 0){b=n}else if(n){if(h!==null&&h[0]>S){S=h[0];n.advance(h[0])}else if(h!==null&&S>=h[0]+h[1]){}else{var r=true;var i="value"in n?n.value:n.key;p.forEach(function(e){if(!e||!e.length){}else if(e.length===2){r=i[e[0]]===e[1]}else{r=e[0].apply(t,[i])}});if(r){S++;b.push(d(i));if(f){i=T(i);n.update(i)}}n.continue()}}};v.oncomplete=function(){w.resolve(b)};v.onerror=function(e){w.reject(e)};v.onabort=function(e){w.reject(e)};return w.promise()};var c=function(e,t){var n="next",r="openCursor",i=[],s=null,u=o,a=false;var c=function(){return l(e,t,r,a?n+"unique":n,s,i,u)};var h=function(){s=Array.prototype.slice.call(arguments,0,2);if(s.length==1){s.unshift(0)}return{execute:c}};var p=function(){n=null;r="count";return{execute:c}};var d=function(){r="openKeyCursor";return{desc:m,execute:c,filter:v,distinct:g,map:b}};var v=function(){i.push(Array.prototype.slice.call(arguments,0,2));return{keys:d,execute:c,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};var m=function(){n="prev";return{keys:d,execute:c,filter:v,distinct:g,modify:y,map:b}};var g=function(){a=true;return{keys:d,count:p,execute:c,filter:v,desc:m,modify:y,map:b}};var y=function(e){f=e;return{execute:c}};var b=function(e){u=e;return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};"only bound upperBound lowerBound".split(" ").forEach(function(e){u[e]=function(){return new c(e,arguments)}});this.filter=function(){var e=new c(null,null);return e.filter.apply(e,arguments)};this.all=function(){return this.filter()}};var c=function(e,t,n){if(typeof t==="function"){t=t()}for(var r in t){var i=t[r];var o;if(!s.call(t,r)||n.objectStoreNames.contains(r)){o=e.currentTarget.transaction.objectStore(r)}else{o=n.createObjectStore(r,i.key)}for(var u in i.indexes){if(o.indexNames.contains(u)){continue}var a=i.indexes[u];o.createIndex(u,a.key||u,Object.keys(a).length?a:{unique:false})}}};var h=function(e,t,n,r){var i=e.target.result;var s=new f(i,t);var o;var u=a();u.resolve(s);p[t]=i;return u.promise()};var p={};var d={version:"0.9.0",open:function(e){var t;var r=a();if(p[e.server]){h({target:{result:p[e.server]}},e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)}else{t=n.open(e.server,e.version);t.onsuccess=function(t){h(t,e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)};t.onupgradeneeded=function(t){c(t,e.schema,t.target.result)};t.onerror=function(e){r.reject(e)}}return r.promise()}};if(typeof module!=="undefined"&&typeof module.exports!=="undefined"){module.exports=d}else if(typeof define==="function"&&define.amd){define(function(){return d})}else{e.db=d}})(window)
+//(function(e,t){"use strict";var n=e.indexedDB||e.webkitIndexedDB||e.mozIndexedDB||e.oIndexedDB||e.msIndexedDB,r=e.IDBKeyRange||e.webkitIDBKeyRange,i={readonly:"readonly",readwrite:"readwrite"};var s=Object.prototype.hasOwnProperty;if(!n){throw"IndexedDB required"}var o=function(e){return e};var u=function(){var e,t=[];var n=function(n,r){if(t){r=r||[];e=e||[n,r];for(var i=0,s=t.length;i<s;i++){t[i].apply(e[0],e[1])}t=[]}};this.add=function(){for(var r=0,i=arguments.length;r<i;r++){t.push(arguments[r])}if(e){n()}return this};this.execute=function(){n(this,arguments);return this}};var a=function(e){var t="progress",n=[["resolve","done",new u,"resolved"],["reject","fail",new u,"rejected"],["notify","progress",new u]],r={},i={state:function(){return t},then:function(){var e=arguments;return a(function(t){n.forEach(function(n,i){var s=e[i];r[n[1]](typeof s==="function"?function(){var e=s.apply(this,arguments);if(e&&typeof e.promise==="function"){e.promise().done(t.resolve).fail(t.reject).progress(t.notify)}}:t[n[0]])})}).promise()},promise:function(e){if(e){Object.keys(i).forEach(function(t){e[t]=i[t]});return e}return i}};n.forEach(function(e,n){var s=e[2],o=e[3];i[e[1]]=s.add;if(o){s.add(function(){t=o})}r[e[0]]=s.execute});i.promise(r);if(e){e.call(r,r)}return r};var f=function(e,t){var n=this,r=false;this.add=function(t){if(r){throw"Database has been closed"}var s=[];var o=0;for(var u=0;u<arguments.length-1;u++){if(Array.isArray(arguments[u+1])){for(var f=0;f<arguments[u+1].length;f++){s[o]=arguments[u+1][f];o++}}else{s[o]=arguments[u+1];o++}}var l=e.transaction(t,i.readwrite),c=l.objectStore(t),h=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=c.add(e,n)}else{t=c.add(e)}t.onsuccess=function(t){var n=t.target;var r=n.source.keyPath;if(r===null){r="__id__"}Object.defineProperty(e,r,{value:n.result,enumerable:true});h.notify()}});l.oncomplete=function(){h.resolve(s,n)};l.onerror=function(e){h.reject(s,e)};l.onabort=function(e){h.reject(s,e)};return h.promise()};this.update=function(t){if(r){throw"Database has been closed"}var s=[];for(var o=0;o<arguments.length-1;o++){s[o]=arguments[o+1]}var u=e.transaction(t,i.readwrite),f=u.objectStore(t),l=f.keyPath,c=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=f.put(e,n)}else{t=f.put(e)}t.onsuccess=function(e){c.notify()}});u.oncomplete=function(){c.resolve(s,n)};u.onerror=function(e){c.reject(s,e)};u.onabort=function(e){c.reject(s,e)};return c.promise()};this.remove=function(t,n){if(r){throw"Database has been closed"}var s=e.transaction(t,i.readwrite),o=s.objectStore(t),u=a();var f=o.delete(n);s.oncomplete=function(){u.resolve(n)};s.onerror=function(e){u.reject(e)};return u.promise()};this.clear=function(t){if(r){throw"Database has been closed"}var n=e.transaction(t,i.readwrite),s=n.objectStore(t),o=a();var u=s.clear();n.oncomplete=function(){o.resolve()};n.onerror=function(e){o.reject(e)};return o.promise()};this.close=function(){if(r){throw"Database has been closed"}e.close();r=true;delete p[t]};this.get=function(t,n){if(r){throw"Database has been closed"}var i=e.transaction(t),s=i.objectStore(t),o=a();var u=s.get(n);u.onsuccess=function(e){o.resolve(e.target.result)};i.onerror=function(e){o.reject(e)};return o.promise()};this.query=function(t,n){if(r){throw"Database has been closed"}return new l(t,e,n)};for(var o=0,u=e.objectStoreNames.length;o<u;o++){(function(e){n[e]={};for(var t in n){if(!s.call(n,t)||t==="close"){continue}n[e][t]=function(t){return function(){var r=[e].concat([].slice.call(arguments,0));return n[t].apply(n,r)}}(t)}})(e.objectStoreNames[o])}};var l=function(e,n,s){var u=this;var f=false;var l=function(o,u,l,c,h,p,d){var v=n.transaction(e,f?i.readwrite:i.readonly),m=v.objectStore(e),g=s?m.index(s):m,y=o?r[o].apply(null,u):null,b=[],w=a(),E=[y],h=h?h:null,p=p?p:[],S=0;if(l!=="count"){E.push(c||"next")}var x=f?Object.keys(f):false;var T=function(e){for(var t=0;t<x.length;t++){var n=x[t];var r=f[n];if(r instanceof Function)r=r(e);e[n]=r}return e};g[l].apply(g,E).onsuccess=function(e){var n=e.target.result;if(typeof n===typeof 0){b=n}else if(n){if(h!==null&&h[0]>S){S=h[0];n.advance(h[0])}else if(h!==null&&S>=h[0]+h[1]){}else{var r=true;var i="value"in n?n.value:n.key;p.forEach(function(e){if(!e||!e.length){}else if(e.length===2){r=i[e[0]]===e[1]}else{r=e[0].apply(t,[i])}});if(r){S++;b.push(d(i));if(f){i=T(i);n.update(i)}}n.continue()}}};v.oncomplete=function(){w.resolve(b)};v.onerror=function(e){w.reject(e)};v.onabort=function(e){w.reject(e)};return w.promise()};var c=function(e,t){var n="next",r="openCursor",i=[],s=null,u=o,a=false;var c=function(){return l(e,t,r,a?n+"unique":n,s,i,u)};var h=function(){s=Array.prototype.slice.call(arguments,0,2);if(s.length==1){s.unshift(0)}return{execute:c}};var p=function(){n=null;r="count";return{execute:c}};var d=function(){r="openKeyCursor";return{desc:m,execute:c,filter:v,distinct:g,map:b}};var v=function(){i.push(Array.prototype.slice.call(arguments,0,2));return{keys:d,execute:c,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};var m=function(){n="prev";return{keys:d,execute:c,filter:v,distinct:g,modify:y,map:b}};var g=function(){a=true;return{keys:d,count:p,execute:c,filter:v,desc:m,modify:y,map:b}};var y=function(e){f=e;return{execute:c}};var b=function(e){u=e;return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};"only bound upperBound lowerBound".split(" ").forEach(function(e){u[e]=function(){return new c(e,arguments)}});this.filter=function(){var e=new c(null,null);return e.filter.apply(e,arguments)};this.all=function(){return this.filter()}};var c=function(e,t,n){if(typeof t==="function"){t=t()}for(var r in t){var i=t[r];var o;if(!s.call(t,r)||n.objectStoreNames.contains(r)){o=e.currentTarget.transaction.objectStore(r)}else{o=n.createObjectStore(r,i.key)}for(var u in i.indexes){if(o.indexNames.contains(u)){continue}var a=i.indexes[u];o.createIndex(u,a.key||u,Object.keys(a).length?a:{unique:false})}}};var h=function(e,t,n,r){var i=e.target.result;var s=new f(i,t);var o;var u=a();u.resolve(s);p[t]=i;return u.promise()};var p={};var d={version:"0.9.0",open:function(e){var t;var r=a();if(p[e.server]){h({target:{result:p[e.server]}},e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)}else{t=n.open(e.server,e.version);t.onsuccess=function(t){h(t,e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)};t.onupgradeneeded=function(t){c(t,e.schema,t.target.result)};t.onerror=function(e){r.reject(e)}}return r.promise()}};if(typeof module!=="undefined"&&typeof module.exports!=="undefined"){module.exports=d}else if(typeof define==="function"&&define.amd){define(function(){return d})}else{e.db=d}})(window)
 
 
 function DB(callback) {
@@ -94,7 +94,7 @@ function DB(callback) {
 	if(typeof callback !== "function") return;
 
 	if(window.kolDB) return callback(window.kolDB);
-	
+
 	db.open({
 		"server": 'mr.script',
 		"version": INDEXED_DB_VERSION,
@@ -125,14 +125,14 @@ function DB(callback) {
 function UpdateDB(successFunc, errorFunc, safeToCreate) {
 
 	DB(function(db) {
-	
-		// Fixme: host elsewhere
+
+		// Fixme: host elsewhere :P
 		GM_get("lukifer.net/db.json?rand="+Math.random(), function(json) {
 
 			var data = $.parseJSON(json);
 			var items = data.items;
 			var monsters = data.monsters;
-			
+
 			var i = 0;
 			var f = function(i) {
 
@@ -175,7 +175,7 @@ function QueryItems(args, callback) {
 				.execute()
 				.done(function(results) { callback(results[0]); });
 		}
-	
+
 		// Query by Description Id: {"descid": 868780591}
 		else if(args.descid !== undefined) {
 			db.items.query()
@@ -183,7 +183,7 @@ function QueryItems(args, callback) {
 				.execute()
 				.done(function(results) { callback(results[0]); });
 		}
-	
+
 		// Query by Name: {"name": "dry noodles"}
 		else if(args.name !== undefined) {
 			db.items.query()
@@ -191,7 +191,7 @@ function QueryItems(args, callback) {
 				.execute()
 				.done(function(results) { callback(results[0]); });
 		}
-	
+
 		// Query by anything else: {"type": "weapon"}
 		else {
 		}
@@ -212,10 +212,10 @@ function QueryMonsters(args, callback) {
 				.execute()
 				.done(function(results) { console.log(results); callback(results[0]); });
 		}
-	
+
 		// Query by anything else: {"type": "horror"}
 		else {
-	
+
 		};
 	});
 }
@@ -240,7 +240,7 @@ setTimeout(function(){
 	QueryItems("1", function(item){ console.log(item); });
 	QueryItems("spices", function(item){ console.log(item); });
 	QueryMonsters("1335 HaXx0r", function(monster){ console.log(monster); });
-	
+
 }, 2000);
 
 
@@ -276,11 +276,11 @@ handler = null;
 // no imperative top-level code below here; the rest is function definitions:
 
 jQuery.prototype.toString = function() {
-  return "[jQuery:" + this.length + "]";
+	return "[jQuery:" + this.length + "]";
 };
 
 String.prototype.trim = function () {
-    return this.replace(/^\s*/, "").replace(/\s*$/, "");
+	return this.replace(/^\s*/, "").replace(/\s*$/, "");
 }
 
 // ANYWHERE: stuff that we want to do on every possible occasion.
@@ -328,8 +328,10 @@ function ResultHandler(e) {
 			mainpane_goto(goHere);
 		} else if (mystuff.indexOf("You equip an item:") != -1) {
 			process_equip(btext, bnode);
+			InventoryHoverText();
 		} else if (mystuff.indexOf("You put on an Outfit:") != -1) {
 			process_outfit(btext, bnode);
+			InventoryHoverText();
 		} else if (mystuff.indexOf("You acquire an item:") != -1) {
 			var theItem = $(bnode).parent().parent().get(0);
 			AddLinks(null, theItem, null, thePath);
@@ -349,11 +351,11 @@ function process_effect(effectname, jnode) {
 	switch(effectname) {
 		case 'Filthworm Larva Stench':		jnode.after(AppendLink('[drone chamber (1)]',snarfblat(128))); 			break;
 		case 'Filthworm Drone Stench':		jnode.after(AppendLink('[guard chamber (1)]',snarfblat(129))); 			break;
-		case 'Filthworm Guard Stench':		jnode.after(AppendLink('[Queen! (1)]',snarfblat(130)));				    break;
-		case 'Stone-Faced':			        jnode.after(AppendLink('[hidden temple (1)]',snarfblat(280)));			break;
+		case 'Filthworm Guard Stench':		jnode.after(AppendLink('[Queen! (1)]',snarfblat(130)));					break;
+		case 'Stone-Faced':					jnode.after(AppendLink('[hidden temple (1)]',snarfblat(280)));			break;
 		case 'Down the Rabbit Hole':		jnode.after(AppendLink('[go down]',to_place('rabbithole')))
-            								.after(AppendLink('[tea party!]',to_place('rabbithole&action=rabbithole_teaparty')));	break;
-		case 'Knob Goblin Perfume':		    jnode.after(AppendLink('[knob]','cobbsknob.php'));				        break;
+											.after(AppendLink('[tea party!]',to_place('rabbithole&action=rabbithole_teaparty')));	break;
+		case 'Knob Goblin Perfume':			jnode.after(AppendLink('[knob]','cobbsknob.php'));						break;
 	}
 }
 
@@ -361,17 +363,17 @@ function process_effect(effectname, jnode) {
 function process_equip(itemname, jnode) {
 	switch(itemname) {
 		case 'continuum transfunctioner':	jnode.after(AppendLink('[8-bit realm (1)]',snarfblat(73)));		break;
-		case 'huge mirror shard':		    jnode.after(AppendLink('[chamber]','lair6.php?place=1'));	    break;
-		case 'snorkel':				        jnode.after(AppendLink('[map]',inv_use(26)));					break;
-		case 'pool cue':			        jnode.after(AppendLink('[chalk it!]',inv_use(1794)));			break;
-		case "Talisman o' Nam":			    jnode.after(AppendLink('[Dome moD]',to_place('palindome')));	break;
-		case 'worm-riding hooks':		    jnode.after(AppendLink('[drum!]',inv_use(2328)));				break;
-        case 'Mega Gem':                    jnode.after(AppendLink("[Dr. Awkward Office (1)]",to_place('palindome&action=pal_droffice'))); break;
-		case 'dingy planks':			    jnode.after(AppendLink('[boat]', inv_use(146)));				break;
+		case 'huge mirror shard':			jnode.after(AppendLink('[chamber]','lair6.php?place=1'));		break;
+		case 'snorkel':						jnode.after(AppendLink('[map]',inv_use(26)));					break;
+		case 'pool cue':					jnode.after(AppendLink('[chalk it!]',inv_use(1794)));			break;
+		case "Talisman o' Nam":				jnode.after(AppendLink('[Dome moD]',to_place('palindome')));	break;
+		case 'worm-riding hooks':			jnode.after(AppendLink('[drum!]',inv_use(2328)));				break;
+		case 'Mega Gem':					jnode.after(AppendLink("[Dr. Awkward Office (1)]",to_place('palindome&action=pal_droffice'))); break;
+		case 'dingy planks':				jnode.after(AppendLink('[boat]', inv_use(146)));				break;
 		case "makeshift SCUBA gear": 		jnode.after(AppendLink('[odor]', 'lair2.php?action=odor'));		break;
-        case 'worthless gew-gaw':
-        case 'worthless knick-knack':
-        case 'worthless trinket':           jnode.after(AppendLink('[hermit]','hermit.php'));               break;
+		case 'worthless gew-gaw':
+		case 'worthless knick-knack':
+		case 'worthless trinket':		   jnode.after(AppendLink('[hermit]','hermit.php'));				break;
 
 		case "Lord SpookyRaven's spectacles":
 			if (weCameFrom('manor3')) {
@@ -598,13 +600,13 @@ function FindHash() {
 		var CharInfo = JSON.parse(html);
 		var hash = CharInfo["pwd"];
 		SetPwd(hash);
-        SetData("charname",CharInfo["name"]);
-        var moonsign = CharInfo["sign"];
-        if ((moonsign == "Mongoose") || (moonsign == "Wallaby") || (moonsign == "Vole")) {
-            SetCharData("friendlyknoll",true);
-        } else {
-            SetCharData("friendlyknoll",false);
-        }
+		SetData("charname",CharInfo["name"]);
+		var moonsign = CharInfo["sign"];
+		if ((moonsign == "Mongoose") || (moonsign == "Wallaby") || (moonsign == "Vole")) {
+			SetCharData("friendlyknoll",true);
+		} else {
+			SetCharData("friendlyknoll",false);
+		}
 	});
 }
 
@@ -621,12 +623,12 @@ function FindMaxQuantity(item, howMany, deefault, safeLevel) {
 		case 357: min = 6; max = 9; break;  	// Mountain Stream Soda
 		case 465: min = 55; max = 79; break;  	// Blue Pixel Potion
 		case 466: min = 31; max = 40; break;  	// Green Pixel Potion
-		case 518: 				                // Magical Mystery Juice
+		case 518: 								// Magical Mystery Juice
 			min = 4 + (1.5 * GetCharData("level")); max = min + 2; break;
 		case 593: min = 46; max = 50 ; break;  	// Phonics Down
 		case 592: min = 20; max = 24; break;  	// Tiny House
 		case 882: min = 20; max = 25; break;  	// Blatantly Canadian
-		case 909:				                // Wint-o-Fresh mint
+		case 909:								// Wint-o-Fresh mint
 		case 1003: min = 3; max = 5; break;  	// Soda Water
 		case 1334: min = 10; max = 14; break;  	// Cloaca-Cola
 		case 1559: min = 30; max = 50; break;  	// Tonic Water
@@ -637,7 +639,7 @@ function FindMaxQuantity(item, howMany, deefault, safeLevel) {
 		case 2616: min = 50; max = 60; break;  	// Magi-Wipes
 		case 2600: min = 60; max = 70; break;  	// Lily
 		case 2576: min = 30; max = 39; break;  	// Locust
-		case 2389:				                // Monstar
+		case 2389:								// Monstar
 		case 2367: min = 70; max = 80; break;  	// Soy! Soy!
 		case 2639: min = 9; max = 11; break;  	// Black Cherry
 		case 2035: min = 30; max = 40; break;  	// Marquis de Poivre Soda
@@ -900,11 +902,11 @@ function InvChecker(event) {
 	$(add).attr('class','tiny').attr('id','span'+item).text("checking: "+itemname+ "...");
 	$(this).parent().next().append(br).append(add);
 
-    GM_get(server + 'submitnewchat.php?pwd='+pwd+'&graf=/count '+itemname, function(details) {
-        itemqty = details.match(/ou have (\d+)/)[1];
-        if (itemqty === undefined) itemqty = 0;
-        addText = "(" + itemqty + " in inventory)";
-        $('#span'+item).text(addText);
+	GM_get(server + 'submitnewchat.php?pwd='+pwd+'&graf=/count '+itemname, function(details) {
+		itemqty = details.match(/ou have (\d+)/)[1];
+		if (itemqty === undefined) itemqty = 0;
+		addText = "(" + itemqty + " in inventory)";
+		$('#span'+item).text(addText);
 	});
 	this.setAttribute("done","done"); event.stopPropagation(); event.preventDefault();
 }
@@ -1036,14 +1038,14 @@ function AddLinks(descId, theItem, formWhere, path) {
 			else addWhere.append(AppendLink('[Knoll]', to_place('knoll_hostile')));
 			break;
 
-		case  609:                                                              // S.O.C.K
-            addWhere.append(AppendLink('[giant Basement (1)]',snarfblat(322))); break;
+		case  609:																// S.O.C.K
+			addWhere.append(AppendLink('[giant Basement (1)]',snarfblat(322))); break;
 
 		case  727:	case 728: 													// Hedge maze puzzle piece/key
 			addWhere.append(AppendLink('[maze]', 'hedgepuzzle.php', false)); break;
 
-		case 1766:                                                              // ballroom key
-            addWhere.append(AppendLink('[ballroom (1)]',snarfblat(109))); break;
+		case 1766:																// ballroom key
+			addWhere.append(AppendLink('[ballroom (1)]',snarfblat(109))); break;
 
 		case 2267: 																// Mega Gem
 			addWhere.append(AppendLink('[equip as acc2]', equip({i:2267,s:2})));
@@ -1089,16 +1091,16 @@ function AddLinks(descId, theItem, formWhere, path) {
 
 		case   23: 																// gum
 			if (weCameFrom('hermit') && path == "/store.php") {	// came to the store from the hermit?  use it automatically.
-                if (itemQty > 3) itemQty = 3;
-                var dourl = inv_use(23)+"&itemquantity="+itemQty+"&quantity="+itemQty+"&ajax=1";
-                ajaxit(dourl);
+				if (itemQty > 3) itemQty = 3;
+				var dourl = inv_use(23)+"&itemquantity="+itemQty+"&quantity="+itemQty+"&ajax=1";
+				ajaxit(dourl);
 			} else 	{
 				addWhere.append(AppendLink('[use]', inv_use(23)+"&itemquantity="+itemQty+"&quantity="+itemQty));
 			}
 			break;
 
 		case   42: 																// hermit permit
-        case   43: case  44: case  45:                                          // worthless thingies
+		case   43: case  44: case  45:											// worthless thingies
 			if (weCameFrom('hermit') && path == "/store.php") {
 				mainpane_goto('/hermit.php');
 			} else {
@@ -1179,18 +1181,18 @@ function AddLinks(descId, theItem, formWhere, path) {
 		case 2338: 																// Black Pudding
 			addWhere.append(AppendLink('[eat]','inv_eat.php?pwd='+ pwd +
 							'&which=1&whichitem='+itemNum)); break;
-		case 2054:                                                              // black market map
+		case 2054:																// black market map
 			//add link to switch to blackbird or crow
 			addWhere.append(AppendLink('[switch to blackbird]','familiar.php?action=newfam&newfam=59'));
 				break;
 
 		case 2064: 																// Forged documents
 			addWhere.append(AppendLink('[shore]',to_place('desertbeach'))); break;
-		case 2266:							                                    // wet stunt nut stew
+		case 2266:																// wet stunt nut stew
 			addWhere.append(AppendLink('[visit Mr. Alarm]',to_place('palindome&action=pal_mroffice'))); break;
-		case 2347:	                                                            //heart of the filthworm queen
+		case 2347:																//heart of the filthworm queen
 			addWhere.append(AppendLink('[turn it in!]','bigisland.php?place=orchard&action=stand&pwd='+pwd)); break;
-		case 3471:                                                              // damp old boot
+		case 3471:																// damp old boot
 			addWhere.append(AppendLink('[old man, see?]','oldman.php')); break;
 		case 4621: 																// Game Grid Token
 			addWhere.append(AppendLink('[arcade]','arcade.php')); break;
@@ -1202,31 +1204,31 @@ function AddLinks(descId, theItem, formWhere, path) {
 			addWhere.append(AppendLink('[visit 37]','cobbsknob.php?level=3&action=cell37')); break;
 		case 5193:	case 5194:													// 11-inch knob sausage, exorcised sandwich
 			addWhere.append(AppendLink('[back to the guild]','guild.php?place=challenge')); break;
-		case 5221:                                                              // fat loot token
+		case 5221:																// fat loot token
 			addWhere.append(AppendLink('[spend it!]','shop.php?whichshop=damachine',false)); break;
-		case 1764:												                // spookyraven library key
+		case 1764:																// spookyraven library key
 			addWhere.append(AppendLink('[library (1)]',snarfblat(104))); break;
-		case 5570:                                                              // ninja carabiner
+		case 5570:																// ninja carabiner
 			addWhere.append(AppendLink('[Open the Peak!]',to_place('mclargehuge&action=cloudypeak'))); break;
 		case 5571:
 			addWhere.append(AppendLink('[visit the John]',to_place('mclargehuge&action=trappercabin'))); break;
-		case 5690:                                                              // bugbear invasion: goldblum larva
+		case 5690:																// bugbear invasion: goldblum larva
 			addWhere.append(AppendLink('[mothership!]',to_place('bugbearship&action=bb_bridge'))); break;
-		case 5782:  case 5783:  case 5784:  case 5785:  case 5786:  case 5787:  // smut orc building materials
+		case 5782:  case 5783:  case 5784:  case 5785:  case 5786:  case 5787:	// smut orc building materials
 			addWhere.append(AppendLink('[build!]',to_place('orc_chasm&action=bridge'))); break;
-		case 6693:  case 6694:                                                  // McClusky file, page 5, binder clip
+		case 6693:  case 6694:													// McClusky file, page 5, binder clip
 			addWhere.append(AppendLink('[bind!]',inv_use(6694))); break;
-		case 7179:  case 7182:  case 7184:                                      // First Pizza, Stankara Stone, Shield of Brook
+		case 7179:  case 7182:  case 7184:										// First Pizza, Stankara Stone, Shield of Brook
 			addWhere.append(AppendLink('[Copperhead Club (1)]',snarfblat(383))); break;
-		case 7185: case 7178:                                                   // copperhead charms
+		case 7185: case 7178:													// copperhead charms
 			addWhere.append(AppendLink('[man, o nam]', 'craft.php?mode=combine&' +
 								'action=craft&a=7185&b=7178&pwd='+ pwd +
 								'&qty=1'));
 			break;
-		case 7262: case 7270:                                                   // I Love Me, 2 Love Me
+		case 7262: case 7270:													// I Love Me, 2 Love Me
 			doWhat = "oneuse";
 			//addWhere.append(AppendLink('[The Dr is In!]',to_place('palindome&action=pal_droffice'))); break;
-		case 4029:		                                                        // Hyboria: memory of a grappling hook
+		case 4029:																// Hyboria: memory of a grappling hook
 			if (GetCharData("Krakrox") == "A") {
 				SetCharData("Krakrox","B");
 			} else {
@@ -1475,11 +1477,13 @@ function Defaults(revert) {
 		 	 ['moonslink', 1],
 			 ['malllink', 1],
 			 ['ascension_list','cooked key pies, exploded chef, exploded bartender, discarded karma, bought a skill'],
-             ['compressfam', 0],
-             ['questbottom', 0],
+			 ['compressfam', 0],
+			 ['questbottom', 0],
 			 ['inlineitemdesc', 1],
-             ['monsterlinks',1],
-             ['choicelinks',1]
+			 ['monsterlinks',1],
+			 ['choicelinks',1],
+			 ['invhovertext',1],
+			 ['outfitsmenu',1]
 			];
 	var menu1 = ['market;town_market.php','hermit;hermit.php',
 		'untinker;place.php?whichplace=forestvillage&action=fv_untinker',
@@ -1649,7 +1653,7 @@ function InlineItemDescriptions() {
 				var pos = $img.position();
 				var x = pos.left - - 15 - 150;
 				var y = pos.top  - - 15;
-				
+
 				// X Bounds
 				x = Math.max(x, window.scrollX - - 3);
 				x = Math.min(x, $(document.body).width() - 290);
@@ -1730,7 +1734,7 @@ function InlineItemDescriptions() {
 							.find("center:eq(1)")
 							.css("marginBottom", "15px");
 					}
-					
+
 					// Calculate Y and bounds
 					var yHeight = parseInt($desc.height());
 					y = y - (yHeight / 2);
@@ -1781,6 +1785,81 @@ function InlineItemDescriptions() {
 		return true;
 
 	}, true);
+}
+
+
+function GetInventoryEquipment() {
+	var equipped = {};
+	$("#curequip > tbody > tr > td[valign] > a").each(function(n, el) {
+		var $a = $(this);
+		var $item = $a.parent("td").parent("tr").children("td:eq(2)");
+		var slotText = $.trim($a.parent("td").text()).replace(":", "").replace(/\s/, " ");
+
+		equipped[slotText] = $item.length ? $item.children("b").text() : "None";
+	});
+	return equipped;
+}
+
+
+function InventoryHoverText() {
+
+	if(GetPref("invhovertext") !== "1"
+	|| place != "inventory"
+	|| (document.location.search+"").indexOf("which=2") === -1)
+		return;
+
+	var equipped = GetInventoryEquipment();
+	var slotShelf = {
+		"Hats":					"Hat",
+		"Back Items":			"Back",
+		"Shirts":				"Shirt",
+		"Melee Weapons":		"Weapon",
+		"Ranged Weapons":		"Weapon",
+		"Off-Hand Items":		"Off-Hand",
+		"Pants":				"Pants",
+		"Familiar Equipment":	"Familiar"
+	};
+
+	var currentSlot = "";
+	var shelfRegex = /javascript\:toggle\(\'([a-zA-Z\s]+)\'\);/;
+	var accFull  = equipped["Accessory 1"] && equipped["Accessory 1"] !== "None"
+				&& equipped["Accessory 2"] && equipped["Accessory 2"] !== "None"
+				&& equipped["Accessory 3"] && equipped["Accessory 3"] !== "None";
+
+
+	$("a").each(function(n, a){
+		var href = ""+a.href.replace("%20"," ");
+		var newSlot = href.match(shelfRegex);
+		if(newSlot && newSlot.length && newSlot[1]) {
+			currentSlot = newSlot[1];
+			return true;
+		}
+		else if(currentSlot == "") return true;
+
+		var aText = a.textContent;
+		var replaceText;
+		if(aText === "[equip]") {
+			if(currentSlot == "Accessories") {
+				replaceText = false;
+			//	a.style.textDecoration = accFull ? "line-through" : "";
+			//	a.title = accFull ? "3 accessories equipped" : "";
+				a.style.display = accFull ? "none" : "inline";
+			} else {
+				replaceText = equipped[slotShelf[currentSlot]];
+				if(equipped["Off-Hand"] && a.parentNode.textContent.match(/[23]h\)$/))
+					replaceText += " and "+equipped["Off-Hand"];
+			}
+		}
+		else if(aText === "[1]" || aText === "[2]" || aText === "[3]") {
+			var accNum = $.trim(aText).replace("[", "").replace("]", "");
+			replaceText = equipped["Accessory "+accNum];
+			if(1) // needs pref?
+				a.innerHTML = "["+(accNum=="1"?"one":(accNum=="2"?"two":"three"))+"]";
+		}
+
+		a.title = !replaceText || replaceText === "None" ? "" : "Replaces "+replaceText;
+
+	});
 }
 
 
@@ -1876,7 +1955,7 @@ function at_fight() {
 	// monster name:[preferred combat item, funkslinging item, is this lair-spoilery, special treatment flag]
 	// special treatment: 0=nothing; 1=any gremlin; 2=non-tool gremlin; 3=hidden city; 4=pirate insults.
 	var MonsterArray = {
-	"a Beer Batter":            ["baseball","",1,0],
+	"a Beer Batter":	        ["baseball","",1,0],
 	"a best-selling novelist":  ["plot hole","",1,0],
 	"a Big Meat Golem":         ["meat vortex","",1,0],
 	"a Bowling Cricket":        ["sonar-in-a-biscuit","",1,0],
@@ -1923,11 +2002,11 @@ function at_fight() {
 	var monsterNameShort = monsterName.replace(/^an?\s/, '');
 	var infight = GetCharData("infight");
 
-    if (GetPref("monsterlinks") == 1) {
-    	$monster.html(' <a href="http://kol.coldfront.net/thekolwiki/index.php/'+
-	    	'Special:Search?search='+ monsterNameShort.replace(/\s/g, '+').replace('"', '')+
-    		'&go=Go" target="_blank">'+monsterName+'</a>');
-    }
+	if (GetPref("monsterlinks") == 1) {
+		$monster.html(' <a href="http://kol.coldfront.net/thekolwiki/index.php/'+
+			'Special:Search?search='+ monsterNameShort.replace(/\s/g, '+').replace('"', '')+
+			'&go=Go" target="_blank">'+monsterName+'</a>');
+	}
 	// fix the ugly new Hell Ion image...
 	if (monsterName == "a Hellion") {
 		$('#monpic')
@@ -2618,16 +2697,16 @@ function at_guild() {
 		break;
 		case "?place=challenge":
 			//add links here for going to haunted pantry, sleazy back alley, or Cobb's Knob.
-			if ((tdtext.indexOf("So you wanna join the Department of Shadowy") != -1) ||    // moxie quest opener
-				(tdtext.indexOf("manage to steal your own pants") != -1)) {                 // moxie not-done-yet
+			if ((tdtext.indexOf("So you wanna join the Department of Shadowy") != -1) ||	// moxie quest opener
+				(tdtext.indexOf("manage to steal your own pants") != -1)) {					// moxie not-done-yet
 				$('p:last').append(AppendLink('[back alley (1)]',snarfblat(112)));
-			} else if ((tdtext.indexOf("particularly the big ones") != -1) ||               // muscle opener
-					   (tdtext.indexOf("it has to be a really big one") != -1)) {           // muscle not-done-yet
+			} else if ((tdtext.indexOf("particularly the big ones") != -1) ||				// muscle opener
+					   (tdtext.indexOf("it has to be a really big one") != -1)) {			// muscle not-done-yet
 				$('p:last').append(AppendLink('[knob outskirts (1)]',snarfblat(114)));
-			} else if ((tdtext.indexOf("particular poltersandwich") != -1) ||               // myst opener
-                        (tdtext.indexOf("cinnabonshee") != -1)) {                           // myst not-done-yet
-                $('p:last').append(AppendLink('[haunted pantry (1)]',snarfblat(113)));
-            }
+			} else if ((tdtext.indexOf("particular poltersandwich") != -1) ||				// myst opener
+						(tdtext.indexOf("cinnabonshee") != -1)) {							// myst not-done-yet
+				$('p:last').append(AppendLink('[haunted pantry (1)]',snarfblat(113)));
+			}
 		break;
 	}
 }
@@ -2654,10 +2733,10 @@ function at_choice() {
 	var NCText = $NCTitle.text();
 
 	if((NCText !== "Results:") && (GetPref("choicelinks") == 1)) {
-    	$NCTitle.wrap('<a style="color:white;" href="http://kol.coldfront.net/thekolwiki/index.php/'+
+		$NCTitle.wrap('<a style="color:white;" href="http://kol.coldfront.net/thekolwiki/index.php/'+
 			'Special:Search?search='+ NCText.replace(/\s/g, '+').replace('"', '') +'&go=Go" '+
 			'target="_blank"></a>');
-    }
+	}
 	if (square) {
 //		if (square.indexOf("hiddencity") != -1) link_hiddencity(square);
 		if (square.indexOf("cellar.php") != -1) {
@@ -3011,7 +3090,11 @@ function at_inventory() {
 		var lnks = document.links;
 		var unlink, famLock;
 		var didQElink = false;
-		var selecty = document.getElementsByTagName('select')[0];
+		var selecty = $('select[name=whichoutfit]')[0];
+
+		InventoryHoverText();
+
+		SetCharData("outfitsmenu", selecty.innerHTML);
 
 		if (backup != '') {
 			for (var i=0, len=lnks.length; i<len; i++) {
@@ -3915,31 +3998,83 @@ function at_questlog() {
 }
 
 function CompressThrallAndFamiliar(compressLevel) {
-    var weight = 0;
-    var $fp1 = $('.familiarpick:first');
-    var $fp2 = $('.familiarpick:eq(1)');
-    var fInfo = $fp2.siblings().text();
-    if (!fInfo) return;         // no familiar info found
-    fInfo = fInfo.slice(6);     //cut off ", the"
-    weight = $fp2.next().children('b').text();
-    if (compressLevel == 2) {   //show weight and XP only
-        $fp2.siblings('font').find('table').appendTo($fp1.parents('p:first')); //entire XP table, if present
-        $fp2.next('font')
-            .text('(' + weight + ' lb)')
-            .appendTo($fp1);
-        $fp2.hide();
-    } else {                    //show nothing
-        $fp2.parent().hide();
-    }
-    $fp1.appendTo('b:contains(Familiar)').attr('title',fInfo);
+	var weight = 0;
+	var $fp1 = $('.familiarpick:first');
+	var $fp2 = $('.familiarpick:eq(1)');
+	var fInfo = $fp2.siblings().text();
+	if (!fInfo) return;         // no familiar info found
+	fInfo = fInfo.slice(6);     //cut off ", the"
+	weight = $fp2.next().children('b').text();
+	if (compressLevel == 2) {   //show weight and XP only
+		$fp2.siblings('font').find('table').appendTo($fp1.parents('p:first')); //entire XP table, if present
+		$fp2.next('font')
+			.text('(' + weight + ' lb)')
+			.appendTo($fp1);
+		$fp2.hide();
+	} else {                    //show nothing
+		$fp2.parent().hide();
+	}
+	$fp1.appendTo('b:contains(Familiar)').attr('title',fInfo);
 
-    var tParent = $('b:contains(Thrall)').parent();
+	var tParent = $('b:contains(Thrall)').parent();
 
-    tParent.siblings('font').children('b').text('');    //nuke the name
-    var thrallInfo = tParent.siblings('font').text();
-    tParent.siblings(':not(img, center, p)').hide();
-    tParent.siblings('img:first').attr('title',thrallInfo);
+	tParent.siblings('font').children('b').text('');    //nuke the name
+	var thrallInfo = tParent.siblings('font').text();
+	tParent.siblings(':not(img, center, p)').hide();
+	tParent.siblings('img:first').attr('title',thrallInfo);
 }
+
+
+function OutfitsMenu(compact) {
+
+	if(GetPref("outfitsmenu") === "0") return '';
+
+	var s = document.createElement('style');
+	s.innerHTML = '@keyframes spinna { from { transform: rotateZ(0deg); } to { rotateZ(-360deg); } } '; //keyframeCSS;
+	document.getElementsByTagName('head')[0].appendChild(s);
+
+	$(document).on("click", "#outfitspinna", function(e) {
+		$("#outfitspinna").css("animation", "spinna 500ms infinite linear");
+
+		// TODO: Use lean chat requests instead.
+		// For outfit 12345: /submitnewchat.php?playerid=53596&pwd=&graf=%2Fclan+%2Foutfit%3F+12345&j=1
+
+		GM_get(server + "inventory.php?which=2",
+		function(html) {
+			$("#outfitspinna").css("animation", "");
+			var start = html.indexOf(">", html.indexOf("whichoutfit", html.indexOf("<select")));
+			var end = html.indexOf("</select>", start);
+			var cur = $("#outfitsmenu").val();
+			$("#outfitsmenu").html(html.substring(start - - 1, end));
+			// TODO: Use DB to confirm character is still wearing this outfit
+			$("#outfitsmenu").val(cur);
+		});
+	});
+	$(document).on("change", "#outfitsmenu", function(e) {
+		var val = $(this).val();
+		if(!val || val == "0") return;
+		$("#outfitspinna").css("animation", "spinna 500ms infinite linear");
+		GM_get(server + equip({a:'outfit', onum:val}),
+		function(html) {
+			$("#outfitspinna").css("animation", "");
+			document.location.reload();
+		});
+	});
+
+	if(compact)	var style = "font-size:  8px; max-height: 15px;  max-width: 90px; margin-left: 12px; margin-top: 4px;";
+	else		var style = "font-size: 10px; max-height: 16px; max-width: 160px; margin-left: 12px; ";
+
+	var spinStyle = 'display: inline-block; margin-left: -4px; font-size: 14px; line-height: 14px; width: 14px; height: 16px; text-align: center; text-decoration: none; transform: rotateZ(-360deg);';
+
+	var html = '<select id="outfitsmenu" style="'+style+'">'+GetCharData("outfitsmenu")+'</select>'
+		+' <a id="outfitspinna" href="javascript:void(0);" style="'+spinStyle+'">&#8634;</a>';
+
+	if(compact)	html = '<div style="white-space: nowrap;">'+html+'</div>';
+	else		html = '<tr><td colspan="2" align="center" style="white-space:nowrap;">'+html+'</td></tr>';
+
+	return html;
+}
+
 
 // CHARPANE: Find HP, MP, do effects stuff.
 function at_charpane() {
@@ -3982,13 +4117,16 @@ function at_charpane() {
 	};
 
 //	SetData("charname",bText[0].textContent);
-    var compressfam = GetPref("compressfam");
-    if (compressfam > 0) {
-        CompressThrallAndFamiliar(compressfam);
-    }
+	var compressfam = GetPref("compressfam");
+	if (compressfam > 0) {
+		CompressThrallAndFamiliar(compressfam);
+	}
 
 	// Compact Mode
 	if (compactMode) {
+		var outfitsMenuHtml = OutfitsMenu(true);
+		if(outfitsMenuHtml) $("hr:first").before(outfitsMenuHtml);
+
 		var mp=0;
 		for (var i=4, len=bText.length; i<len; i++) {
 			str = bText[i].textContent;
@@ -4019,34 +4157,50 @@ function at_charpane() {
 
 		SetCharData("currentHP", curHP); SetCharData("maxHP", maxHP);
 		SetCharData("currentMP", curMP); SetCharData("maxMP", maxMP);
-	} else { // Full Mode
+	}
+
+	// Full Mode
+	else {
 		function parse_cur_and_max(names, data) {
-			for each (var name in names) {
+			for (var name in names) {
 				var cur_max = data.shift().split('/').map(integer);
-        		SetCharData("current"+ name, cur_max[0]);
+				SetCharData("current"+ name, cur_max[0]);
 				SetCharData("max"    + name, cur_max[1]);
 			}
 		}
-		var lvlblock = $("td:contains('Level'):first").text();
+		var $tbody = $("tbody:first");
+		var lvlblock = $tbody.find("td:contains('Level'):first").text();
 		if (lvlblock) {
 			level = lvlblock.match(/Level (\d+)/)[1];
 			SetCharData("level", level);
 		} else {
-			SetCharData("level",13);		// failsafe setting if we couldn't find the level block, generally due to a custom title.
+			SetCharData("level",13); // failsafe if we couldn't find the level block, generally due to a custom title.
 			level = 13;
 		}
-        var $statusblock = $('img[alt*="Hit Points"]').parent().parent().parent().parent();
-        $statusblock.wrap('<div id="statusblock></div>');
-        var $statusitems = $statusblock.find('span.black, span.red');
+		var outfitsMenuHtml = OutfitsMenu(false);
+		if(outfitsMenuHtml) {
+			var $outfit = $tbody.parent().next("center.tiny");
+			$tbody.append(outfitsMenuHtml);
+			if($outfit.length && $outfit[0].textContent.match(/^Outfit/)) {
+				$outfit.hide();
+				$("#outfitsmenu")
+					.children("optgroup:first")
+					.find("option:contains("+$outfit.children("span")[0].textContent+")")
+					.attr("selected", "selected");
+			}
+		}
+		var $statusblock = $('img[alt*="Hit Points"]').parent().parent().parent().parent();
+		$statusblock.wrap('<div id="statusblock></div>');
+		var $statusitems = $statusblock.find('span.black, span.red');
 		var data = $.makeArray($statusitems.slice(0, 4)).map(text);
-        if (data.length == 2) { //I forget what this was guarding against already.
-            data = $.makeArray($('td[valign="center"]').slice(1, 5)).map(text);
-        }
-        // parse regular hp/mp display
+		if (data.length == 2) { //I forget what this was guarding against already.
+			data = $.makeArray($('td[valign="center"]').slice(1, 5)).map(text);
+		}
+		// parse regular hp/mp display
   		parse_cur_and_max(["HP", "MP"], data);
-	    //data.shift(); // meat, if MP are present
-    	advcount = integer(data[1]); // data[1] will be adv if HP/MP are present
-        if (isNaN(advcount)) advcount = integer(data[0]); // data[0] is adv if no MP is on display (e.g. ZombieMaster)
+		//data.shift(); // meat, if MP are present
+		advcount = integer(data[1]); // data[1] will be adv if HP/MP are present
+		if (isNaN(advcount)) advcount = integer(data[0]); // data[0] is adv if no MP is on display (e.g. ZombieMaster)
 
 		// Change image link for costumes
 		var img = imgs[0];
@@ -4072,11 +4226,11 @@ function at_charpane() {
 	}	// end full mode processing
 
 	if ($('#nudgeblock div:contains("a work in progress")').length > 0) $('#nudgeblock').hide();
-    if ($('#nudgeblock div:contains("none")').length > 0) $('#nudgeblock').hide();
-    //make this configurable:
-    if (GetPref("questbottom") == 1) {
-        $('#nudgeblock').appendTo($('center:eq(1)'));
-    }
+	if ($('#nudgeblock div:contains("none")').length > 0) $('#nudgeblock').hide();
+	//make this configurable:
+	if (GetPref("questbottom") == 1) {
+		$('#nudgeblock').appendTo($('center:eq(1)'));
+	}
 
 	// Re-hydrate (0)
 	var temphydr = integer(GetCharData('hydrate'));
@@ -4148,7 +4302,7 @@ function at_charpane() {
 					var hydtxt = img.parentNode.nextSibling.textContent;
 					if (/\(1\)/.test(hydtxt)) {			// 1 turn left?  set marker to add rehydrate link next adventure.
 						SetCharData('hydrate', advcount-1);
-                    }
+					}
 					else if (/\(5\)/.test(hydtxt) || /\(20\)/.test(hydtxt))		// got 5 turns (or 20 from clover) now?  add Desert link.
 					{	if (compactMode) $('a[href="adventure.php?snarfblat=122"]')
 						.after(':<br /><a href="adventure.php?' +
@@ -4525,9 +4679,9 @@ function at_oldman() {
 }
 
 function at_spookyraven1() {
-    if (document.body.textContent.indexOf("know where that is.") != -1) {
-        mainpane_goto('/town_right.php');
-    }
+	if (document.body.textContent.indexOf("know where that is.") != -1) {
+		mainpane_goto('/town_right.php');
+	}
 }
 // MANOR: If manor is not present, redirect to town.
 function at_manor() {
@@ -5308,10 +5462,10 @@ function at_campground() {
 			var txt = this.textContent;
 			var snarf = false;
 			var gateInfo = [
-                //note that using functions to define where to go just KILLS performance since the array must then be constructed on every page instead of
-                //being a static, pre-defined object.  drat.
-                //identifying text              item required           image           where to go                                     link text               item ID
-                ["carving of an armchair",      ['pygmy pygment',       'pigment',      'hiddencity.php',                               'hidden city',          '2242']],
+				//note that using functions to define where to go just KILLS performance since the array must then be constructed on every page instead of
+				//being a static, pre-defined object.  drat.
+				//identifying text              item required           image           where to go                                     link text               item ID
+				["carving of an armchair",      ['pygmy pygment',       'pigment',      'hiddencity.php',                               'hidden city',          '2242']],
 				["carving of a cowardly-l",     ['wussiness potion',    'potion5',      'friars.php',                                   'deep fat friars',      '469']],
 				["carving of a banana peel",    ['gremlin juice',       'potion6',      'bigisland.php?place=junkyard',                 'island',               '2631']],
 				["carving of a coiled viper",   ['adder bladder',       'bladder',      'adventure.php?snarfblat=111',                  'black forest (1)',     '2056']],
@@ -5631,18 +5785,18 @@ function spoil_hiddencity() {
 }
 
 function spoil_canadia() {
-    $('#lc_outskirts > a > img').attr('title','ML: 2-3');
-    $('#lc_camp > a > img').attr('title','ML: 35-40');
+	$('#lc_outskirts > a > img').attr('title','ML: 2-3');
+	$('#lc_camp > a > img').attr('title','ML: 35-40');
 }
 
 function spoil_marais() {
-    $('#swamp1 > a > img').attr('title','ML: 14-20; open swamp, sanctuargh');   //edge
-    $('#swamp2 > a > img').attr('title','ML: 19-36; open bog, tower');          //swamp
-    $('#swamp3 > a > img').attr('title','ML: 34-51; fight Bunion (axe)');       //bog
-    $('#swamp4 > a > img').attr('title','ML: 27-55; get navigator for beaver maze');    //wizard tower
-    $('#swamp5 > a > img').attr('title','ML: 19-37; open beavers, village');    //sanctuarrrrgh
-    $('#swamp6 > a > img').attr('title','ML: 27-54; fight hippy (wood)');       //beaver
-    $('#swamp7 > a > img').attr('title','ML: 36-58; fight skunk (bouquet)');    //village
+	$('#swamp1 > a > img').attr('title','ML: 14-20; open swamp, sanctuargh');   //edge
+	$('#swamp2 > a > img').attr('title','ML: 19-36; open bog, tower');          //swamp
+	$('#swamp3 > a > img').attr('title','ML: 34-51; fight Bunion (axe)');       //bog
+	$('#swamp4 > a > img').attr('title','ML: 27-55; get navigator for beaver maze');    //wizard tower
+	$('#swamp5 > a > img').attr('title','ML: 19-37; open beavers, village');    //sanctuarrrrgh
+	$('#swamp6 > a > img').attr('title','ML: 27-54; fight hippy (wood)');       //beaver
+	$('#swamp7 > a > img').attr('title','ML: 36-58; fight skunk (bouquet)');    //village
 }
 
 function spoil_bugbearship() {
@@ -5734,11 +5888,11 @@ function spoil_pyramid() {
 }
 
 function spoil_bathole() {
-    $('#bathole_entryway > a > img').attr('title','ML: 11-16');
-    $('#bathole_junction > a > img').attr('title','ML: 14-18');
-    $('#bathole_burrow > a > img').attr('title','ML: 16-20');
-    $('#bathole_chamber > a > img').attr('title','ML: 22');
-    $('#bathole_lair > a > img').attr('title','ML: 26-35\nMCD=4 for Boss Bat Britches (+5 mox pants)\nMCD=8 for Boss Bat Bling (+3 Mus/+3 Mox accessory)');
+	$('#bathole_entryway > a > img').attr('title','ML: 11-16');
+	$('#bathole_junction > a > img').attr('title','ML: 14-18');
+	$('#bathole_burrow > a > img').attr('title','ML: 16-20');
+	$('#bathole_chamber > a > img').attr('title','ML: 22');
+	$('#bathole_lair > a > img').attr('title','ML: 26-35\nMCD=4 for Boss Bat Britches (+5 mox pants)\nMCD=8 for Boss Bat Bling (+3 Mus/+3 Mox accessory)');
 }
 
 function spoil_plains() {
@@ -6358,6 +6512,7 @@ function at_topmenu() {
 		toprow1.appendChild(a);
 		GM_get(server+to_place('forestvillage&action=fv_friar'), function(t) {
 			if (t.length>10 && t.indexOf("Back to the Distant Woods") == -1) {
+				// FIXME: $ is not defined
 				$('#florist').html('florist')
 					.attr('href',to_place('forestvillage&action=fv_friar'));
 				SetCharData("hasflorist",true);
@@ -6684,14 +6839,16 @@ function buildPrefs() {
 		prefSpan.appendChild(MakeOption("Backup Outfit Name: ", -1, 'backup', 0, 0));
 		prefSpan.appendChild(MakeOption("Ascension Checklist: ", -1, 'ascension_list', 0, 0));
 
-        choice = MakeOption("Compress familiar/thrall info: ", 3, 'compressfam', "No", "Yes");
-        select = choice.firstChild.cells[1].firstChild;
-        select.options[2].innerHTML = "Show Fam Wgt/XP";
-        prefSpan.appendChild(choice);
+		choice = MakeOption("Compress familiar/thrall info: ", 3, 'compressfam', "No", "Yes");
+		select = choice.firstChild.cells[1].firstChild;
+		select.options[2].innerHTML = "Show Fam Wgt/XP";
+		prefSpan.appendChild(choice);
 
-        prefSpan.appendChild(MakeOption("Questblock to bottom of charpane: ", 2, 'questbottom', "No", "Yes"));
-        prefSpan.appendChild(MakeOption("Monster name links to wiki: ", 2, 'monsterlinks', "No", "Yes"));
-        prefSpan.appendChild(MakeOption("Choice Title links to wiki: ", 2, 'choicelinks', "No", "Yes"));
+		prefSpan.appendChild(MakeOption("Questblock to bottom of charpane: ", 2, 'questbottom', "No", "Yes"));
+		prefSpan.appendChild(MakeOption("Outfit switcher on charpane: ", 2, 'outfitsmenu', "No", "Yes"));
+		prefSpan.appendChild(MakeOption("Add hover text to equip links: ", 2, 'invhovertext', "No", "Yes"));
+		prefSpan.appendChild(MakeOption("Monster name links to wiki: ", 2, 'monsterlinks', "No", "Yes"));
+		prefSpan.appendChild(MakeOption("Choice Title links to wiki: ", 2, 'choicelinks', "No", "Yes"));
 	}
 
 	function createMenu1(menu1Span) {
@@ -6813,6 +6970,7 @@ function buildPrefs() {
 				else $("#hashrenew").html('Fail!');
 		});	}, true);
 
+/*
 		var ul5 = document.createElement('a');
 		ul5.setAttribute('href','javascript:void(0);');
 		ul5.innerHTML = "Refresh DB";
@@ -6824,6 +6982,7 @@ function buildPrefs() {
 				function() { $("#refreshdb").html('Fail!'); }
 			);
 		}, true);
+*/
 
 		ulspan.setAttribute('class','tiny');
 		ulspan.setAttribute('name','updatespan');
@@ -6971,3 +7130,4 @@ function at_maint() {
 }
 
 //console.timeEnd("Mr. Script @ " + place);
+

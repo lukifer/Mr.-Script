@@ -705,7 +705,7 @@ function maybeConvertToNumber(val) {
 // Set/GetCharData: store/retrieve data related to a particular account/ascension
 function SetCharData(which, value) {
 	var charname = GetData("charname");
-	persist(charname + which, value);
+	persist(charname + which, value+"");
 }
 function GetCharData(which) {
 	var charname = GetData("charname");
@@ -831,6 +831,7 @@ function FindMaxQuantity(item, howMany, deefault, safeLevel) {
 	}
 	if (hp == 1) result = integer(GetCharData("maxHP")-GetCharData("currentHP"));
 	else		 result = integer(GetCharData("maxMP")-GetCharData("currentMP"));
+
 	if (result == 0) return 0;
 	result = result / avg;
 	if (result > howMany) result = howMany;
@@ -4472,7 +4473,6 @@ function at_charpane() {
 		level = 13;
 		if (lvlblock) level = lvlblock.match(/Lvl. (\d+)/)[1];
 		SetCharData("level", level);
-
 		SetCharData("currentHP", curHP); SetCharData("maxHP", maxHP);
 		SetCharData("currentMP", curMP); SetCharData("maxMP", maxMP);
 	}
@@ -4481,6 +4481,8 @@ function at_charpane() {
 	else {
 		function parse_cur_and_max(names, data) {
 			for (var name in names) {
+					 if(name == 0) name = "HP"; // DERP HACK
+				else if(name == 1) name = "MP";
 				var cur_max = data.shift().split('/').map(integer);
 				SetCharData("current"+ name, cur_max[0]);
 				SetCharData("max"    + name, cur_max[1]);
@@ -6921,19 +6923,23 @@ function at_topmenu() {
 	}
 }
 
-/*
 
-function at_chatlaunch() {
+function at_lchat() {
+	// Needs pref
 	var $graf = $("#InputForm input[name=graf]");
+	var reg = /\/[a-z\?]*\s/;
+	var regQ= /\/[a-z]*\?\s/;
 	$graf.on("keyup", function() {
 		var val = this.value;
 		if(!val) return true;
 
-		if(val[0] === '/') {
+		if(reg.test(val)) {
 			if(val.indexOf("/msg") === 0 || val.indexOf("/r ") === 0)
 				$graf.css("color", "blue");
-			else
+			else if(regQ.test(val))
 				$graf.css("color", "purple");
+			else
+				$graf.css("color", "green");
 		}
 		else {
 			$graf.css("color", "");
@@ -6942,7 +6948,6 @@ function at_chatlaunch() {
 		return true;
 	});
 }
-*/
 
 
 // ASCEND: Make sure we're really ready to jump into that gash.

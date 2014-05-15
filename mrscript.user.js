@@ -1921,29 +1921,21 @@ function InlineItemDescriptions() {
 }
 
 
-function RightClickFamiliarCarry($link, which) {
+function RightClickFamiliarCarry($link, action) {
 
-	var which;
-	//var $link = $("a[href='familiar.php?showback=1']");
-	var $link = $("a[href$='hat']");
-	if($link.length) which = 'bjorn';
-	else {
-	//	var $link = $("a[href='familiar.php?showback=1']");
-		if($link.length) which = 'crown';
-		else return;
-	}
+	if($link.length < 1 || $link.hasClass("mrfamcarry")) return;
 
-	if($link.hasClass("mrfamcarry")) return;
-
-	$link.addClass("mrfamcarry").on("contextmenu", function(e) {
+	$link.addClass("mrfamcarry").data("action", action).on("contextmenu", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 
 		var $ircm = $("#pop_ircm");
+		var action = $(this).data("action");
 		if(!$ircm.length) {
 			$("body").append('<div id="pop_ircm"></div>');
 			$ircm = $("#pop_ircm");
 		}
+		$ircm.data("action", action);
 		$ircm.css({
 			"position": "absolute",
 			"top": (e.pageY - -10)+"px",
@@ -1974,7 +1966,8 @@ function RightClickFamiliarCarry($link, which) {
 					$.each(fams, function(n, fam) {
 						var alt = fam.name + " \n\n" + fam.bjorn2;
 						alt = ' alt="'+alt+'" title="'+alt+'" ';
-						html += '<a class="famcarry '+which+'" href="javascript:void(0);" data-id="'+fam.id+'">' +
+						html += '<a class="famcarry" href="javascript:void(0);" ' +
+								'data-action="'+action+'" data-id="'+fam.id+'">' +
 								'<img src="http://images.kingdomofloathing.com/itemimages/'+fam.image+'" '+alt+
 								' width="30" height="30" /></a>';
 					});
@@ -2016,7 +2009,7 @@ function RightClickFamiliarCarry($link, which) {
 			});
 		}
 
-		$ircm.html('<div style="color:white;background-color:blue;padding:2px 15px 2px 15px;white-space: nowrap;text-align:center; font-weight: bold">'+(which="bjorn"?"Bjorn Bjorn Bjorn":"Encrownenthrone")+'</div><img class="close" style="cursor: pointer; position: absolute;right:1px;top:1px;" alt="X" title="Cancel [Esc]" src="http://images.kingdomofloathing.com/closebutton.gif"><div style="padding:4px; text-align: left"><div id="pop_ircm_fam_hat"></div></div><div style="clear:both"></div>');
+		$ircm.html('<div style="color:white;background-color:blue;padding:2px 15px 2px 15px;white-space: nowrap;text-align:center; font-weight: bold">'+(action=="backpack"?"Bjorn Bjorn Bjorn":"Encrownthrone")+'</div><img class="close" style="cursor: pointer; position: absolute;right:1px;top:1px;" alt="X" title="Cancel [Esc]" src="http://images.kingdomofloathing.com/closebutton.gif"><div style="padding:4px; text-align: left"><div id="pop_ircm_fam_hat"></div></div><div style="clear:both"></div>');
 
 		return false;
 	});
@@ -2027,8 +2020,9 @@ function RightClickFamiliarCarry($link, which) {
 	$(document).on("click", ".famcarry", function() {
 		var $a = $(this);
 		var famid = $a.data("id");
+		var action = $("#pop_ircm").data("action");
 		$a.children("img").attr("src", "data:image/gif;base64,R0lGODlhEAAQAPQZAPHx8f///yEhISUlJSgoKERERFZWVllZWYCAgLe3t8HBwcLCwtra2tvb2/Dw8Pb29vz8/P39/SQkJH9/f5aWlqSkpOfn556eniMjIyIiIp2dnQAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/i1NYWRlIGJ5IEtyYXNpbWlyYSBOZWpjaGV2YSAod3d3LmxvYWRpbmZvLm5ldCkAIfkEBAoA/wAsAAAAABAAEAAABSJgII7WNFljqlJZRqlwoEmSFqtAVQF37//AoHBILBqPSGIIACH5BAUKABIALAYAAAAJAAYAAAUYYCCOJAk9ZQAgRlIuhHCgY1MMSFQyihOEACH5BAUKAAIALAoAAQAGAAkAAAUTYCCOZGmeJHBRllhJ2OTCcqCyIQAh+QQFCgASACwKAAYABgAJAAAFGWAgjmRpkoziiE0xIFGwEMLxBABiJCN0iyEAIfkEBQoAAgAsBgAKAAkABgAABRVgII5kOQJVBZSXJF0llWVUaU2TVYYAIfkEBQoAEgAsAQAKAAkABgAABRlg4ChMYJoRMhTNGTyHQCxukBgIUL/Q7gchACH5BAUKAAIALAAABgAGAAkAAAUToEVdQBBMmFSZqGqKpCnPdG3TIQAh+QQFCgASACwAAAEABgAJAAAFGWAgPpAYJAYCBM8hEEsQIUPRiI7CmHzv/yEAOw==")
-		GM_get(server+"familiar.php?action=backpack&famid="+famid+"&pwd="+pwd, function(html) {
+		GM_get(server+"familiar.php?action="+action+"&famid="+famid+"&pwd="+pwd, function(html) {
 			$("#pop_ircm").remove();
 		});
 	});
@@ -2094,8 +2088,10 @@ function ProcessGearChange(delay) {
 		return setTimeout(function(){ ProcessGearChange(delay - - 100) }, 100);
 
 	InventoryHoverText();
-	RightClickFamiliarCarry();
 	OutfitBackupLinks();
+
+	RightClickFamiliarCarry($("a[href='familiar.php?showback=1']"), 'backpack');
+	RightClickFamiliarCarry($("a[href='familiar.php?showcrown=1']"), 'hatseat');
 
 	//FINISHME :P
 	//var quickequip = GetPref("quickequip");

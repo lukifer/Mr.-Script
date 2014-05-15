@@ -86,7 +86,7 @@ $(document).on('animationstart',ResultHandler);
 
 
 // IndexedDB wrapper: https://github.com/aaronpowell/db.js
-//(function(e,t){"use strict";var n=e.indexedDB||e.webkitIndexedDB||e.mozIndexedDB||e.oIndexedDB||e.msIndexedDB,r=e.IDBKeyRange||e.webkitIDBKeyRange,i={readonly:"readonly",readwrite:"readwrite"};var s=Object.prototype.hasOwnProperty;if(!n){throw"IndexedDB required"}var o=function(e){return e};var u=function(){var e,t=[];var n=function(n,r){if(t){r=r||[];e=e||[n,r];for(var i=0,s=t.length;i<s;i++){t[i].apply(e[0],e[1])}t=[]}};this.add=function(){for(var r=0,i=arguments.length;r<i;r++){t.push(arguments[r])}if(e){n()}return this};this.execute=function(){n(this,arguments);return this}};var a=function(e){var t="progress",n=[["resolve","done",new u,"resolved"],["reject","fail",new u,"rejected"],["notify","progress",new u]],r={},i={state:function(){return t},then:function(){var e=arguments;return a(function(t){n.forEach(function(n,i){var s=e[i];r[n[1]](typeof s==="function"?function(){var e=s.apply(this,arguments);if(e&&typeof e.promise==="function"){e.promise().done(t.resolve).fail(t.reject).progress(t.notify)}}:t[n[0]])})}).promise()},promise:function(e){if(e){Object.keys(i).forEach(function(t){e[t]=i[t]});return e}return i}};n.forEach(function(e,n){var s=e[2],o=e[3];i[e[1]]=s.add;if(o){s.add(function(){t=o})}r[e[0]]=s.execute});i.promise(r);if(e){e.call(r,r)}return r};var f=function(e,t){var n=this,r=false;this.add=function(t){if(r){throw"Database has been closed"}var s=[];var o=0;for(var u=0;u<arguments.length-1;u++){if(Array.isArray(arguments[u+1])){for(var f=0;f<arguments[u+1].length;f++){s[o]=arguments[u+1][f];o++}}else{s[o]=arguments[u+1];o++}}var l=e.transaction(t,i.readwrite),c=l.objectStore(t),h=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=c.add(e,n)}else{t=c.add(e)}t.onsuccess=function(t){var n=t.target;var r=n.source.keyPath;if(r===null){r="__id__"}Object.defineProperty(e,r,{value:n.result,enumerable:true});h.notify()}});l.oncomplete=function(){h.resolve(s,n)};l.onerror=function(e){h.reject(s,e)};l.onabort=function(e){h.reject(s,e)};return h.promise()};this.update=function(t){if(r){throw"Database has been closed"}var s=[];for(var o=0;o<arguments.length-1;o++){s[o]=arguments[o+1]}var u=e.transaction(t,i.readwrite),f=u.objectStore(t),l=f.keyPath,c=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=f.put(e,n)}else{t=f.put(e)}t.onsuccess=function(e){c.notify()}});u.oncomplete=function(){c.resolve(s,n)};u.onerror=function(e){c.reject(s,e)};u.onabort=function(e){c.reject(s,e)};return c.promise()};this.remove=function(t,n){if(r){throw"Database has been closed"}var s=e.transaction(t,i.readwrite),o=s.objectStore(t),u=a();var f=o.delete(n);s.oncomplete=function(){u.resolve(n)};s.onerror=function(e){u.reject(e)};return u.promise()};this.clear=function(t){if(r){throw"Database has been closed"}var n=e.transaction(t,i.readwrite),s=n.objectStore(t),o=a();var u=s.clear();n.oncomplete=function(){o.resolve()};n.onerror=function(e){o.reject(e)};return o.promise()};this.close=function(){if(r){throw"Database has been closed"}e.close();r=true;delete p[t]};this.get=function(t,n){if(r){throw"Database has been closed"}var i=e.transaction(t),s=i.objectStore(t),o=a();var u=s.get(n);u.onsuccess=function(e){o.resolve(e.target.result)};i.onerror=function(e){o.reject(e)};return o.promise()};this.query=function(t,n){if(r){throw"Database has been closed"}return new l(t,e,n)};for(var o=0,u=e.objectStoreNames.length;o<u;o++){(function(e){n[e]={};for(var t in n){if(!s.call(n,t)||t==="close"){continue}n[e][t]=function(t){return function(){var r=[e].concat([].slice.call(arguments,0));return n[t].apply(n,r)}}(t)}})(e.objectStoreNames[o])}};var l=function(e,n,s){var u=this;var f=false;var l=function(o,u,l,c,h,p,d){var v=n.transaction(e,f?i.readwrite:i.readonly),m=v.objectStore(e),g=s?m.index(s):m,y=o?r[o].apply(null,u):null,b=[],w=a(),E=[y],h=h?h:null,p=p?p:[],S=0;if(l!=="count"){E.push(c||"next")}var x=f?Object.keys(f):false;var T=function(e){for(var t=0;t<x.length;t++){var n=x[t];var r=f[n];if(r instanceof Function)r=r(e);e[n]=r}return e};g[l].apply(g,E).onsuccess=function(e){var n=e.target.result;if(typeof n===typeof 0){b=n}else if(n){if(h!==null&&h[0]>S){S=h[0];n.advance(h[0])}else if(h!==null&&S>=h[0]+h[1]){}else{var r=true;var i="value"in n?n.value:n.key;p.forEach(function(e){if(!e||!e.length){}else if(e.length===2){r=i[e[0]]===e[1]}else{r=e[0].apply(t,[i])}});if(r){S++;b.push(d(i));if(f){i=T(i);n.update(i)}}n.continue()}}};v.oncomplete=function(){w.resolve(b)};v.onerror=function(e){w.reject(e)};v.onabort=function(e){w.reject(e)};return w.promise()};var c=function(e,t){var n="next",r="openCursor",i=[],s=null,u=o,a=false;var c=function(){return l(e,t,r,a?n+"unique":n,s,i,u)};var h=function(){s=Array.prototype.slice.call(arguments,0,2);if(s.length==1){s.unshift(0)}return{execute:c}};var p=function(){n=null;r="count";return{execute:c}};var d=function(){r="openKeyCursor";return{desc:m,execute:c,filter:v,distinct:g,map:b}};var v=function(){i.push(Array.prototype.slice.call(arguments,0,2));return{keys:d,execute:c,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};var m=function(){n="prev";return{keys:d,execute:c,filter:v,distinct:g,modify:y,map:b}};var g=function(){a=true;return{keys:d,count:p,execute:c,filter:v,desc:m,modify:y,map:b}};var y=function(e){f=e;return{execute:c}};var b=function(e){u=e;return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};"only bound upperBound lowerBound".split(" ").forEach(function(e){u[e]=function(){return new c(e,arguments)}});this.filter=function(){var e=new c(null,null);return e.filter.apply(e,arguments)};this.all=function(){return this.filter()}};var c=function(e,t,n){if(typeof t==="function"){t=t()}for(var r in t){var i=t[r];var o;if(!s.call(t,r)||n.objectStoreNames.contains(r)){o=e.currentTarget.transaction.objectStore(r)}else{o=n.createObjectStore(r,i.key)}for(var u in i.indexes){if(o.indexNames.contains(u)){continue}var a=i.indexes[u];o.createIndex(u,a.key||u,Object.keys(a).length?a:{unique:false})}}};var h=function(e,t,n,r){var i=e.target.result;var s=new f(i,t);var o;var u=a();u.resolve(s);p[t]=i;return u.promise()};var p={};var d={version:"0.9.0",open:function(e){var t;var r=a();if(p[e.server]){h({target:{result:p[e.server]}},e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)}else{t=n.open(e.server,e.version);t.onsuccess=function(t){h(t,e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)};t.onupgradeneeded=function(t){c(t,e.schema,t.target.result)};t.onerror=function(e){r.reject(e)}}return r.promise()}};if(typeof module!=="undefined"&&typeof module.exports!=="undefined"){module.exports=d}else if(typeof define==="function"&&define.amd){define(function(){return d})}else{e.db=d}})(window)
+(function(e,t){"use strict";var n=e.indexedDB||e.webkitIndexedDB||e.mozIndexedDB||e.oIndexedDB||e.msIndexedDB,r=e.IDBKeyRange||e.webkitIDBKeyRange,i={readonly:"readonly",readwrite:"readwrite"};var s=Object.prototype.hasOwnProperty;if(!n){throw"IndexedDB required"}var o=function(e){return e};var u=function(){var e,t=[];var n=function(n,r){if(t){r=r||[];e=e||[n,r];for(var i=0,s=t.length;i<s;i++){t[i].apply(e[0],e[1])}t=[]}};this.add=function(){for(var r=0,i=arguments.length;r<i;r++){t.push(arguments[r])}if(e){n()}return this};this.execute=function(){n(this,arguments);return this}};var a=function(e){var t="progress",n=[["resolve","done",new u,"resolved"],["reject","fail",new u,"rejected"],["notify","progress",new u]],r={},i={state:function(){return t},then:function(){var e=arguments;return a(function(t){n.forEach(function(n,i){var s=e[i];r[n[1]](typeof s==="function"?function(){var e=s.apply(this,arguments);if(e&&typeof e.promise==="function"){e.promise().done(t.resolve).fail(t.reject).progress(t.notify)}}:t[n[0]])})}).promise()},promise:function(e){if(e){Object.keys(i).forEach(function(t){e[t]=i[t]});return e}return i}};n.forEach(function(e,n){var s=e[2],o=e[3];i[e[1]]=s.add;if(o){s.add(function(){t=o})}r[e[0]]=s.execute});i.promise(r);if(e){e.call(r,r)}return r};var f=function(e,t){var n=this,r=false;this.add=function(t){if(r){throw"Database has been closed"}var s=[];var o=0;for(var u=0;u<arguments.length-1;u++){if(Array.isArray(arguments[u+1])){for(var f=0;f<arguments[u+1].length;f++){s[o]=arguments[u+1][f];o++}}else{s[o]=arguments[u+1];o++}}var l=e.transaction(t,i.readwrite),c=l.objectStore(t),h=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=c.add(e,n)}else{t=c.add(e)}t.onsuccess=function(t){var n=t.target;var r=n.source.keyPath;if(r===null){r="__id__"}Object.defineProperty(e,r,{value:n.result,enumerable:true});h.notify()}});l.oncomplete=function(){h.resolve(s,n)};l.onerror=function(e){h.reject(s,e)};l.onabort=function(e){h.reject(s,e)};return h.promise()};this.update=function(t){if(r){throw"Database has been closed"}var s=[];for(var o=0;o<arguments.length-1;o++){s[o]=arguments[o+1]}var u=e.transaction(t,i.readwrite),f=u.objectStore(t),l=f.keyPath,c=a();s.forEach(function(e){var t;if(e.item&&e.key){var n=e.key;e=e.item;t=f.put(e,n)}else{t=f.put(e)}t.onsuccess=function(e){c.notify()}});u.oncomplete=function(){c.resolve(s,n)};u.onerror=function(e){c.reject(s,e)};u.onabort=function(e){c.reject(s,e)};return c.promise()};this.remove=function(t,n){if(r){throw"Database has been closed"}var s=e.transaction(t,i.readwrite),o=s.objectStore(t),u=a();var f=o.delete(n);s.oncomplete=function(){u.resolve(n)};s.onerror=function(e){u.reject(e)};return u.promise()};this.clear=function(t){if(r){throw"Database has been closed"}var n=e.transaction(t,i.readwrite),s=n.objectStore(t),o=a();var u=s.clear();n.oncomplete=function(){o.resolve()};n.onerror=function(e){o.reject(e)};return o.promise()};this.close=function(){if(r){throw"Database has been closed"}e.close();r=true;delete p[t]};this.get=function(t,n){if(r){throw"Database has been closed"}var i=e.transaction(t),s=i.objectStore(t),o=a();var u=s.get(n);u.onsuccess=function(e){o.resolve(e.target.result)};i.onerror=function(e){o.reject(e)};return o.promise()};this.query=function(t,n){if(r){throw"Database has been closed"}return new l(t,e,n)};for(var o=0,u=e.objectStoreNames.length;o<u;o++){(function(e){n[e]={};for(var t in n){if(!s.call(n,t)||t==="close"){continue}n[e][t]=function(t){return function(){var r=[e].concat([].slice.call(arguments,0));return n[t].apply(n,r)}}(t)}})(e.objectStoreNames[o])}};var l=function(e,n,s){var u=this;var f=false;var l=function(o,u,l,c,h,p,d){var v=n.transaction(e,f?i.readwrite:i.readonly),m=v.objectStore(e),g=s?m.index(s):m,y=o?r[o].apply(null,u):null,b=[],w=a(),E=[y],h=h?h:null,p=p?p:[],S=0;if(l!=="count"){E.push(c||"next")}var x=f?Object.keys(f):false;var T=function(e){for(var t=0;t<x.length;t++){var n=x[t];var r=f[n];if(r instanceof Function)r=r(e);e[n]=r}return e};g[l].apply(g,E).onsuccess=function(e){var n=e.target.result;if(typeof n===typeof 0){b=n}else if(n){if(h!==null&&h[0]>S){S=h[0];n.advance(h[0])}else if(h!==null&&S>=h[0]+h[1]){}else{var r=true;var i="value"in n?n.value:n.key;p.forEach(function(e){if(!e||!e.length){}else if(e.length===2){r=i[e[0]]===e[1]}else{r=e[0].apply(t,[i])}});if(r){S++;b.push(d(i));if(f){i=T(i);n.update(i)}}n.continue()}}};v.oncomplete=function(){w.resolve(b)};v.onerror=function(e){w.reject(e)};v.onabort=function(e){w.reject(e)};return w.promise()};var c=function(e,t){var n="next",r="openCursor",i=[],s=null,u=o,a=false;var c=function(){return l(e,t,r,a?n+"unique":n,s,i,u)};var h=function(){s=Array.prototype.slice.call(arguments,0,2);if(s.length==1){s.unshift(0)}return{execute:c}};var p=function(){n=null;r="count";return{execute:c}};var d=function(){r="openKeyCursor";return{desc:m,execute:c,filter:v,distinct:g,map:b}};var v=function(){i.push(Array.prototype.slice.call(arguments,0,2));return{keys:d,execute:c,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};var m=function(){n="prev";return{keys:d,execute:c,filter:v,distinct:g,modify:y,map:b}};var g=function(){a=true;return{keys:d,count:p,execute:c,filter:v,desc:m,modify:y,map:b}};var y=function(e){f=e;return{execute:c}};var b=function(e){u=e;return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};return{execute:c,count:p,keys:d,filter:v,desc:m,distinct:g,modify:y,limit:h,map:b}};"only bound upperBound lowerBound".split(" ").forEach(function(e){u[e]=function(){return new c(e,arguments)}});this.filter=function(){var e=new c(null,null);return e.filter.apply(e,arguments)};this.all=function(){return this.filter()}};var c=function(e,t,n){if(typeof t==="function"){t=t()}for(var r in t){var i=t[r];var o;if(!s.call(t,r)||n.objectStoreNames.contains(r)){o=e.currentTarget.transaction.objectStore(r)}else{o=n.createObjectStore(r,i.key)}for(var u in i.indexes){if(o.indexNames.contains(u)){continue}var a=i.indexes[u];o.createIndex(u,a.key||u,Object.keys(a).length?a:{unique:false})}}};var h=function(e,t,n,r){var i=e.target.result;var s=new f(i,t);var o;var u=a();u.resolve(s);p[t]=i;return u.promise()};var p={};var d={version:"0.9.0",open:function(e){var t;var r=a();if(p[e.server]){h({target:{result:p[e.server]}},e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)}else{t=n.open(e.server,e.version);t.onsuccess=function(t){h(t,e.server,e.version,e.schema).done(r.resolve).fail(r.reject).progress(r.notify)};t.onupgradeneeded=function(t){c(t,e.schema,t.target.result)};t.onerror=function(e){r.reject(e)}}return r.promise()}};if(typeof module!=="undefined"&&typeof module.exports!=="undefined"){module.exports=d}else if(typeof define==="function"&&define.amd){define(function(){return d})}else{e.db=d}})(window)
 
 
 function DB(callback) {
@@ -113,7 +113,35 @@ function DB(callback) {
 					"name":		{ "unique": true },
 					"image":	{ }
 				}
-			}
+			},
+			"familiars": {
+				"key": { "keyPath": "id" },
+				"indexes": {
+					"name":		{ "unique": true },
+					"image":	{ },
+					"larva":	{ }
+				}
+			},
+
+			// Future-proofing
+			"npcstores": {
+				"key": { "keyPath": "id" },
+				"indexes": {
+					"name":		{ "unique": true },
+				}
+			},
+			"outfits": {
+				"key": { "keyPath": "id" },
+				"indexes": {
+					"name":		{ "unique": true },
+				}
+			},
+			"zonelist": {
+				"key": { "keyPath": "id" },
+				"indexes": {
+					"name":		{ "unique": true },
+				}
+			},
 		}
 	}).done(function(theDB) {
 		window.kolDB = theDB;
@@ -122,7 +150,7 @@ function DB(callback) {
 }
 
 
-function UpdateDB(successFunc, errorFunc, safeToCreate) {
+function UpdateDB(successFunk, errorFunk, safeToCreate) {
 
 	DB(function(db) {
 
@@ -132,27 +160,45 @@ function UpdateDB(successFunc, errorFunc, safeToCreate) {
 			var data = $.parseJSON(json);
 			var items = data.items;
 			var monsters = data.monsters;
+			var familiars = data.familiars;
 
-			var i = 0;
-			var f = function(i) {
+			var $work = $("#dbworking");
+			var lastTick = (new Date).getTime();
+			var tick = function(str) {
+				var now = (new Date).getTime(); if(now - lastTick < 300) return;
+				lastTick = now; $work.html(str);
+			}
+
+			var itemFunk = function(i) {
 
 				if(items[i]) {
+					if(i%11==0) tick(" Item #"+i);
 					items[i]['id'] += ""; // cast to string
-					db.items.update(items[i]).done(function(){ f(i+1); });
+					db.items.update(items[i]).done(function(){ itemFunk(i - -1); });
 				}
 				else {
-					var ii = 0;
-					var ff = function(ii) {
+					var monFunk = function(ii) {
 						if(monsters[ii]) {
-							monsters[ii]['id'] = ii+1;
-							db.monsters.update(monsters[ii]).done(function(){ ff(ii+1); });
+							monsters[ii]['id'] = ii - -1;
+							if(ii%11==0) tick(" Monster #"+ii);
+							db.monsters.update(monsters[ii]).done(function(){ monFunk(ii - -1); });
 						}
-						else { if(typeof successFunc === "function") successFunc(db); }
-					}
-					ff(ii);
+						else {
+							var famFunk = function(iii) {
+								if(familiars[iii]) {
+									if(iii%11==0) tick(" Familiar #"+iii);
+									familiars[iii]['id'] += ""; // cast to string
+									db.familiars.update(familiars[iii]).done(function(){ famFunk(iii - -1); });
+								}
+								else if(typeof successFunk === "function") successFunk(db);
+							}
+							famFunk(0);
+						}
+					};
+					monFunk(0);
 				}
-			}
-			f(i);
+			};
+			itemFunk(0);
 		});
 	});
 }
@@ -202,21 +248,93 @@ function QueryItems(args, callback) {
 function QueryMonsters(args, callback) {
 	if(typeof callback !== "function") return;
 
-	if(typeof args !== "object") args = {"name": args};
+	if(typeof args !== "object") {
+		if(/^[0-9]+$/.test(args))	args = {"id":	args};
+		else						args = {"name":	args};
+	}
 
 	DB(function(db) {
+
 		// Query by Name: {"name": "dry noodles"}
 		if(args.name !== undefined) {
 			db.monsters.query()
 				.filter('name', args.name)
 				.execute()
-				.done(function(results) { console.log(results); callback(results[0]); });
+				.done(function(results) { callback(results[0]); });
 		}
 
 		// Query by anything else: {"type": "horror"}
 		else {
 
 		};
+	});
+}
+
+
+function QueryFamiliars(args, callback) {
+	if(typeof callback !== "function") return;
+
+	if(typeof args !== "object") {
+		if(/^[0-9]+$/.test(args))	args = {"id":	args};
+		else						args = {"name":	args};
+	}
+
+	DB(function(db) {
+
+		// Query by Item Id: {"id": 1}
+		if(args.id !== undefined) {
+			db.familiars.query()
+				.filter('id', args.id+"")
+				.execute()
+				.done(function(results) { callback(results[0]); });
+		}
+
+		// Query by Name: {"name": "dry noodles"}
+		else if(args.name !== undefined) {
+			db.familiars.query()
+				.filter('name', args.name)
+				.execute()
+				.done(function(results) { callback(results[0]); });
+		}
+
+		// Query by Image: {"image": "mosquito.gif"}
+		else if(args.image !== undefined) {
+			db.familiars.query()
+				.filter('image', args.image)
+				.execute()
+				.done(function(results) { callback(results[0]); });
+		}
+
+		// Query by Larva: {"larva": "275"}
+		else if(args.larva !== undefined) {
+			db.familiars.query()
+				.filter('larva', args.larva+"")
+				.execute()
+				.done(function(results) { callback(results[0]); });
+		}
+
+		// Filter by multiple ids
+		else if(args.ids !== undefined) {
+			db.familiars.query()
+				.filter()
+				.execute()
+				.done(function(results) {
+					var keyed = {};
+					var fin = [];
+					var ids = args.ids;
+					$.each(ids,		function(k,v){ keyed[v] = true; });
+					$.each(results, function(k,v){ if(keyed[v.id]) fin.push(v); });
+					callback(fin);
+				});
+		}
+
+		// Get all
+		else {
+			db.familiars.query()
+				.filter()
+				.execute()
+				.done(function(results) { callback(results); });
+		}
 	});
 }
 
@@ -233,15 +351,19 @@ setTimeout(function(){
 }, 500);
 
 
-
 if(0)
 setTimeout(function(){
 
-	QueryItems("1", function(item){ console.log(item); });
-	QueryItems("spices", function(item){ console.log(item); });
-	QueryMonsters("1335 HaXx0r", function(monster){ console.log(monster); });
+//	QueryItems("1", function(item){ console.log(item); });
+//	QueryItems("spices", function(item){ console.log(item); });
+//	QueryMonsters("1335 HaXx0r", function(monster){ console.log(monster); });
+//	QueryFamiliars("Snow Angel", function(familiar){ console.log(familiar); });
+//	QueryFamiliars({"larva": "275"}, function(familiar){ console.log(familiar); });
 
-}, 2000);
+//	QueryFamiliars({}, function(familiars){ console.log(familiars); });
+//	QueryFamiliars({"ids": [1,2,3]}, function(familiars){ console.log(familiars); });
+
+}, 1000);
 
 
 
@@ -319,8 +441,13 @@ function ResultHandler(e) {
 		}
 		var mystuff = $(target).parents('#effdiv').children('center:first').html();
 		var effdiv = $(target).parents('#effdiv');
+
+		if(document.location.pathname === "/inventory.php" && document.location.search.indexOf("which=2") != -1)
+			setTimeout(ProcessGearChange, 200);
+
 // TODO:
 // we need to check multiple <b> nodes here, for cases where there is, for example, multi-stage crafting.
+
 		var bnode = effdiv.find('b:eq(1)');
 		var btext = bnode.text();
 		var goHere = checkForRedirects(mystuff);
@@ -328,10 +455,8 @@ function ResultHandler(e) {
 			mainpane_goto(goHere);
 		} else if (mystuff.indexOf("You equip an item:") != -1) {
 			process_equip(btext, bnode);
-			InventoryHoverText();
 		} else if (mystuff.indexOf("You put on an Outfit:") != -1) {
 			process_outfit(btext, bnode);
-			InventoryHoverText();
 		} else if (mystuff.indexOf("You acquire an item:") != -1) {
 			var theItem = $(bnode).parent().parent().get(0);
 			AddLinks(null, theItem, null, thePath);
@@ -840,7 +965,7 @@ function AppendOutfitSwap(outfitNumber, text) {
 		var backup = GetPref('backup');
 		var which = $('input[name="swap"]').val();
 		if (which <= 0 || backup == "") {
-			mainpane_goto(equip({a:'outfit', oid:which}));
+			mainpane_goto(equip({a:'outfit', onum:which}));
 			//('/inv_equip.php?action=outfit&which=2&whichoutfit=' + which + '&pwd=' + pwd);
 		} else {
 			GM_get(server +
@@ -1795,9 +1920,21 @@ function InlineItemDescriptions() {
 }
 
 
-function RightClickFamiliarHat($link, which) {
-// unfinished
-	$link.on("contextmenu", function(e) {
+function RightClickFamiliarCarry($link, which) {
+
+	var which;
+	//var $link = $("a[href='familiar.php?showback=1']");
+	var $link = $("a[href$='hat']");
+	if($link.length) which = 'bjorn';
+	else {
+	//	var $link = $("a[href='familiar.php?showback=1']");
+		if($link.length) which = 'crown';
+		else return;
+	}
+
+	if($link.hasClass("mrfamcarry")) return;
+
+	$link.addClass("mrfamcarry").on("contextmenu", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 
@@ -1810,23 +1947,90 @@ function RightClickFamiliarHat($link, which) {
 			"position": "absolute",
 			"top": (e.pageY - -10)+"px",
 			"left": (e.pageX-140)+"px",
-			"width": "280px",
+			"width": "320px",
 			"border": "1px solid black",
 			"backgroundColor": "white",
 			"fontSize": "12px"
 		});
 
-		var html = '<div><b style="width: 160px; display: block; float: left;">asdf</b><a class="small dojaxy" href="javascript:void(0);">[fsda]</a></div>';
+		var myfams = GetCharData("familiars");
+		if(myfams) {
+			QueryFamiliars({"ids": myfams.split(",")}, function(familiars) {
+				var sorted = {};
+				$.each(familiars, function(n, familiar) {
+					var bjorn = familiar.bjorn; if(!bjorn) return true;
 
-		$ircm.html('<div style="color:white;background-color:blue;padding:2px 15px 2px 15px;white-space: nowrap;text-align:center; font-weight: bold">Manage Stuff</div><img class="close" style="cursor: pointer; position: absolute;right:1px;top:1px;" alt="X" title="Cancel [Esc]" src="http://images.kingdomofloathing.com/closebutton.gif"><div style="padding:4px; text-align: left">'+html+'</div><div style="clear:both"></div>');
+					if(!sorted[bjorn])	sorted[bjorn] = [familiar];
+					else				sorted[bjorn].push(familiar);
+				});
+
+				var htmls = {};
+				$.each(sorted, function(bjorn, fams) {
+					var style = 'width: 149px; display: block; float: left; text-align: right; padding: 8px 4px 0 0;';
+					//bjorn = bjorn.replace(",", ",<br />");
+					var html = '<div style="min-height: 30px; margin-bottom: 4px; margin-bottom: 4px;">' +
+							'<b style="'+style+'">'+bjorn+':</b><div style="float: left; width:158px;">';
+					$.each(fams, function(n, fam) {
+						var alt = fam.name + " \n\n" + fam.bjorn2;
+						alt = ' alt="'+alt+'" title="'+alt+'" ';
+						html += '<a class="famcarry '+which+'" href="javascript:void(0);" data-id="'+fam.id+'">' +
+								'<img src="http://images.kingdomofloathing.com/itemimages/'+fam.image+'" '+alt+
+								' width="30" height="30" /></a>';
+					});
+
+					html += '</div><div style="clear:both;"></div></div>';
+					if(!htmls[bjorn]) htmls[bjorn] = "";
+					htmls[bjorn] += html;
+				});
+
+				// I really wish JS was as good at array sorting at PHP :P
+				var clusters = ['','','','','','','','','','','','','',''];
+				var magicOrder = [
+					/Frequency/,
+					/Familiar\sWeight/,
+					/Monster\sLevel/,
+					/^\+[0-9]*\sStats$/,
+					/^\+.*Stats$/,
+					/^\+[0-9]*.*Drops$/,
+					/^\+[0-9]*.*Meat$/,
+					/Max.*\+[0-9]*/,
+					/M.*\+[0-9]*\%/,
+					/^\+[0-9]*.*Damage$/,
+					/Damage.*\+[0-9]*/,
+					/Spell\sDamage\s\+[0-9]*/,
+					/Attributes/,
+					/.*/
+				];
+
+				$.each(htmls, function(bjorn, html) {
+					$.each(magicOrder, function(n, mag) {
+						if(mag.test(bjorn)) {
+							clusters[n] += html;
+							return false;
+						}
+					});
+				});
+
+				$("#pop_ircm_fam_hat").html(clusters.join(""));
+			});
+		}
+
+		$ircm.html('<div style="color:white;background-color:blue;padding:2px 15px 2px 15px;white-space: nowrap;text-align:center; font-weight: bold">'+(which="bjorn"?"Bjorn Bjorn Bjorn":"Encrownenthrone")+'</div><img class="close" style="cursor: pointer; position: absolute;right:1px;top:1px;" alt="X" title="Cancel [Esc]" src="http://images.kingdomofloathing.com/closebutton.gif"><div style="padding:4px; text-align: left"><div id="pop_ircm_fam_hat"></div></div><div style="clear:both"></div>');
 
 		return false;
+	});
 
-		// familiar.php?&action=backpack&famid=42&pwd=
-		// familiar.php?&action=backpack&famid=0&pwd=
+	$(document).on("click", "#pop_ircm .close", function() { $("#pop_ircm").remove(); });
+	$(document).on("keydown", function(e) { if(e.keyCode == 27) $("#pop_ircm").remove(); });
 
-		// <div style="color:white;background-color:blue;padding:2px 15px 2px 15px;white-space: nowrap;text-align:center; font-weight: bold">Manage Stuff</div><img class="close" style="cursor: pointer; position: absolute;right:1px;top:1px;" alt="X" title="Cancel [Esc]" src="http://images.kingdomofloathing.com/closebutton.gif"><div style="padding:4px; text-align: left"><div style="width:100%; padding-bottom: 3px;" rel="sellstuff.php?action=sell&amp;ajax=1&amp;type=quant&amp;whichitem%5B%5D=IID&amp;howmany=NUM&amp;pwd=5be24f2554aaf1d1f0fb0edc5ea8cc7d" id="pircm_638"><b style="width: 160px; display: block; float: left;">Auto-Sell (45 meat):</b> <a href="#" rel="1" class="small dojaxy">[one]</a></div><div style="width:100%; padding-bottom: 3px;" rel="inventory.php?action=closetpush&amp;ajax=1&amp;whichitem=IID&amp;qty=NUM&amp;pwd=5be24f2554aaf1d1f0fb0edc5ea8cc7d" id="pircm_638"><b style="width: 160px; display: block; float: left;">Closet:</b> <a href="#" rel="1" class="small dojaxy">[one]</a></div></div><div style="clear:both"></div>
-	})
+	$(document).on("click", ".famcarry", function() {
+		var $a = $(this);
+		var famid = $a.data("id");
+		$a.children("img").attr("src", "data:image/gif;base64,R0lGODlhEAAQAPQZAPHx8f///yEhISUlJSgoKERERFZWVllZWYCAgLe3t8HBwcLCwtra2tvb2/Dw8Pb29vz8/P39/SQkJH9/f5aWlqSkpOfn556eniMjIyIiIp2dnQAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/i1NYWRlIGJ5IEtyYXNpbWlyYSBOZWpjaGV2YSAod3d3LmxvYWRpbmZvLm5ldCkAIfkEBAoA/wAsAAAAABAAEAAABSJgII7WNFljqlJZRqlwoEmSFqtAVQF37//AoHBILBqPSGIIACH5BAUKABIALAYAAAAJAAYAAAUYYCCOJAk9ZQAgRlIuhHCgY1MMSFQyihOEACH5BAUKAAIALAoAAQAGAAkAAAUTYCCOZGmeJHBRllhJ2OTCcqCyIQAh+QQFCgASACwKAAYABgAJAAAFGWAgjmRpkoziiE0xIFGwEMLxBABiJCN0iyEAIfkEBQoAAgAsBgAKAAkABgAABRVgII5kOQJVBZSXJF0llWVUaU2TVYYAIfkEBQoAEgAsAQAKAAkABgAABRlg4ChMYJoRMhTNGTyHQCxukBgIUL/Q7gchACH5BAUKAAIALAAABgAGAAkAAAUToEVdQBBMmFSZqGqKpCnPdG3TIQAh+QQFCgASACwAAAEABgAJAAAFGWAgPpAYJAYCBM8hEEsQIUPRiI7CmHzv/yEAOw==")
+		GM_get(server+"familiar.php?action=backpack&famid="+famid+"&pwd="+pwd, function(html) {
+			$("#pop_ircm").remove();
+		});
+	});
 }
 
 
@@ -1843,9 +2047,67 @@ function GetInventoryEquipment() {
 }
 
 
+function OutfitBackupLinks() {
+
+	var backup = GetPref('backup');
+	if(!backup) return;
+
+	var $unlink = $("#naked");
+	var $outfitselecty = $('select[name=whichoutfit]');
+	var $famLock = $("a[href^='familiar.php']");
+
+	SetCharData("outfitsmenu", $outfitselecty.html());
+
+	// Save contents of outfit menu
+	var revertlink = '';
+	$outfitselecty.find("option").each(function(n, opty) {
+		if (opty.text == backup) {
+			revertlink = '<a href="'+equip({a:'outfit', onum:opty.value})+'">[revert to '+backup.toLowerCase()+']</a> - ';
+			return false;
+		}
+	});
+
+	$unlink.before('<a id="mrbackup" href="javascript:void(0);">[backup]</a> - '+revertlink);
+
+	$("#mrbackup").on('click', function(e) {
+		this.innerHTML = "[backing up...]";
+		GM_get(server + equip({a:'customoutfit', oname:GetPref('backup')}), function(response) {
+			var $bak = $("#mrbackup");
+			if (response.indexOf("custom outfits") == -1)
+				$bak[0].innerHTML = "[done]";
+			else
+				$bak[0].innerHTML = "[too many outfits]";
+		});
+		e.stopPropagation();
+		e.preventDefault();
+	});
+
+}
+
+
+function ProcessGearChange(delay) {
+
+	// If the gear block hasn't refreshed, we need to delay until it has
+	if(!delay) delay = 0;
+	if($("#curequip").hasClass("mrscriptdone") && delay < 5000)
+		return setTimeout(function(){ ProcessGearChange(delay - - 100) }, 100);
+
+	InventoryHoverText();
+	RightClickFamiliarCarry();
+	OutfitBackupLinks();
+
+	//FINISHME :P
+	//var quickequip = GetPref("quickequip");
+
+	$("#curequip").addClass("mrscriptdone");
+}
+
+
 function InventoryHoverText() {
 
-	if(GetPref("invhovertext") === "0"
+	var invhovertext = GetPref("invhovertext");
+
+	if(invhovertext == "0"
 	|| place != "inventory"
 	|| (document.location.search+"").indexOf("which=2") === -1)
 		return;
@@ -1895,7 +2157,7 @@ function InventoryHoverText() {
 		else if(aText === "[1]" || aText === "[2]" || aText === "[3]") {
 			var accNum = $.trim(aText).replace("[", "").replace("]", "");
 			replaceText = equipped["Accessory "+accNum];
-			if(1) // needs pref?
+			if(invhovertext == "2")
 				a.innerHTML = "["+(accNum=="1"?"one":(accNum=="2"?"two":"three"))+"]";
 		}
 
@@ -2807,6 +3069,41 @@ function at_choice() {
 		return;
 	}
 
+	var $porko = $("#porko");
+	if($porko.length) { // P-P-Porkos!
+		$porko.after('<p><a id="porko_reveal" href="javascript:void(0);" class="tiny" style="position: relative; top: 8px;">[reveal]</a></p>');
+		$porko_reveal = $("#porko_reveal");
+		$porko_reveal.on("click", function() {
+			if($porko_reveal.text() == "[reveal]") {
+				SetPref('porko_reveal', '1');
+				$porko_reveal.html("[unreveal]");
+				$("#porko img").each(function() {
+					var arrow = '';
+					var $img = $(this);
+					var alt = $img.attr("alt");
+					if(alt === "peg style 1")
+						arrow = 'transform: rotateZ(45deg) scale(1.7);">&rarr;';
+					else if(alt === "peg style 2")
+						arrow = 'transform: rotateZ(-45deg) scale(1.7);">&larr;';
+					else if(alt === "peg style 3")
+						arrow = 'transform: scale(0.75);">&bull;';
+					else
+						return true;
+
+					$img
+						.hide()
+						.after('<div style="display:inline-block; width: 30px; height: 30px; pointer-events:none;'
+								+arrow+'</div>');
+				});
+			} else {
+				SetPref('porko_reveal', '0');
+				document.location = "choice.php?"+document.location.pathname.replace(/\&option\=[0-9]*/, '');
+			}
+		});
+
+		if(GetPref('porko_reveal') == '1') $porko_reveal.trigger("click");
+	}
+
 	var choicetext = $('body').text(); // for finding stuff that's not in a <p> tag.  sigh.
 	$('div[style*="green"] > p').addClass("greenP");
 	var p = $("p").not(".greenP");
@@ -3085,7 +3382,6 @@ function at_inventory() {
 	var gearpage = 0; // Man, this is annoying.
 	var searchString = document.location.search;
 	if (searchString.indexOf("which=2") != -1) gearpage = 1;
-
 	// Miscellaneous messages that always route you back to inventory:
 	else if (searchString.indexOf("action=message") != -1) {
 		var fimg = $('img:first');
@@ -3128,99 +3424,9 @@ function at_inventory() {
 
 	// Equipment page only
 	if (gearpage == 1) {
-		var backup = GetPref('backup');
-		var quickequip = GetPref("quickequip");
-		var lnks = document.links;
-		var unlink, famLock;
-		var didQElink = false;
-		var selecty = $('select[name=whichoutfit]')[0];
-
-		InventoryHoverText();
-
-		var $bjorn = $("a[href='familiar.php?showback=1']");
-		//if($bjorn.length) RightClickFamiliarHat($bjorn, 'bjorn');
-		//if($crown.length) RightClickFamiliarHat($bjorn, 'crown');
-
-		SetCharData("outfitsmenu", selecty.innerHTML);
-
-		if (backup != '') {
-			for (var i=0, len=lnks.length; i<len; i++) {
-				var lnk = lnks[i];
-
-				if (/familiar\.php/.test(lnk.href)) {
-					famLock = lnk; continue;
-				}
-
-				if (lnk.text == "[unequip all]"
-				 || lnk.text == "Manage your Custom Outfits")
-				{
-					var processingUnequipAll = 1;
-					if (lnk.text != "Manage your Custom Outfits")
-						unlink = lnk;
-					else {
-						processingUnequipAll = 0;
-						unlink = selecty.parentNode.previousSibling;
-						if (unlink != null) {
-							unlink.firstChild.appendChild(
-								document.createElement('tr'));
-							unlink.firstChild.lastChild.appendChild(
-								document.createElement('td'));
-							unlink = unlink.firstChild.lastChild.lastChild;
-							unlink.setAttribute('align','center');
-							unlink.setAttribute('colspan','3');
-							unlink.appendChild(document.createElement('font'));
-							unlink = unlink.firstChild;
-							unlink.setAttribute('size','1');
-							unlink.appendChild(document.createTextNode(' '));
-							unlink = unlink.lastChild;
-						}
-					}
-					if (processingUnequipAll == 1) {
-						var newlink = document.createElement('a');
-						newlink.innerHTML = "[backup]";
-						newlink.href = "#";
-						//newlink.addEventListener('contextmenu',function(event)
-						//{	alert('pow!');}, false);
-						newlink.addEventListener('click',function(event) {
-							this.innerHTML = "[backing up...]";
-							GM_get(server + equip({a:'customoutfit',oname:GetPref('backup')}),
-//							'/inv_equip.php?action=customoutfit&which=2&outfitname=' + GetPref('backup'),
-							function(response) {
-								for (var i=0, len=document.links.length; i<len; i++) {
-									if (document.links[i].text.indexOf("...") != -1) {
-										if (response.indexOf("custom outfits") == -1)
-											document.links[i].innerHTML = "[done]";
-										else document.links[i].innerHTML = "[too many outfits]";
-										break;
-									}
-								}
-							}); event.stopPropagation(); event.preventDefault();
-						}, false);
-						unlink.parentNode.insertBefore(newlink,unlink);
-						unlink.parentNode.insertBefore(document.createTextNode(" - "),unlink);
-					}
-
-					// Save contents of outfit menu
-					var nunewlink; var opty;
-					for (i=1, len=selecty.options.length; i<len; i++) {
-						opty = selecty.options[i];
-						if (opty.text == backup) {
-							nunewlink = document.createElement('a');
-							nunewlink.innerHTML = "[revert to " + backup.toLowerCase() + "]";
-							nunewlink.href = equip({a:'outfit',oid:opty.value});
-							//"inv_equip.php?action=outfit&which=2&whichoutfit=" + opty.value;
-						}
-					}
-
-					if (nunewlink)
-						unlink.parentNode.insertBefore(nunewlink,unlink);
-					if (processingUnequipAll == 1) unlink.parentNode.insertBefore(
-						document.createTextNode(" - "),unlink);
-					break;
-				}
-			}
-		}
+		ProcessGearChange();
 	} // equippage
+
 // this is where we go back to a useful location if we've done/used something elsewhere that caused the inventory page to load.
 	if (GetPref('shortlinks') > 1 && firstTable.rows[0].textContent == "Results:") {
 		var resultsText = firstTable.rows[1].textContent;
@@ -3389,7 +3595,72 @@ function at_bigisland() {
 			box.value = quant;
 		});
 	}
+
+/*
+	$('a[href^="adventure.php?snarfblat=132"]').each(function() {
+		var title = $(this).children("img").attr("title"); // The Battlefield [Image #0] (1)
+		var num = parseInt(title.match(/Image\s\#([0-9]*)/)[1]);
+
+		var soldiers = 0;
+		for(var i=0; i<num; i++) {
+			soldiers += ((i / 2) * 2) + 8;
+			if(i > 13) soldiers += 10;
+		}
+	});
+*/
+
+	// 0 = 1000-998
+	// 1 = 997-992	6
+	// 2 = 991-983	8
+	// 3 = 983-973	10
+	// 4 = 972-961	12
+	// 5 = 960-949	12
+	// 6 = 948-937	12
+	// 7 = 936-921	16
+	// 8 = 920-905	16
+	// 9 = 904-887	18
+	// 10= 886-869	18
+	// 11= 868-847	20
+	// 12= 848-829	20
+	// 13= 828-807	22
+	// 14=?806-777	30?
+	// 15= 776-743	34
+	// 16= 742-707	36
+	// 17= 706-667	38
+	// 18= 668-
+
+	// 0 = 1000-998
+	// 1 = 997-992	6
+	// 2 = 991-984	8
+	// 3 = 983-973	11
+	// 4 = 972-961  12
+	// 5 = 960-949	12
+	// 6 = 948-937	12
+	// 7 = 936-921	16
+	// 8 = 920-905	16
+	// 9 = 904-887	18
+	// 10= 886-869	18
+	// 11= 868-
 }
+
+/*
+if(document.body.innerHTML.indexOf("You win the fight!") !== -1) {
+	document.location = "bigisland.php";
+}
+if(place == "bigisland") console.log($("a[href$=140] img").attr("alt"));
+*/
+
+/*
+function asdf2(num) {
+	var soldiers = 0;
+	for(var i=0; i<num; i++) {
+		soldiers += (2 * parseInt(i / 2)) + 8;
+		if(i > 13) soldiers += 10;
+	}
+	console.log(num+": "+soldiers);
+	return soldiers;
+}
+*/
 
 function pants(evt) {
 	GM_get('http://'+server+equip({i:1792}), //inv_equip.php?pwd='+pwd+'&which=2&action=equip&whichitem=1792'
@@ -4276,7 +4547,7 @@ function at_charpane() {
 	if ($('#nudgeblock div:contains("none")').length > 0) $('#nudgeblock').hide();
 	//make this configurable:
 	if (GetPref("questbottom") == 1) {
-		$('#nudgeblock').appendTo($('center:eq(1)'));
+		$('#nudgeblock').appendTo($('body > center:eq(1)'));
 	}
 
 	// Re-hydrate (0)
@@ -5388,8 +5659,9 @@ function at_familiar() {
 	// Stash an array of all familiars
 	var fams = [];
 	$("img[onclick^=fam]").each(function(n, el) {
-		var fam = $(el).attr("onclick").match(/fam\(([0-9]+)\)/)[1];
-		if(!$.inArray(fam, fams)) fams.push(fam[1]);
+		var fam = $(el).attr("onclick").match(/fam\(([0-9]+)\)/);
+		if(fam && fam[1] && $.inArray(fam[1], fams) === -1)
+			fams.push(fam[1]);
 	});
 	SetCharData("familiars", fams.join(','));
 }
@@ -5688,6 +5960,7 @@ function at_bathole() {
 		}
 	});
 }
+
 
 function spoil_knoll_friendly() {
 	$('#dk_pens > a > img').attr('title','ML: 13-20');
@@ -6648,6 +6921,30 @@ function at_topmenu() {
 	}
 }
 
+/*
+
+function at_chatlaunch() {
+	var $graf = $("#InputForm input[name=graf]");
+	$graf.on("keyup", function() {
+		var val = this.value;
+		if(!val) return true;
+
+		if(val[0] === '/') {
+			if(val.indexOf("/msg") === 0 || val.indexOf("/r ") === 0)
+				$graf.css("color", "blue");
+			else
+				$graf.css("color", "purple");
+		}
+		else {
+			$graf.css("color", "");
+		}
+
+		return true;
+	});
+}
+*/
+
+
 // ASCEND: Make sure we're really ready to jump into that gash.
 function at_ascend() {
 	var checklist = GetPref('ascension_list');
@@ -6901,7 +7198,12 @@ function buildPrefs() {
 
 		prefSpan.appendChild(MakeOption("Questblock to bottom of charpane: ", 2, 'questbottom', "No", "Yes"));
 		prefSpan.appendChild(MakeOption("Outfit switcher on charpane: ", 2, 'outfitsmenu', "No", "Yes"));
-		prefSpan.appendChild(MakeOption("Add hover text to equip links: ", 2, 'invhovertext', "No", "Yes"));
+
+		choice = MakeOption("Add hover text to equip links: ", 3, 'invhovertext', "No", "Yes");
+		choice.firstChild.cells[1].firstChild.options[2].innerHTML = "And change [1] to [one]";
+		prefSpan.appendChild(choice);
+
+
 		prefSpan.appendChild(MakeOption("Monster name links to wiki: ", 2, 'monsterlinks', "No", "Yes"));
 		prefSpan.appendChild(MakeOption("Choice Title links to wiki: ", 2, 'choicelinks', "No", "Yes"));
 	}
@@ -7025,19 +7327,17 @@ function buildPrefs() {
 				else $("#hashrenew").html('Fail!');
 		});	}, true);
 
-/*
 		var ul5 = document.createElement('a');
 		ul5.setAttribute('href','javascript:void(0);');
 		ul5.innerHTML = "Refresh DB";
 		ul5.setAttribute('id','refreshdb');
 		ul5.addEventListener('click', function(event)
-		{	this.innerHTML = 'Working...';
+		{	this.innerHTML = 'Working...<span id="dbworking"></span>';
 			UpdateDB(
 				function() { $("#refreshdb").html('Done'); },
 				function() { $("#refreshdb").html('Fail!'); }
 			);
 		}, true);
-*/
 
 		ulspan.setAttribute('class','tiny');
 		ulspan.setAttribute('name','updatespan');

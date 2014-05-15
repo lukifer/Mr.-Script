@@ -167,33 +167,33 @@ if($file) while (($line = fgets($file)) !== false)
 		case "Pottery Barn Owl":
 			$familiar["bjorn"] = "+10 Hot Damage"; break;
 		case "El Vibrato Megadrone":
-			$familiar["bjorn"] = "+10 to Monster Level"; break;
+			$familiar["bjorn"] = "+10 Monster Level"; break;
 		case "Spirit Hobo":
-			$familiar["bjorn"] = "+15% Booze Drops from Monsters"; break;
+			$familiar["bjorn"] = "+15% Booze Drops"; break;
 		case "Gluttonous Green Ghost":
-			$familiar["bjorn"] = "+15% Food Drops from Monsters"; break;
+			$familiar["bjorn"] = "+15% Food Drops"; break;
 		case "Li'l Xenomorph":
 		case "Feral Kobold":
-			$familiar["bjorn"] = "+15% Item Drops from Monsters"; break;
+			$familiar["bjorn"] = "+15% Item Drops"; break;
 		case "Reassembled Blackbird":
 		case "Reconstituted Crow":
 		case "Oily Woim":
-			$familiar["bjorn"] = "+10% Item Drops from Monsters"; break;
+			$familiar["bjorn"] = "+10% Item Drops"; break;
 		case "Slimeling":
-			$familiar["bjorn"] = "+15% Weapon Drops from Monsters"; break;
+			$familiar["bjorn"] = "+15% Weapon Drops"; break;
 		case "Blood-Faced Volleyball":
 		case "Cymbal-Playing Monkey":
 		case "Hovering Skull":
 		case "Jill-O-Lantern":
 		case "Mariachi Chihuahua":
 		case "Nervous Tick":
-			$familiar["bjorn"] = "+2 Moxie Stat(s) Per Fight"; break;
+			$familiar["bjorn"] = "+2 Moxie Stats"; break;
 		case "Chauvinist Pig":
 		case "Grinning Turtle":
 		case "Hunchbacked Minion":
 		case "Killer Bee":
 		case "Baby Mutant Rattlesnake":
-			$familiar["bjorn"] = "+2 Muscle Stat(s) Per Fight"; break;
+			$familiar["bjorn"] = "+2 Muscle Stats"; break;
 		case "Cheshire Bat":
 		case "Dramatic Hedgehog":
 		case "Hovering Sombrero":
@@ -201,11 +201,11 @@ if($file) while (($line = fgets($file)) !== false)
 		case "Reanimated Reanimator":
 		case "Sugar Fruit Fairy":
 		case "Uniclops":
-			$familiar["bjorn"] = "+2 Mysticality Stat(s) Per Fight"; break;
+			$familiar["bjorn"] = "+2 Mysticality Stats"; break;
 		case "Frumious Bandersnatch":
 		case "Jack-in-the-Box":
 		case "Purse Rat":
-			$familiar["bjorn"] = "+2 Stat(s) Per Fight"; break;
+			$familiar["bjorn"] = "+2 Stats"; break;
 		case "Frozen Gravy Fairy":
 			$familiar["bjorn"] = "+20 Cold Damage"; break;
 		case "Flaming Gravy Fairy":
@@ -232,13 +232,13 @@ if($file) while (($line = fgets($file)) !== false)
 		case "Piano Cat":
 		case "Psychedelic Bear":
 		case "Hippo Ballerina":
-			$familiar["bjorn"] = "+20% Meat from Monsters "; break;
+			$familiar["bjorn"] = "+20% Meat"; break;
 		case "Hobo Monkey":
 		case "Knob Goblin Organ Grinder":
 		case "Happy Medium":
-			$familiar["bjorn"] = "+25% Meat from Monsters"; break;
+			$familiar["bjorn"] = "+25% Meat"; break;
 		case "Smiling Rat":
-			$familiar["bjorn"] = "+3 Stat(s) Per Fight"; break;
+			$familiar["bjorn"] = "+3 Stats"; break;
 		case "Animated Macaroni Duck":
 		case "Autonomous Disco Ball":
 		case "Barrrnacle":
@@ -248,7 +248,7 @@ if($file) while (($line = fgets($file)) !== false)
 		case "Pair of Ragged Claws":
 		case "Penguin Goodfella":
 		case "Spooky Pirate Skeleton":
-			$familiar["bjorn"] = "+5 to Familiar Weight"; break;
+			$familiar["bjorn"] = "+5 Familiar Weight"; break;
 		case "Artistic Goth Kid":
 		case "Cocoabo":
 		case "Crimbo P. R. E. S. S. I. E.":
@@ -263,18 +263,18 @@ if($file) while (($line = fgets($file)) !== false)
 		case "Steam-Powered Cheerleader":
 		case "Stocking Mimic":
 		case "Tickle-Me Emilio":
-			$familiar["bjorn"] = "All Attributes +10"; break;
+			$familiar["bjorn"] = "Attributes +10"; break;
 		case "Wild Hare":
 			$familiar["bjorn"] = "5-6 HP, 3-4 MP"; break;
 		case "BRICKO chick":
 		case "Mini-Adventurer":
 		case "Nanorhino":
-			$familiar["bjorn"] = "All Attributes +10%"; break;
+			$familiar["bjorn"] = "Attributes +10%"; break;
 		case "Black Cat":
 		case "O.A.F.":
-			$familiar["bjorn"] = "All Attributes -10"; break;
+			$familiar["bjorn"] = "Attributes -10"; break;
 		case "Baby Bugged Bugbear":
-			$familiar["bjorn"] = "All Attributes -10, +2 Stats"; break;
+			$familiar["bjorn"] = "Attributes -10, +2 Stats"; break;
 		case "Cotton Candy Carnie":
 		case "Cuddlefish":
 		case "Emo Squid":
@@ -289,7 +289,7 @@ if($file) while (($line = fgets($file)) !== false)
 		case "Teddy Borg":
 		case "Temporal Riftlet":
 		case "Untamed Turtle":
-			$familiar["bjorn"] = "Combat Initiative +20%"; break;
+			$familiar["bjorn"] = "Combat Init +20%"; break;
 		case "Angry Jung Man":
 		case "Astral Badger":
 		case "Baby Sandworm":
@@ -298,11 +298,11 @@ if($file) while (($line = fgets($file)) !== false)
 		case "Green Pixie":
 		case "Llama Lama":
 		case "Unconscious Collective":
-			$familiar["bjorn"] = "Maximum HP/MP +10"; break;
+			$familiar["bjorn"] = "Max HP/MP +10"; break;
 		case "Warbear Drone":
-			$familiar["bjorn"] = "Maximum HP/MP +15"; break;
+			$familiar["bjorn"] = "Max HP/MP +15"; break;
 		case "Adorable Space Buddy":
-			$familiar["bjorn"] = "Maximum HP/MP +30"; break;
+			$familiar["bjorn"] = "Max HP/MP +30"; break;
 		case "Clockwork Grapefruit":
 		case "Nosy Nose":
 		case "Ninja Snowflake":
@@ -335,7 +335,7 @@ if($file) while (($line = fgets($file)) !== false)
 		case "Holiday Log":
 		case "Pet Rock":
 		case "Toothsome Rock":
-			$familiar["bjorn"] = "So-So Resistance to All Elements"; break;
+			$familiar["bjorn"] = "So-So Resistance"; break;
 		case "Baby Yeti":
 		case "Dataspider":
 		case "Howling Balloon Monkey":

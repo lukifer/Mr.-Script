@@ -3314,6 +3314,48 @@ function at_bounty() {
 
 }
 
+
+function at_sellstuff() {
+	var $select = $("select[multiple]");
+	if($select.length > 0) {
+		$select.before('<div id="mrsellsort" class="small" style="text-align:right; margin-bottom: 3px;"> Sort: ' +
+			'<a href="javascript:void(0);" style="font-weight:bold;">Name</a> ' +
+			'<a href="javascript:void(0);">Meat</a></div>');
+		$(document).on("click", "#mrsellsort a", function(e) {
+			var $a = $(this);
+			var which = $a.html();
+				console.log(which, $a.css("fontWeight"));
+			if($a.css("fontWeight") === "700") return true;
+			$a.css("fontWeight", "700");
+			if(which == "Name") $("#mrsellsort a:last") .css("fontWeight", "normal");
+			else				$("#mrsellsort a:first").css("fontWeight", "normal");
+			var $opts = $select.children("option");
+			var qtyreg = /\(([0-9]*)\)/;
+			var meatreg = /\(([0-9]*)\sMeat/;
+			if(which == "Name") {
+				$opts.sort(function (a, b) {
+					return a.innerHTML < b.innerHTML ? -1 : 1;
+				});
+			}
+			else {
+				$opts.sort(function (a, b) {
+					var ameat = meatreg.exec(a.innerHTML)[1];
+					var bmeat = meatreg.exec(b.innerHTML)[1];
+					var aqty = qtyreg.exec(a.innerHTML);
+					var bqty = qtyreg.exec(b.innerHTML);
+						aqty = aqty ? aqty[1] : 1;
+						bqty = bqty ? bqty[1] : 1;
+
+					return aqty*ameat > bqty*bmeat ? -1 : 1;
+				});
+			}
+			$select.html($opts);
+		});
+	} else {
+		// TODO: Full-size autosell
+	}
+}
+
 function at_mall() {
 	$('center table tr td center table:first').prepend('<tr><td><center><a href=managestore.php>Manage your Store</a><br /><br /></center></td></tr>');
 }
